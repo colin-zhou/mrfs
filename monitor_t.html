@@ -1,0 +1,131 @@
+{% extends "mycapbase.html" %}
+
+{% block mycap_dashboard %}
+<section class="content-header">
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+    <li><a href="#">Monitor</a></li>
+    <li>Overview</li>
+  </ol>
+</section>
+{% endblock %} 
+
+{% block mycap_extrajs %}
+<script type="text/javascript" src="{{STATIC_URL}}platform/js/common/ws4redis.js"></script>
+<script src="{{STATIC_URL}}platform/js/operation-monitor-t.js"></script>
+<script type="text/javascript">
+    rss = typeof rss === 'undefined' ? {} : rss;
+    rss.websocket_url = '{{ websocket_url }}';
+    rss.websocket_type = '{{ websocket_msg_type }}';
+    rss.server_detail_url = '{{ server_detail_url }}';
+</script>
+{% endblock %}
+
+{% block mycap_extrastyle %}
+{% endblock %}
+
+{% block mycap_content %}
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-solid box-primary">
+        <div class="box-header">
+          <h3 class="box-title">Monitor</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row" id="monitor_panel">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <div class="monitor_column">
+        <div class="thumbnail server_panel" id="server_1">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_6">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_11">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="monitor_column">
+        <div class="thumbnail server_panel" id="server_2">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_7">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_12">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-2">
+      <div class="monitor_column">
+        <div class="thumbnail server_panel" id="server_3">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_8">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_13">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-2">
+      <div class="monitor_column">
+        <div class="thumbnail server_panel" id="server_4">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_9">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_14">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-2">
+      <div class="monitor_column">
+        <div class="thumbnail server_panel" id="server_5">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_10">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+        <div class="thumbnail server_panel" id="server_15">
+          <div class="server_title"></div>
+          <div class="server_body"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-1"></div>
+  </div>
+</section>
+
+{% endblock %}

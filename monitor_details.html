@@ -1,0 +1,205 @@
+{% extends "mycapbase.html" %}
+
+{% block mycap_dashboard %}
+<section class="content-header">
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+    <li><a href="{{ overview_url }}">Monitor</a></li>
+    <li>Details</li>
+    <li>Server&nbsp; 
+      <span class="dropdown">
+        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" id="current_server"></a>
+        <ul class="dropdown-menu" id="local_server_list"></ul>
+      </span>
+    </li>
+  </ol>
+</section>
+{% endblock %} 
+
+{% block mycap_extrajs %}
+
+<script type="text/javascript" src="/static/plugins/kdb/c.js"></script>
+<script type="text/javascript" src="/static/plugins/jQuery.Idle/jquery.idle.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}platform/js/common/ws4redis.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}plugins/cycleprogress/cycle-progress.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}plugins/responsive/dataTables.responsive.js"></script>
+
+
+<script src="{{STATIC_URL}}platform/js/operation-monitor-details.js"></script>
+
+<script type="text/javascript">
+    rss = typeof rss === 'undefined' ? {} : rss;
+    rss.websocket_url = '{{ websocket_url }}';
+    rss.websocket_type = '{{ websocket_msg_type }}';
+    rss.monitor_detail_url = '{{ monitor_detail_url }}';
+    rss.system_config_url = '{{ system_config_url }}';
+    rss.tunnel_config_url = '{{ tunnel_config_url }}';
+    rss.quote_config_url = '{{ quote_config_url }}';
+    rss.account_config_url = '{{ account_config_url }}';
+    rss.symbol_config_url = '{{ symbol_config_url }}';
+    rss.strategy_config_url = '{{ strategy_config_url }}';
+    rss.kdb_url = '{{ kdb_url }}';
+</script>
+{% endblock %}
+
+{% block mycap_extrastyle %}
+    <link href="{{STATIC_URL}}plugins/responsive/dataTables.responsive.css" media="all" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block mycap_content %}
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-solid box-primary">
+        <div class="box-header">
+          <h3 class="box-title">Monitor</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="monitor_panel">
+    <div class="col-md-4" id="monitor_column_first">
+      <div class="box box-primary" id="monitor_box_system">
+        <div class="box-body">
+            <span class="panel_title">SYSTEM</span>
+            <table id="system_info" class="table table-condensed monitor-server" style="width:100%">
+            </table>
+        </div>
+      </div>
+      
+      <div class="box box-primary" id="monitor_box_load">
+        <div class="box-body">
+            <span class="panel_title">LOAD AVERAGE</span>
+            <table id="load_average" class="table table-condensed monitor-server" style="width:100%">
+                <thead>
+                    <tr><th style="width:33%">1 Min</th><th style="width:33%">5 Min</th><th style="width:34%">15 Min</th></tr>
+                </thead>
+                <tr>
+                    <td align="center">
+                        <div class="load-progress">
+                            <strong></strong>
+                        </div>
+                    </td>
+                    <td align="center">
+                        <div class="load-progress">
+                            <strong></strong>
+                        </div>
+                    </td>
+                    <td align="center">
+                        <div class="load-progress">
+                            <strong></strong>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+      </div>
+      
+      <div class="box box-primary" id="monitor_box_memory">
+        <div class="box-body">
+            <span class="panel_title">MEMORY AND SWAP</span>
+            <table id="memory_swap" class="table table-condensed monitor-server" style="width:100%">
+                <thead><tr>
+                    <th style="width:15%">Type</th>
+                    <th style="width:15%">Free</th>
+                    <th style="width:15%">Total</th>
+                    <th style="width:15%">Status</th>
+                    <th style="width:40%">Use</th>
+                </tr></thead>
+            </table>
+        </div>
+      </div>
+      
+      <div class="box box-primary" id="monitor_box_disk">
+        <div class="box-body">
+            <span class="panel_title">DISK USAGE</span>
+            <table id="disk_usage" class="table table-condensed monitor-server" style="width:100%" cellspacing="0">
+                <thead><tr>
+                    <th style="width:15%">Mount</th>
+                    <th style="width:15%">Free</th>
+                    <th style="width:15%">Total</th>
+                    <th style="width:15%">Status</th>
+                    <th style="width:40%">Use</th>
+                </tr></thead>
+            </table>
+        </div>
+      </div>
+      <div class="box box-primary" id="monitor_box_account">
+        <div class="box-body">
+          <span class="panel_title">STATISTICS</span>
+          <table id="statistic_info" class="table table-condensed monitor-server" style="width:100%">
+            <thead>
+              <th>Resource</th>
+              <th>Process</th>
+              <th>Market</th>
+              <th>Account</th>
+              <th>Strategy</th>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8" id="monitor_column_second">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="box box-primary" id="monitor_box_process">
+            <div class="box-body">
+              <table id="process_state" class="table table-hover table-condensed dataTable display nowrap" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Path</th>
+                      <th>Pid</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="box box-primary" id="monitor_box_market">
+            <div class="box-body">
+              <table id="market_state" class="table table-hover table-condensed dataTable display nowrap" cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Connection</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Path</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box box-primary" id="monitor_box_strategy">
+          <div class="box-body">
+            <table id="strategy_list" class="table table-hover dataTable-condensed dataTable display nowrap" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Strategy</th>
+                  <th>Account</th>
+                  <th>Process</th>
+                  <th>Product</th>
+                  <th>Symbol</th>
+                  <th>Broker</th>
+                  <th>Status</th>
+                  <th>Path</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
