@@ -1,0 +1,17 @@
+OUT:= json_to_confuse 
+TOP:=..
+CFLAGS:= -I$(TOP)/lib/include  --std=c++11
+LDFLASS:= -L$(TOP)/lib/bin  -l$(TOP)/lib/bin/libjsoncpp.a -l:libconfuse.a
+
+all: $(OUT)
+	
+# $< is the first relied on file
+# $@ is the target file
+# $^ is all files that relied on
+
+$(OUT): json_to_confuse.o
+	g++ $< $(LDFLASS) -o $@ 
+
+
+json_to_confuse.o: json_to_confuse.cpp
+	g++ -c $(CFLAGS) $< -o $@ 
