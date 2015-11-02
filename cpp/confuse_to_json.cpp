@@ -48,28 +48,31 @@ conf_parse_acb (cfg_t * cfg, cfg_opt_t * opt, const char *value, void *result)
 
 /* validates a port option (must be positive) */
 /* copied from official document */
-int conf_validate_port(cfg_t *cfg, cfg_opt_t *opt)
+int
+conf_validate_port (cfg_t * cfg, cfg_opt_t * opt)
 {
-    int value = cfg_opt_getnint(opt, 0);
-    if(value <= 0)
+  int value = cfg_opt_getnint (opt, 0);
+  if (value <= 0)
     {
-        cfg_error(cfg, "invalid port %d in section '%s'", value, cfg_name(cfg));
-        return -1;
+      cfg_error (cfg, "invalid port %d in section '%s'", value,
+		 cfg_name (cfg));
+      return -1;
     }
-    return 0;
+  return 0;
 }
 
 /* validates a bookmark section (host option required) */
 /* copied from official document */
-int conf_validate_bookmark(cfg_t *cfg, cfg_opt_t *opt)
+int
+conf_validate_bookmark (cfg_t * cfg, cfg_opt_t * opt)
 {
-    cfg_t *bookmark = cfg_opt_getnsec(opt, cfg_opt_size(opt) - 1);
-    if(cfg_size(bookmark, "host") == 0)
+  cfg_t *bookmark = cfg_opt_getnsec (opt, cfg_opt_size (opt) - 1);
+  if (cfg_size (bookmark, "host") == 0)
     {
-        cfg_error(cfg, "missing required option 'host' in bookmark");
-        return -1;
+      cfg_error (cfg, "missing required option 'host' in bookmark");
+      return -1;
     }
-    return 0;
+  return 0;
 }
 
 /* fethch the cfg_t of ftp_conf */
@@ -166,35 +169,39 @@ traverse_confuse (cfg_t * cfg, cfg_opt_t * opts,
 	}
       else if (is_set (CFGF_LIST, opts[i].flags))	// it is a list
 	{
+	  Json::Value * tnode = &nodes[curnode][opts[i].name];
 	  switch (opts[i].type)
 	    {
 	    case CFGT_BOOL:
 	      for (j = 0; j < cfg_size (cfg, opts[i].name); j++)
 		{
-		  nodes[curnode][opts[i].name].append (cfg_getnbool (cfg,opts[i].name, j));
+		  tnode->append (cfg_getnbool (cfg, opts[i].name, j));
 		}
 	      break;
 	    case CFGT_STR:
 	      for (j = 0; j < cfg_size (cfg, opts[i].name); j++)
 		{
-		  nodes[curnode][opts[i].name].append (cfg_getnstr (cfg, opts[i].name, j));
+		  tnode->append (cfg_getnstr (cfg, opts[i].name, j));
 		}
 	      break;
 	    case CFGT_FLOAT:
 	      for (j = 0; j < cfg_size (cfg, opts[i].name); j++)
 		{
-		  nodes[curnode][opts[i].name].append (cfg_getnfloat (cfg, opts[i].name, j));
+		  tnode->append (cfg_getnfloat (cfg, opts[i].name, j));
 		}
 	      break;
 	    case CFGT_INT:
 	      for (j = 0; j < cfg_size (cfg, opts[i].name); j++)
 		{
-		  nodes[curnode][opts[i].name].append (Json::Value::Int (cfg_getnint (cfg, opts[i].name, j)));
+		  tnode->
+		    append (Json::Value::
+			    Int (cfg_getnint (cfg, opts[i].name, j)));
 		}
 	      break;
 	    default:
 	      printf
-		("Convert trader rc to redis failed: CFGF_LIST type %d.\n", opts[i].type);
+		("Convert trader rc to redis failed: CFGF_LIST type %d.\n",
+		 opts[i].type);
 	      break;
 	    }
 	}
@@ -241,8 +248,8 @@ confuse_to_json (cfg_opt_t * opt, const char *conf_file,
     }
   int ret = 0;
   cfg_t *cfg = cfg_init (opt, CFGF_NONE);
-  cfg_set_validate_func(cfg, "bookmark|port", conf_validate_port);
-  cfg_set_validate_func(cfg, "bookmark", conf_validate_bookmark);
+  cfg_set_validate_func (cfg, "bookmark|port", conf_validate_port);
+  cfg_set_validate_func (cfg, "bookmark", conf_validate_bookmark);
   if (!cfg)
     {
       printf ("Trader confuse to redis cfg_init failed\n");
@@ -270,7 +277,7 @@ confuse_to_json (cfg_opt_t * opt, const char *conf_file,
   cfg_free (cfg);
   Json::FastWriter fast_writer;
   redis_str = fast_writer.write (valueArray[0]);
-  // redis_str = valueArray[0].toStyledString();
+  redis_str = valueArray[0].toStyledString ();
   return 0;
 }
 
