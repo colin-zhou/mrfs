@@ -1,0 +1,4 @@
+#! /bin/bash
+echo kill all processes related with $1
+ps -efww|grep $1|grep -v 'grep'|cut -c 9-15|xargs kill -9 > /dev/null 2>&1 &
+# ps -ef |grep rtserver.py |grep -v 'grep' |awk '{if($2~/^[0-9]+$/)print $2}'|xargs kill -9

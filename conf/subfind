@@ -1,0 +1,16 @@
+#! /bin/bash
+echo "****************************************************"
+echo "****************************************************"
+echo Pretend to open all *.h file contains $1 in this path
+echo "****************************************************"
+echo "****************************************************"
+
+var=$(grep -lir --include=*.h "$1")
+
+if [[ -z $var ]]; then
+	echo "Not find you input string" \"$1\"
+else
+	sublime $var
+fi
+
+# grep -lir --include=*.{c,h,cpp} $1 | xargs sublime
