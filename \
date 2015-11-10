@@ -1,0 +1,26 @@
+Add a json->confuse format function
+
+1. rearrange the path
+2. add a file which contains a json to libconfuse format function
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   c/json_to_confuse.c
+#	new file:   conf/testrtserver.rec
+#	renamed:    monitor.html -> html/monitor.html
+#	renamed:    monitor_details.html -> html/monitor_details.html
+#	renamed:    monitor_t.html -> html/monitor_t.html
+#	renamed:    realmonitor.html -> html/realmonitor.html
+#	renamed:    canvas.js -> js/canvas.js
+#	renamed:    canvas_circle_progress.js -> js/canvas_circle_progress.js
+#	renamed:    operation-monitor.js -> js/operation-monitor.js
+#	renamed:    overview.js -> js/overview.js
+#	renamed:    post.js -> js/post.js
+#	renamed:    quote_info.js -> js/quote_info.js
+#	new file:   js/testconnection.js
+#	renamed:    get_datatables.py -> py/get_datatables.py
+#	renamed:    view.py -> py/view.py
+#

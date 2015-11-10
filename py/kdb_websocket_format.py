@@ -3,8 +3,20 @@ import datetime
 
 
 class Deserialize:
+    """ input kdb return buffer or a string of buffer or a byte array
+        use the getret function to fetch the result
+    """
     def __init__(self, x):
-        # x
+        if isinstance(x, str):
+            tx = buffer(x)
+        elif isinstance(x, buffer):
+            tx = x
+        elif isinstance(x, list):
+            tx = x
+        else:
+            tx = None
+        if tx:
+            x = np.array(tx, dtype=np.uint8)
         self.a = x[0]
         self.pos = 8
         self.j2p32 = 2 ** 32
@@ -24,7 +36,7 @@ class Deserialize:
         return self.rint8() == 1
 
     def rchar(self):
-        return ord(self.rint8())
+        return chr(self.rint8())
 
     def rint8(self):
         tv = self.sb[self.pos]
@@ -201,6 +213,9 @@ class Deserialize:
 
 
 class Serialize:
+    """ input a array,string or any other things and take
+        getret to fetch the serialized bytes
+    """
     def __init__(self, x):
         self.a = 1
         self.pos = 0
@@ -220,8 +235,9 @@ class Serialize:
         self.wn(4)
         self.w(x, None)
 
+    # return a bytes array
     def getret(self):
-        return self.ab
+        return self.ab.tobytes()
 
     def totype(self, obj):
         return str(type(obj))
@@ -347,7 +363,5 @@ if __name__ == '__main__':
         101,103,121,0,98,0,99,11,0,6,0,0,0,116,105,109,101,0,115,121,109,0,73,80,72,111,115,116,78,97,109,101,0,84,114,97,
         100,101,114,80,97,116,104,0,83,116,114,97,116,101,103,121,0,67,111,110,116,114,97,99,116,0,0,0,6,0,0,0,16,0,0,0,0,0,
         11,0,0,0,0,0,11,0,0,0,0,0,11,0,0,0,0,0,11,0,0,0,0,0,0,0,0,0,0,0]
-        
-    bf = np.array(x, dtype=np.uint8)
-    oj = Deserialize(bf)
+    oj = Deserialize(x)
     print oj.getret()
