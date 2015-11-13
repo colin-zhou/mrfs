@@ -5,11 +5,34 @@
 # Comments: Mainly function ara transfer from gateway module
 
 import os
+import sys
 import types
 import json
 import hashlib
 import sqlite3
+import logging
 import paramiko as ssh
+from logging.handlers import TimedRotatingFileHandler
+
+LEVELS = {'debug': logging.DEBUG,
+          'info':  logging.INFO,
+          'warn':  logging.WARNING,
+          'error': logging.ERROR,
+          'fatal': logging.CRITICAL}
+
+
+def cal_sha1sum(file_path):
+    mh = hashlib.sha1()
+    try:
+        fp = open(file_path, 'r')
+    except:
+        Log.error("Can not open file: %s" % file_path)
+        return None
+    lines = fp.readlines()
+    for line in lines:
+        mh.update(line)
+    fp.close()
+    return mh.hexdigest()
 
 
 def Singleton(cls):
@@ -19,6 +42,49 @@ def Singleton(cls):
             instances[cls] = cls(*args, **kw)
         return instances[cls]
     return _singleton
+
+@Singleton
+class MYLogger:
+    __logger = None
+
+    def __init__(self, level, logfile):
+        MYLogger.__logger = logging.getLogger()
+        setval = LEVELS.get(level.lower(), logging.WARNING)
+        MYLogger.__logger.setLevel(setval)
+
+        ch = logging.handlers.TimedRotatingFileHandler(logfile, 'D')
+        format = '%(asctime)s | %(levelname)s | %(message)s'
+        fmt = logging.Formatter(format)
+        ch.setFormatter(fmt)
+        MYLogger.__logger.addHandler(ch)
+
+    def details(self, msg, depth=2):
+        frame = sys._getframe(depth)
+        file = os.path.basename(frame.f_code.co_filename)
+        linenum = ''
+        if frame.f_back is not None:
+            linenum = frame.f_back.f_lineno
+        info = "%s - %s line:%s" % (file, frame.f_code.co_name, linenum)
+        return "%s | %s" % (info, msg)
+
+    def debug(self, msg):
+        MYLogger.__logger.debug(self.details(msg))
+
+    def info(self, msg):
+        MYLogger.__logger.info(self.details(msg))
+
+    def warn(self, msg):
+        MYLogger.__logger.warn(self.details(msg))
+
+    def error(self, msg):
+        MYLogger.__logger.error(self.details(msg))
+
+    def fatal(self, msg):
+        MYLogger.__logger.critical(self.details(msg))
+
+LOG_LEVEL = 'debug'
+LOG_FILE = 'logs/gateway.log'
+Log = MYLogger(LOG_LEVEL, LOG_FILE)
 
 class DataBase:
     def __init__(self, path):
@@ -79,8 +145,8 @@ class DBOperate:
     the history checksum stored in the local sqlite3
     """
     # local database operation
-    def __init__(self):
-        self.operate = DataBase(config.DB_FILE_PATH)
+    def __init__(self, db_file_path):
+        self.operate = DataBase(db_file_path)
         self.create_table()
 
     # close the database connection
@@ -164,9 +230,9 @@ class FileDeploy:
     Encapsulate the remote file operation, including upload, download
     move and mkdir
     """
-    def __init__(self):
+    def __init__(self, db_file):
         self.__pool = {}
-        self.state = DBOperate()
+        self.state = DBOperate(db_file)
 
     # setup a ssh connection to specified host and establish a sftp connection 
     def connect(self, host, username, password, port=22):
@@ -271,17 +337,20 @@ class FileDeploy:
 def rfo_initial():
     ROOT_DIR = os.path.dirname(__file__)
     DB_FILE_PATH = os.path.join(ROOT_DIR, 'state.sqlite3')
-    rf_handler = FileDeploy()
+    rf_handler = FileDeploy(DB_FILE_PATH)
 
-# connect the remote server
-def set_server(host, user, password, port=22):
+# get server parameters and connect the remote server
+def cfg_server(host, user, password, port=22):
     rf_handler = FileDeploy()
     return rf_handler.connect(host, user, password, port)
 
 # process user command
-def exec_cmd(type, remote_path, remote_file, local_path, local_file):
+def exec_cmd(type, remote, local):
     if type == "upload":
-        
+        print "1"
     elif type == "download":
-        
+        print "2"
+
+if __name__ == "__main__":
+    rfo_initial()
 
