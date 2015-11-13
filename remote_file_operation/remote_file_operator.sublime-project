@@ -1,0 +1,20 @@
+{
+	"folders":
+        [
+                {
+                        "path": "/home/rss/Git/reserve/remote_file_operation",
+                        "folder_exclude_patterns":["*.pyc"]
+                }
+        ],
+        "settings":
+        {
+                "tab_size": 4,
+                "translate_tabs_to_spaces": true
+        },
+        "build_systems":
+        {
+                "cmd": ["python", "-u", "$file"],
+                "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+                "selector": "source.python"
+        }
+}
