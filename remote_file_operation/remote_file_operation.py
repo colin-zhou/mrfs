@@ -2,7 +2,7 @@
 # -*-coding:utf-8-*-
 # Copyright (c) 2015 MyCapital
 # Author: colin <zhouchaolin@mycapital.net>
-# Comments: Mainly function ara transfer from gateway module
+# Comments: Mainly functions are transfer from gateway module
 
 import os
 import sys
@@ -42,6 +42,7 @@ def Singleton(cls):
             instances[cls] = cls(*args, **kw)
         return instances[cls]
     return _singleton
+
 
 @Singleton
 class MYLogger:

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"st",
+				"stderr"
+			],
+			[
+				"check",
+				"check_rf_params"
+			],
+			[
+				"n",
+				"NAME_LEN"
+			],
+			[
 				"WA",
 				"SEND_WAIT"
 			],
@@ -16,48 +28,10 @@
 	"buffers":
 	[
 		{
-			"contents": "#!/usr/bin/python\n#-*-coding:utf-8-*-\n\n\"\"\"\n *  Description: 建立一个sqllite的本地数据，用于维护系统资源及状态\n *  Author:savion\n *  Date: 2015-04-20\n\"\"\"\n\nimport os, sqlite3\nimport config\nfrom utils import Log as \n\nclass DataBase:\n\n    def __init__(self, path):\n        conn = sqlite3.connect(path,check_same_thread = False)\n        if os.path.exists(path) and os.path.isfile(path):\n            self.conn = conn\n        else:\n            Log.error('Create sqlite3 file fail. use memory!')\n            self.conn = sqlite3.connect(':memory:')\n\n    def get_cursor(self):\n        if self.conn is not None:\n            return self.conn.cursor()\n\n    def close(self):\n        if self.conn is not None:\n            self.conn.close()\n\n    def execute(self, sql, data=None):\n        Log.debug('execute :' + sql)\n        try:\n            cu = self.get_cursor()\n            if data:\n                for dt in data:\n                    cu.execute(sql, dt)\n                    self.conn.commit()\n            else:\n                cu.execute(sql)\n                self.conn.commit()\n        except Exception, e:\n            Log.error('execute error:' + str(e))\n        finally:\n            cu.close()\n\n    def fetch(self, sql, data=None):\n        rows = []\n        Log.debug('fetch :' + sql)\n        try:\n            cu = self.get_cursor()\n            if data:\n                cu.execute(sql, data)\n            else:\n                cu.execute(sql)\n            rows = cu.fetchall()\n        except Exception, e:\n            Log.error('fetch error:' + str(e))\n        finally:\n            cu.close()\n        if rows is not None and len(rows) > 0:\n            return rows[0][0]\n        else:\n            return None\n\nclass DBOperate:\n\n    def __init__(self):\n        self.operate = DataBase(config.DB_FILE_PATH)\n        self.create_table()\n\n    def __del__(self):\n        self.operate.close()\n\n    def create_table(self):\n        profile = '''CREATE TABLE IF NOT EXISTS `profile` (\n                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,\n                  `host_ip` varchar(32) NOT NULL,\n                  `user_name` varchar(32) NOT NULL,\n                  `user_dir` varchar(256) NOT NULL\n                )'''\n        self.operate.execute(profile)\n\n        detail = '''CREATE TABLE IF NOT EXISTS `detail` (\n                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,\n                  `host_ip` varchar(32) NOT NULL,\n                  `user_name` varchar(32) NOT NULL,\n                  `file` varchar(64) NOT NULL,\n                  `check_code` varchar(64) NOT NULL\n                )'''\n        self.operate.execute(detail)\n\n    def drop_table(self):\n        drop_sql = 'DROP TABLE IF EXISTS profile'\n        self.operate.execute(drop_sql)\n        drop_sql = 'DROP TABLE IF EXISTS detail'\n        self.operate.execute(drop_sql)\n\n\n    def query_user_dir(self, host_ip, user_name):\n        query = '''SELECT user_dir FROM profile WHERE host_ip='%s' \\\n              AND user_name='%s' ''' % (host_ip, user_name)\n        return self.operate.fetch(query)\n\n    def update_user_dir(self, host_ip, user_name, user_dir):\n        add_sql = \"\"\n        if self.query_user_dir(host_ip, user_name):\n            add_sql = '''UPDATE profile SET user_dir='%s' WHERE  host_ip='%s' \\\n                 AND user_name='%s' ''' % (user_dir, host_ip, user_name)\n        else:\n            add_sql = '''INSERT INTO  profile (host_ip, user_name, user_dir) \\\n             VALUES ('%s', '%s', '%s') ''' % (host_ip, user_name, user_dir)\n        self.operate.execute(add_sql)\n\n    def delete_dir(self, host_ip, user_name):\n        del_sql = '''DELETE FROM profile WHERE  host_ip='%s' \\\n                 AND user_name='%s' ''' % (host_ip, user_name)\n        self.operate.execute(del_sql)\n\n\n    def query_check_code(self, host_ip, user_name, file):\n        query = '''SELECT check_code FROM detail WHERE host_ip='%s' \\\n            AND user_name='%s' AND file='%s' ''' % (host_ip, user_name, file)\n        return self.operate.fetch(query)\n\n    def update_check_code(self, host_ip, user_name, file, check_code):\n        add_sql = \"\"\n        if self.query_check_code(host_ip, user_name, file):\n            add_sql = '''UPDATE detail SET check_code='%s' WHERE  host_ip='%s' \\\n            AND user_name='%s' AND file='%s' ''' % (check_code, host_ip, user_name, file)\n        else:\n            add_sql = '''INSERT INTO  detail (host_ip, user_name, file, check_code) \\\n            VALUES ('%s', '%s', '%s', '%s') ''' % (host_ip, user_name, file, check_code)\n        self.operate.execute(add_sql)\n\n    def delete_file(self, host_ip, user_name, file):\n        del_sql = '''DELETE FROM detail WHERE  host_ip='%s' \\\n            AND user_name='%s' AND file='%s' ''' % (host_ip, user_name, file)\n        self.operate.execute(del_sql)\n\n\n",
-			"file": "state_info.py",
-			"file_size": 4791,
-			"file_write_time": 1447398724000000,
+			"file": "wrapCall.cpp",
 			"settings":
 			{
-				"buffer_size": 4754,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "#!/usr/bin/python\n# -*-coding:utf-8-*-\n\nimport config\nimport socket, struct, fcntl\nimport threading\n\n\n\ndef get_local_ip(ethname=config.NETWORK_CARD):\n    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\n    return socket.inet_ntoa(fcntl.ioctl(sock.fileno(), 0X8915, struct.pack('256s', ethname[:15]))[20:24])\nif __name__ == '__main__':\n    print get_local_ip('eth0')\n",
-			"file": "utils_comm.py",
-			"file_size": 576,
-			"file_write_time": 1447398721000000,
-			"settings":
-			{
-				"buffer_size": 374,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "utils.py",
-			"settings":
-			{
-				"buffer_size": 4648,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "remote_file_operation.py",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config.py",
-			"settings":
-			{
-				"buffer_size": 625,
+				"buffer_size": 1522,
 				"line_ending": "Unix"
 			}
 		}
@@ -102,6 +76,12 @@
 	},
 	"file_history":
 	[
+		"/home/colin/Git/reserve/remote_file_operation/remote_file_operator.sublime-project",
+		"/home/colin/Git/reserve/remote_file_operation/utils_comm.py",
+		"/home/colin/Git/reserve/remote_file_operation/config.py",
+		"/home/colin/Git/reserve/remote_file_operation/remote_file_operation.py",
+		"/home/colin/Git/reserve/remote_file_operation/state_info.py",
+		"/home/colin/Git/reserve/remote_file_operation/utils.py",
 		"/home/rss/Git/reserve/remote_file_operation/remote_file_operator.sublime-project",
 		"/home/rss/Git/reserve/remote_file_operation/remote_file_operator.sublime-workspace",
 		"/home/rss/Git/reserve/remote_file_operation/log.py",
@@ -232,6 +212,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"args",
 			"os",
 			"sys",
 			"ObjectFromDict",
@@ -268,144 +249,33 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "state_info.py",
+					"file": "wrapCall.cpp",
 					"settings":
 					{
-						"buffer_size": 4754,
+						"buffer_size": 1522,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								93,
-								93
+								1520,
+								1520
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
+							"syntax": "Packages/C++/C++.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "utils_comm.py",
-					"settings":
-					{
-						"buffer_size": 374,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								101,
-								101
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "utils.py",
-					"settings":
-					{
-						"buffer_size": 4648,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2463,
-								2463
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "remote_file_operation.py",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "config.py",
-					"settings":
-					{
-						"buffer_size": 625,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								192,
-								192
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
