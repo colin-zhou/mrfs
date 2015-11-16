@@ -1,0 +1,288 @@
+2015-11-16 15:36:03,966 | DEBUG | remote_file_operation.py - execute line:165 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 15:36:03,984 | DEBUG | remote_file_operation.py - execute line:173 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 15:36:05,244 | DEBUG | remote_file_operation.py - execute line:165 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 15:36:05,244 | DEBUG | remote_file_operation.py - execute line:173 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:00:49,782 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:00:49,847 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:01:39,561 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:01:39,562 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:10:30,594 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:10:30,594 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:19:22,994 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:19:22,995 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:19:23,958 | WARNING | remote_file_operation.py - check_conn line:332 | Connection to 192.168.1.21 have not setup yet.
+2015-11-16 20:19:24,015 | DEBUG | starting thread (client mode): 0xb2de5b10L
+2015-11-16 20:19:24,028 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-16 20:19:24,029 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-16 20:19:24,029 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-16 20:19:24,029 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-16 20:19:24,108 | DEBUG | Switch to new keys ...
+2015-11-16 20:19:24,116 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-16 20:19:24,117 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-16 20:19:24,149 | DEBUG | userauth is OK
+2015-11-16 20:19:24,191 | INFO | Authentication (publickey) failed.
+2015-11-16 20:19:24,220 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-16 20:19:24,222 | DEBUG | userauth is OK
+2015-11-16 20:19:24,363 | INFO | Authentication (publickey) failed.
+2015-11-16 20:19:24,365 | DEBUG | userauth is OK
+2015-11-16 20:19:24,371 | INFO | Authentication (password) successful!
+2015-11-16 20:19:24,371 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-16 20:19:24,374 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-16 20:19:24,374 | DEBUG | Secsh channel 1 opened.
+2015-11-16 20:19:24,376 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-16 20:19:24,378 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-16 20:20:34,313 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:20:34,313 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:20:35,268 | WARNING | remote_file_operation.py - check_conn line:332 | Connection to 192.168.1.21 have not setup yet.
+2015-11-16 20:20:35,271 | DEBUG | starting thread (client mode): 0xf08acb10L
+2015-11-16 20:20:35,279 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-16 20:20:35,281 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-16 20:20:35,281 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-16 20:20:35,281 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-16 20:20:35,343 | DEBUG | Switch to new keys ...
+2015-11-16 20:20:35,372 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-16 20:20:35,373 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-16 20:20:35,382 | DEBUG | userauth is OK
+2015-11-16 20:20:35,409 | INFO | Authentication (publickey) failed.
+2015-11-16 20:20:35,437 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-16 20:20:35,438 | DEBUG | userauth is OK
+2015-11-16 20:20:35,569 | INFO | Authentication (publickey) failed.
+2015-11-16 20:20:35,572 | DEBUG | userauth is OK
+2015-11-16 20:20:35,577 | INFO | Authentication (password) successful!
+2015-11-16 20:20:35,578 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-16 20:20:35,580 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-16 20:20:35,580 | DEBUG | Secsh channel 1 opened.
+2015-11-16 20:20:35,582 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-16 20:20:35,584 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-16 20:20:35,584 | DEBUG | remote_file_operation.py - fetch line:210 | fetch :SELECT check_code FROM detail WHERE host_ip='192.168.1.21'             AND user_name='rss' AND file='RSS.git' 
+2015-11-16 20:20:35,584 | ERROR | remote_file_operation.py - cal_sha1sum line:305 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:21:58,189 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:21:58,190 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:21:59,143 | WARNING | remote_file_operation.py - check_conn line:332 | Connection to 192.168.1.21 have not setup yet.
+2015-11-16 20:21:59,147 | DEBUG | starting thread (client mode): 0x2c08aad0L
+2015-11-16 20:21:59,160 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-16 20:21:59,161 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-16 20:21:59,161 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-16 20:21:59,161 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-16 20:21:59,229 | DEBUG | Switch to new keys ...
+2015-11-16 20:21:59,249 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-16 20:21:59,251 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-16 20:21:59,268 | DEBUG | userauth is OK
+2015-11-16 20:21:59,296 | INFO | Authentication (publickey) failed.
+2015-11-16 20:21:59,317 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-16 20:21:59,319 | DEBUG | userauth is OK
+2015-11-16 20:21:59,529 | INFO | Authentication (publickey) failed.
+2015-11-16 20:21:59,532 | DEBUG | userauth is OK
+2015-11-16 20:21:59,538 | INFO | Authentication (password) successful!
+2015-11-16 20:21:59,539 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-16 20:21:59,541 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-16 20:21:59,541 | DEBUG | Secsh channel 1 opened.
+2015-11-16 20:21:59,543 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-16 20:21:59,544 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-16 20:21:59,545 | DEBUG | remote_file_operation.py - fetch line:210 | fetch :SELECT check_code FROM detail WHERE host_ip='192.168.1.21'             AND user_name='rss' AND file='RSS.git' 
+2015-11-16 20:21:59,545 | ERROR | remote_file_operation.py - cal_sha1sum line:305 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:23:13,865 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:23:13,865 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:23:14,830 | WARNING | remote_file_operation.py - check_conn line:332 | Connection to 192.168.1.21 have not setup yet.
+2015-11-16 20:23:14,833 | DEBUG | starting thread (client mode): 0x93708a90L
+2015-11-16 20:23:14,844 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-16 20:23:14,845 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-16 20:23:14,845 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-16 20:23:14,845 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-16 20:23:14,909 | DEBUG | Switch to new keys ...
+2015-11-16 20:23:14,910 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-16 20:23:14,911 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-16 20:23:14,949 | DEBUG | userauth is OK
+2015-11-16 20:23:14,983 | INFO | Authentication (publickey) failed.
+2015-11-16 20:23:15,011 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-16 20:23:15,013 | DEBUG | userauth is OK
+2015-11-16 20:23:15,211 | INFO | Authentication (publickey) failed.
+2015-11-16 20:23:15,213 | DEBUG | userauth is OK
+2015-11-16 20:23:15,219 | INFO | Authentication (password) successful!
+2015-11-16 20:23:15,220 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-16 20:23:15,223 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-16 20:23:15,223 | DEBUG | Secsh channel 1 opened.
+2015-11-16 20:23:15,224 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-16 20:23:15,227 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-16 20:23:15,227 | DEBUG | remote_file_operation.py - fetch line:210 | fetch :SELECT check_code FROM detail WHERE host_ip='192.168.1.21'             AND user_name='rss' AND file='RSS.git' 
+2015-11-16 20:23:15,227 | ERROR | remote_file_operation.py - cal_sha1sum line:305 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:23:15,227 | ERROR | remote_file_operation.py - cal_sha1sum line:314 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:24:56,449 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:24:56,449 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:24:57,408 | WARNING | remote_file_operation.py - check_conn line:333 | Connection to 192.168.1.21 have not setup yet.
+2015-11-16 20:24:57,411 | DEBUG | starting thread (client mode): 0xf0e38a90L
+2015-11-16 20:24:57,424 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-16 20:24:57,426 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-16 20:24:57,426 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-16 20:24:57,426 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-16 20:24:57,492 | DEBUG | Switch to new keys ...
+2015-11-16 20:24:57,511 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-16 20:24:57,512 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-16 20:24:57,530 | DEBUG | userauth is OK
+2015-11-16 20:24:57,566 | INFO | Authentication (publickey) failed.
+2015-11-16 20:24:57,576 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-16 20:24:57,577 | DEBUG | userauth is OK
+2015-11-16 20:24:57,708 | INFO | Authentication (publickey) failed.
+2015-11-16 20:24:57,711 | DEBUG | userauth is OK
+2015-11-16 20:24:57,717 | INFO | Authentication (password) successful!
+2015-11-16 20:24:57,717 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-16 20:24:57,720 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-16 20:24:57,720 | DEBUG | Secsh channel 1 opened.
+2015-11-16 20:24:57,722 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-16 20:24:57,724 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-16 20:24:57,724 | DEBUG | remote_file_operation.py - fetch line:210 | fetch :SELECT check_code FROM detail WHERE host_ip='192.168.1.21'             AND user_name='rss' AND file='RSS.git' 
+2015-11-16 20:24:57,724 | ERROR | remote_file_operation.py - cal_sha1sum line:306 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:24:57,724 | ERROR | remote_file_operation.py - cal_sha1sum line:315 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:25:29,850 | DEBUG | remote_file_operation.py - execute line:166 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-16 20:25:29,851 | DEBUG | remote_file_operation.py - execute line:174 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )
+2015-11-16 20:25:30,815 | WARNING | remote_file_operation.py - check_conn line:334 | Connection to 192.168.1.21 have not setup yet.
+2015-11-16 20:25:30,819 | DEBUG | starting thread (client mode): 0xab5c0a90L
+2015-11-16 20:25:30,827 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-16 20:25:30,828 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-16 20:25:30,828 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-16 20:25:30,828 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-16 20:25:30,891 | DEBUG | Switch to new keys ...
+2015-11-16 20:25:30,892 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-16 20:25:30,893 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-16 20:25:30,931 | DEBUG | userauth is OK
+2015-11-16 20:25:36,228 | INFO | Authentication (publickey) failed.
+2015-11-16 20:25:36,232 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-16 20:25:36,233 | DEBUG | userauth is OK
+2015-11-16 20:25:36,433 | INFO | Authentication (publickey) failed.
+2015-11-16 20:25:36,435 | DEBUG | userauth is OK
+2015-11-16 20:25:36,441 | INFO | Authentication (password) successful!
+2015-11-16 20:25:36,442 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-16 20:25:36,444 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-16 20:25:36,444 | DEBUG | Secsh channel 1 opened.
+2015-11-16 20:25:36,446 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-16 20:25:36,448 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-16 20:25:36,448 | DEBUG | remote_file_operation.py - fetch line:210 | fetch :SELECT check_code FROM detail WHERE host_ip='192.168.1.21'             AND user_name='rss' AND file='RSS.git' 
+2015-11-16 20:25:36,448 | ERROR | remote_file_operation.py - cal_sha1sum line:305 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:25:36,448 | ERROR | remote_file_operation.py - cal_sha1sum line:314 | Can not open file: /home/rss/workspace/RSS.git
+2015-11-16 20:25:36,448 | DEBUG | [chan 1] stat('/home/rss/repository/RSS.git')
+2015-11-16 20:25:36,471 | DEBUG | [chan 1] open('/home/rss/repository/RSS.git', 'rb')
+2015-11-16 20:25:36,472 | DEBUG | [chan 1] open('/home/rss/repository/RSS.git', 'rb') -> 00000000
+2015-11-16 20:25:36,472 | DEBUG | [chan 1] stat('/home/rss/repository/RSS.git')
+2015-11-16 20:25:36,476 | DEBUG | [chan 1] close(00000000)
+2015-11-16 20:25:36,478 | ERROR | remote_file_operation.py - __file_transfer line:265 | Transport file: RSS.git error: Failure

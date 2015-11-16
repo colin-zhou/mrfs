@@ -1,0 +1,13 @@
+2015-11-13 17:19:43,531 | DEBUG | remote_file_operation.py - execute line:165 | execute :CREATE TABLE IF NOT EXISTS `profile` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `user_dir` varchar(256) NOT NULL
+                )
+2015-11-13 17:19:43,531 | DEBUG | remote_file_operation.py - execute line:173 | execute :CREATE TABLE IF NOT EXISTS `detail` (
+                  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                  `host_ip` varchar(32) NOT NULL,
+                  `user_name` varchar(32) NOT NULL,
+                  `file` varchar(64) NOT NULL,
+                  `check_code` varchar(64) NOT NULL
+                )

@@ -13,6 +13,7 @@ import sqlite3
 import logging
 import paramiko as ssh
 from logging.handlers import TimedRotatingFileHandler
+from random import randint
 
 LEVELS = {'debug': logging.DEBUG,
           'info':  logging.INFO,
@@ -314,6 +315,8 @@ class FileDeploy:
                 if ckeck_code is not None:
                     if local_sum is None or ckeck_code != local_sum:
                         stp.get(remote, local)
+                else:
+                    stp.get(remote, local)
         except Exception, e:
             Log.error("Transport file: %s error: %s" % (file_name, str(e)) )
             return False
@@ -334,24 +337,22 @@ class FileDeploy:
         clt.close()
         del self.__pool[host]
 
-# remote file operation initial
-def rfo_initial():
-    ROOT_DIR = os.path.dirname(__file__)
-    DB_FILE_PATH = os.path.join(ROOT_DIR, 'state.sqlite3')
-    rf_handler = FileDeploy(DB_FILE_PATH)
+
+ROOT_DIR = os.path.dirname(__file__)
+DB_FILE_PATH = os.path.join(ROOT_DIR, 'state.sqlite3')
+rf_handler = FileDeploy(DB_FILE_PATH)
+    
 
 # get server parameters and connect the remote server
-def cfg_server(host, user, password, port=22):
-    rf_handler = FileDeploy()
+def conn_server(host, user, password, port=22):
+    # rf_handler = FileDeploy()
+    # return rf_handler.connect(host, user, password, port)
+    print host, user, password, port
     return rf_handler.connect(host, user, password, port)
 
 # process user command
-def exec_cmd(type, remote, local):
-    if type == "upload":
-        print "1"
-    elif type == "download":
-        print "2"
-
-if __name__ == "__main__":
-    rfo_initial()
-
+def upload_file(host, user, remote, local):
+    # return rf_handler.download(host, user, remote, local);
+    print host, user, remote, local
+    print "check conn", rf_handler.check_conn(host)
+    return rf_handler.download(host, user, remote, local)
