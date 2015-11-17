@@ -2,8 +2,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 #include "download.h"
 
+void * print_thread(void *p)
+{
+    while(1) {
+        sleep(1);
+        printf("print loop\n");
+    }
+    pthread_exit(NULL);
+}
 int
 main()
 {
@@ -18,13 +27,13 @@ main()
     snprintf(sshp.port, NAME_LEN, "22");
     snprintf(sshp.user, NAME_LEN, "rss");
     snprintf(sshp.password, NAME_LEN, "123456");
-    printf("init connection return = %d\n", init_ssh_connection(&sshp));
-    printf("1 the calculation= %d\n", download_file(&rf, &lf));
+    printf("0 init conn ret = %d\n", init_ssh_connection(&sshp));
+    printf("1 download ret = %d\n", download_file(&rf, &lf));
     lf.path_file[strlen(lf.path_file)-1] = 'a';
-    printf("1 the calculation= %d\n", download_file(&rf, &lf));
+    printf("2 download ret = %d\n", download_file(&rf, &lf));
     lf.path_file[strlen(lf.path_file)-1] = 'b';
-    printf("1 the calculation= %d\n", download_file(&rf, &lf));
+    printf("3 download ret = %d\n", download_file(&rf, &lf));
     lf.path_file[strlen(lf.path_file)-1] = 'c';
-    printf("1 the calculation= %d\n", download_file(&rf, &lf));
+    printf("4 download ret = %d\n", download_file(&rf, &lf));
     return 0;
 }

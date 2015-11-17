@@ -6,6 +6,9 @@
  */
 
 #include <pthread.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/sem.h>
 
 #define NAME_LEN      128   // length of all string
 #define CMD_DOWNLOAD  0     // cmd for upload
@@ -13,8 +16,10 @@
 #define SUCCESS       1     // success flag
 #define FAIL          0     // fail flag
 #define UNKNOWN       -1    // initial flag for py call
+#define MAX_SEM       88988 // the max semaphore value
 
-static const int repository_size  = 100;
+static const int repository_size  = 100;   // the size of circle queue
+static const int sem_key_start    = 88888;
 
 typedef struct
 {
@@ -39,6 +44,7 @@ typedef struct
 {
     int type;                    // CMD_UPLOAD or CMD_INIT
     volatile int ret_msg;        // the return message
+    int sem_id;                  // semaphore id for current task
     remote_file_t *rf;
     local_file_t *lf;
     ssh_conn_params_t *sshp;
@@ -51,10 +57,15 @@ typedef struct
     int read_position;
     int write_position;
     pthread_mutex_t mtx;
-    pthread_mutex_t item_counter_mtx;
     pthread_cond_t repo_not_full;
     pthread_cond_t repo_not_empty;
 } task_repository;
+
+union semun {
+    int val;
+    struct semid_ds *buf;
+    unsigned short *array;
+};
 
 int
 download_file(remote_file_t *rf, local_file_t *lf);

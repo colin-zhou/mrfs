@@ -175,7 +175,7 @@ class FileDeploy(object):
 
 
 LOG_LEVEL = 'debug'
-LOG_FILE = 'logs/gateway.log'
+LOG_FILE = 'gateway.log'
 Log = MYLogger(LOG_LEVEL, LOG_FILE)
 ROOT_DIR = ospath.dirname(__file__)
 rf_handler = FileDeploy()
