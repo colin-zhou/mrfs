@@ -18,6 +18,9 @@
 				"*.pyc"
 			],
 			"path": "/home/colin/Git/reserve/remote_file_operation"
+		},
+		{
+			"path": "/home/rss/Git/reserve/remote_file_operation"
 		}
 	],
 	"settings":

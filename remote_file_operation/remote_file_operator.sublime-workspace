@@ -4,16 +4,144 @@
 		"selected_items":
 		[
 			[
-				"st",
-				"stderr"
+				"local",
+				"local_checksum	statement"
 			],
 			[
-				"check",
-				"check_rf_params"
+				"remo",
+				"remote_checksum	statement"
 			],
 			[
-				"n",
+				"ini",
+				"init_ssh_connection"
+			],
+			[
+				"path",
+				"path_file"
+			],
+			[
+				"it",
+				"item_buffer"
+			],
+			[
+				"erro",
+				"error_flag"
+			],
+			[
+				"loca",
+				"local_file_t"
+			],
+			[
+				"LE",
 				"NAME_LEN"
+			],
+			[
+				"pf",
+				"pFunc_init"
+			],
+			[
+				"CMD",
+				"CMD_INIT"
+			],
+			[
+				"not",
+				"repo_not_full"
+			],
+			[
+				"pt",
+				"pthread_cond_signal"
+			],
+			[
+				"repo",
+				"repository_size"
+			],
+			[
+				"ss",
+				"sshp"
+			],
+			[
+				"para",
+				"params_buffer"
+			],
+			[
+				"tr",
+				"tr"
+			],
+			[
+				"pthread",
+				"pthread_cond_signal"
+			],
+			[
+				"ret_m",
+				"ret_msg"
+			],
+			[
+				"read",
+				"read_position"
+			],
+			[
+				"write",
+				"write_position"
+			],
+			[
+				"task",
+				"task_repository"
+			],
+			[
+				"pth",
+				"pthread_mutex_t"
+			],
+			[
+				"pthread_",
+				"pthread_mutex_t"
+			],
+			[
+				"cons",
+				"cons_cond"
+			],
+			[
+				"do",
+				"dosignal"
+			],
+			[
+				"cons_",
+				"cons_mutex"
+			],
+			[
+				"pthread_mu",
+				"pthread_mutex_lock"
+			],
+			[
+				"ssh",
+				"ssh_rlf_msg_t"
+			],
+			[
+				"MAX",
+				"MAX_CMD"
+			],
+			[
+				"ssh_rlf",
+				"ssh_rlf_msg_t"
+			],
+			[
+				"ret_",
+				"ret_queue"
+			],
+			[
+				"pthre",
+				"pthread_cond_signal"
+			],
+			[
+				"CMD_",
+				"CMD_INIT"
+			],
+			[
+				"loc",
+				"local_file_t"
+			],
+			[
+				"rem",
+				"remote_file_t"
 			],
 			[
 				"WA",
@@ -31,7 +159,15 @@
 			"file": "wrapCall.cpp",
 			"settings":
 			{
-				"buffer_size": 1522,
+				"buffer_size": 10046,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "remote_file_operation.py",
+			"settings":
+			{
+				"buffer_size": 6027,
 				"line_ending": "Unix"
 			}
 		}
@@ -76,12 +212,22 @@
 	},
 	"file_history":
 	[
-		"/home/colin/Git/reserve/remote_file_operation/remote_file_operator.sublime-project",
-		"/home/colin/Git/reserve/remote_file_operation/utils_comm.py",
-		"/home/colin/Git/reserve/remote_file_operation/config.py",
-		"/home/colin/Git/reserve/remote_file_operation/remote_file_operation.py",
-		"/home/colin/Git/reserve/remote_file_operation/state_info.py",
-		"/home/colin/Git/reserve/remote_file_operation/utils.py",
+		"/home/rss/Git/reserve/remote_file_operation/original_py_file.py",
+		"/home/rss/Git/reserve/remote_file_operation/Makefile",
+		"/home/rss/Downloads/embedpython_1_src/py_thread.py",
+		"/home/rss/Git/reserve/test/py_agent.cpp",
+		"/home/rss/Git/reserve/test/main.cpp",
+		"/home/rss/Downloads/embedpython_1_src/call_thread.c",
+		"/home/rss/Downloads/embedpython_1_src/call_function.c",
+		"/home/rss/Downloads/embedpython_1_src/call_thread",
+		"/home/rss/Downloads/embedpython_1_src/py_function.py",
+		"/home/rss/Git/reserve/cpy/pthread/cpythread.c",
+		"/home/rss/Git/reserve/cpy/pycallc/fact.c",
+		"/home/rss/Git/reserve/remote_file_operation/producer_consumer.cpp",
+		"/home/rss/Git/reserve/remote_file_operation/localstorage.py",
+		"/home/rss/Git/reserve/remote_file_operation/utils.py",
+		"/home/rss/Git/reserve/remote_file_operation/utils_comm.py",
+		"/home/rss/Git/reserve/remote_file_operation/config.py",
 		"/home/rss/Git/reserve/remote_file_operation/remote_file_operator.sublime-project",
 		"/home/rss/Git/reserve/remote_file_operation/remote_file_operator.sublime-workspace",
 		"/home/rss/Git/reserve/remote_file_operation/log.py",
@@ -193,8 +339,7 @@
 		"/home/rss/notes/updown.py",
 		"/home/rss/Python/err2.py",
 		"/home/rss/Python/err1.py",
-		"/home/rss/Python/err.py",
-		"/home/rss/Python/try1.py"
+		"/home/rss/Python/err.py"
 	],
 	"find":
 	{
@@ -212,7 +357,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"args",
+			"randint",
+			"ssh",
+			"logging",
+			"hashlib",
+			"json",
+			"types",
+			"os",
+			"sys",
+			"remote_sha1sum",
+			"items_to_produce",
+			"ssh_rlf_msg_t",
+			"item_buffer",
+			"cal_sha1sum",
+			"sqlite3",
+			"Singleton",
+			"DB_FILE_PATH",
 			"os",
 			"sys",
 			"ObjectFromDict",
@@ -237,6 +397,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"params_buffer",
 			"return -1",
 			"  "
 		],
@@ -249,7 +410,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -257,15 +418,15 @@
 					"file": "wrapCall.cpp",
 					"settings":
 					{
-						"buffer_size": 1522,
+						"buffer_size": 10046,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1520,
-								1520
+								5542,
+								5542
 							]
 						],
 						"settings":
@@ -275,7 +436,36 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 3420.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "remote_file_operation.py",
+					"settings":
+					{
+						"buffer_size": 6027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4774,
+								4774
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2520.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -316,7 +506,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 331.0
 	},
 	"replace":
 	{
