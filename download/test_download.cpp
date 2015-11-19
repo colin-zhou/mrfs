@@ -1,7 +1,4 @@
-#include <pthread.h>
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include "download.h"
 
 int
@@ -12,7 +9,7 @@ main()
     snprintf(task.ssh_params.user, NAME_LEN, "rss");
     snprintf(task.ssh_params.password, NAME_LEN, "123456");
     snprintf(task.ssh_params.port, NAME_LEN, "22");
-    download_task_t t1,t2;
+    download_task_t t1, t2;
     t1.task_id = 1;
     t2.task_id = 2;
     snprintf(t1.local_file, NAME_LEN, "/home/rss/dump.rdb");
@@ -25,7 +22,6 @@ main()
     task.task_buffer.push_back(t2);
     
     download_tasks_pycall(&task);
-
 
     return 0;
 }
