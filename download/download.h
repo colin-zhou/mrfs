@@ -9,9 +9,10 @@
 #include <map>
 
 #define NAME_LEN 256
+#define PY_IMPORT_SYS_MODULE_CMD "import sys"
+#define PY_DOWNLOAD_MODULE_NAME  "remote_file_operation"
+#define PY_APD_DOWNLOAD_PATH_CMD "sys.path.append('./')"
 
-static const char PY_FILE_PATH_CMD[NAME_LEN] = "sys.path.append('./')";
-static const char PY_MODULE_NAME[NAME_LEN] = "remote_file_operation";
 
 typedef struct
 {
@@ -49,6 +50,16 @@ typedef std::map<int, download_ret_t>::iterator ret_map_iter; // for traverse th
  */
 int
 download_tasks_pycall(pydownload_tasks_t *p_tasks);
+
+/**
+ * TODO:
+ * add a function to listen the ret_map and dump it to redis
+ */
+
+/*
+int
+process_ret_msg();
+ */
 
 // for print the ret_msg map
 void print_map();

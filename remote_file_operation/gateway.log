@@ -1,0 +1,1056 @@
+2015-11-17 17:05:32,846 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:05:32,850 | DEBUG | starting thread (client mode): 0xf5b9cd50L
+2015-11-17 17:05:32,861 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:05:32,863 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:05:32,863 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:05:32,863 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:05:32,922 | DEBUG | Switch to new keys ...
+2015-11-17 17:05:32,924 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:05:32,925 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:05:32,963 | DEBUG | userauth is OK
+2015-11-17 17:05:32,993 | INFO | Authentication (publickey) failed.
+2015-11-17 17:05:33,026 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:05:33,027 | DEBUG | userauth is OK
+2015-11-17 17:05:33,185 | INFO | Authentication (publickey) failed.
+2015-11-17 17:05:33,187 | DEBUG | userauth is OK
+2015-11-17 17:05:33,194 | INFO | Authentication (password) successful!
+2015-11-17 17:05:33,201 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:05:33,203 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:05:33,203 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:05:33,206 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:05:33,208 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:05:33,308 | DEBUG | EOF in transport thread
+2015-11-17 17:09:27,100 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:09:27,103 | DEBUG | starting thread (client mode): 0x89561d90L
+2015-11-17 17:09:27,116 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:09:27,118 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:09:27,118 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:09:27,118 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:09:27,179 | DEBUG | Switch to new keys ...
+2015-11-17 17:09:27,203 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:09:27,204 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:09:27,220 | DEBUG | userauth is OK
+2015-11-17 17:09:27,252 | INFO | Authentication (publickey) failed.
+2015-11-17 17:09:27,269 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:09:27,270 | DEBUG | userauth is OK
+2015-11-17 17:09:27,436 | INFO | Authentication (publickey) failed.
+2015-11-17 17:09:27,438 | DEBUG | userauth is OK
+2015-11-17 17:09:27,444 | INFO | Authentication (password) successful!
+2015-11-17 17:09:27,445 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:09:27,447 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:09:27,447 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:09:27,449 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:09:27,451 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:09:27,551 | DEBUG | EOF in transport thread
+2015-11-17 17:09:34,835 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:09:34,839 | DEBUG | starting thread (client mode): 0x73f86d90L
+2015-11-17 17:09:34,851 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:09:34,853 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:09:34,853 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:09:34,853 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:09:34,918 | DEBUG | Switch to new keys ...
+2015-11-17 17:09:34,940 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:09:34,941 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:09:34,956 | DEBUG | userauth is OK
+2015-11-17 17:09:34,995 | INFO | Authentication (publickey) failed.
+2015-11-17 17:09:35,005 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:09:35,006 | DEBUG | userauth is OK
+2015-11-17 17:09:35,155 | INFO | Authentication (publickey) failed.
+2015-11-17 17:09:35,157 | DEBUG | userauth is OK
+2015-11-17 17:09:35,163 | INFO | Authentication (password) successful!
+2015-11-17 17:09:35,164 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:09:35,166 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:09:35,166 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:09:35,168 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:09:35,170 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:09:35,270 | DEBUG | EOF in transport thread
+2015-11-17 17:10:48,923 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:10:48,926 | DEBUG | starting thread (client mode): 0x71d45d90L
+2015-11-17 17:10:48,939 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:10:48,940 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:10:48,940 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:10:48,940 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:10:49,001 | DEBUG | Switch to new keys ...
+2015-11-17 17:10:49,027 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:10:49,028 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:10:49,040 | DEBUG | userauth is OK
+2015-11-17 17:10:49,073 | INFO | Authentication (publickey) failed.
+2015-11-17 17:10:49,092 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:10:49,093 | DEBUG | userauth is OK
+2015-11-17 17:10:49,250 | INFO | Authentication (publickey) failed.
+2015-11-17 17:10:49,252 | DEBUG | userauth is OK
+2015-11-17 17:10:49,260 | INFO | Authentication (password) successful!
+2015-11-17 17:10:49,266 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:10:49,268 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:10:49,268 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:10:49,271 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:10:49,275 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:12:15,705 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:12:15,708 | DEBUG | starting thread (client mode): 0x58364d90L
+2015-11-17 17:12:15,721 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:12:15,723 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:12:15,723 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:12:15,723 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:12:15,781 | DEBUG | Switch to new keys ...
+2015-11-17 17:12:15,784 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:12:15,785 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:12:15,820 | DEBUG | userauth is OK
+2015-11-17 17:12:15,858 | INFO | Authentication (publickey) failed.
+2015-11-17 17:12:15,886 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:12:15,887 | DEBUG | userauth is OK
+2015-11-17 17:12:16,044 | INFO | Authentication (publickey) failed.
+2015-11-17 17:12:16,047 | DEBUG | userauth is OK
+2015-11-17 17:12:16,052 | INFO | Authentication (password) successful!
+2015-11-17 17:12:16,053 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:12:16,055 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:12:16,055 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:12:16,058 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:12:16,059 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:12:21,041 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:12:21,045 | DEBUG | starting thread (client mode): 0x89033d90L
+2015-11-17 17:12:21,058 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:12:21,059 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:12:21,059 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:12:21,060 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:12:21,120 | DEBUG | Switch to new keys ...
+2015-11-17 17:12:21,121 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:12:21,122 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:12:21,160 | DEBUG | userauth is OK
+2015-11-17 17:12:21,206 | INFO | Authentication (publickey) failed.
+2015-11-17 17:12:21,223 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:12:21,224 | DEBUG | userauth is OK
+2015-11-17 17:12:21,381 | INFO | Authentication (publickey) failed.
+2015-11-17 17:12:21,383 | DEBUG | userauth is OK
+2015-11-17 17:12:21,400 | INFO | Authentication (password) successful!
+2015-11-17 17:12:21,414 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:12:21,415 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:12:21,415 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:12:21,416 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:12:21,418 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:13:23,752 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:13:23,756 | DEBUG | starting thread (client mode): 0xfa083d90L
+2015-11-17 17:13:23,765 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:13:23,766 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:13:23,766 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:13:23,766 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:13:23,823 | DEBUG | Switch to new keys ...
+2015-11-17 17:13:23,828 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:13:23,829 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:13:23,864 | DEBUG | userauth is OK
+2015-11-17 17:13:23,896 | INFO | Authentication (publickey) failed.
+2015-11-17 17:13:23,930 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:13:23,931 | DEBUG | userauth is OK
+2015-11-17 17:13:24,095 | INFO | Authentication (publickey) failed.
+2015-11-17 17:13:24,098 | DEBUG | userauth is OK
+2015-11-17 17:13:24,104 | INFO | Authentication (password) successful!
+2015-11-17 17:13:24,104 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:13:24,106 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:13:24,107 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:13:24,109 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:13:24,110 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:21:25,131 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:21:25,134 | DEBUG | starting thread (client mode): 0x5107dd90L
+2015-11-17 17:21:25,144 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:21:25,145 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:21:25,146 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:21:25,146 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:21:25,204 | DEBUG | Switch to new keys ...
+2015-11-17 17:21:25,207 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:21:25,208 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:21:25,245 | DEBUG | userauth is OK
+2015-11-17 17:21:25,281 | INFO | Authentication (publickey) failed.
+2015-11-17 17:21:25,309 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:21:25,310 | DEBUG | userauth is OK
+2015-11-17 17:21:25,458 | INFO | Authentication (publickey) failed.
+2015-11-17 17:21:25,461 | DEBUG | userauth is OK
+2015-11-17 17:21:25,466 | INFO | Authentication (password) successful!
+2015-11-17 17:21:25,467 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:21:25,469 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:21:25,469 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:21:25,472 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:21:25,473 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:22:40,177 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:22:40,181 | DEBUG | starting thread (client mode): 0x8af07d90L
+2015-11-17 17:22:40,190 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:22:40,191 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:22:40,191 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:22:40,192 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:22:40,250 | DEBUG | Switch to new keys ...
+2015-11-17 17:22:40,252 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:22:40,253 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:22:40,289 | DEBUG | userauth is OK
+2015-11-17 17:22:40,324 | INFO | Authentication (publickey) failed.
+2015-11-17 17:22:40,354 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:22:40,355 | DEBUG | userauth is OK
+2015-11-17 17:22:40,494 | INFO | Authentication (publickey) failed.
+2015-11-17 17:22:40,497 | DEBUG | userauth is OK
+2015-11-17 17:22:40,504 | INFO | Authentication (password) successful!
+2015-11-17 17:22:40,511 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:22:40,512 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:22:40,512 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:22:40,514 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:22:40,515 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:24:51,231 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:24:51,234 | DEBUG | starting thread (client mode): 0x941d0d90L
+2015-11-17 17:24:51,248 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:24:51,249 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:24:51,249 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:24:51,249 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:24:51,311 | DEBUG | Switch to new keys ...
+2015-11-17 17:24:51,335 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:24:51,336 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:24:51,349 | DEBUG | userauth is OK
+2015-11-17 17:24:51,392 | INFO | Authentication (publickey) failed.
+2015-11-17 17:24:51,400 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:24:51,401 | DEBUG | userauth is OK
+2015-11-17 17:24:51,558 | INFO | Authentication (publickey) failed.
+2015-11-17 17:24:51,561 | DEBUG | userauth is OK
+2015-11-17 17:24:51,576 | INFO | Authentication (password) successful!
+2015-11-17 17:24:51,591 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:24:51,592 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:24:51,592 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:24:51,596 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:24:51,597 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:26:20,869 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:26:20,873 | DEBUG | starting thread (client mode): 0x60e09d90L
+2015-11-17 17:26:20,887 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:26:20,888 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:26:20,888 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:26:20,888 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:26:20,950 | DEBUG | Switch to new keys ...
+2015-11-17 17:26:20,974 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:26:20,975 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:26:20,989 | DEBUG | userauth is OK
+2015-11-17 17:26:21,031 | INFO | Authentication (publickey) failed.
+2015-11-17 17:26:21,039 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:26:21,040 | DEBUG | userauth is OK
+2015-11-17 17:26:21,184 | INFO | Authentication (publickey) failed.
+2015-11-17 17:26:21,187 | DEBUG | userauth is OK
+2015-11-17 17:26:21,193 | INFO | Authentication (password) successful!
+2015-11-17 17:26:21,193 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:26:21,196 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:26:21,196 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:26:21,198 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:26:21,199 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:33:49,791 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:33:49,794 | DEBUG | starting thread (client mode): 0xf0aecd90L
+2015-11-17 17:33:49,808 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:33:49,810 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:33:49,810 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:33:49,810 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:33:49,870 | DEBUG | Switch to new keys ...
+2015-11-17 17:33:49,895 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:33:49,896 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:33:49,909 | DEBUG | userauth is OK
+2015-11-17 17:33:49,948 | INFO | Authentication (publickey) failed.
+2015-11-17 17:33:49,960 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:33:49,961 | DEBUG | userauth is OK
+2015-11-17 17:33:50,111 | INFO | Authentication (publickey) failed.
+2015-11-17 17:33:50,114 | DEBUG | userauth is OK
+2015-11-17 17:33:50,121 | INFO | Authentication (password) successful!
+2015-11-17 17:33:50,128 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:33:50,130 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:33:50,130 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:33:50,133 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:33:50,136 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 17:35:58,541 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 17:35:58,544 | DEBUG | starting thread (client mode): 0x1b6d90L
+2015-11-17 17:35:58,558 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 17:35:58,559 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 17:35:58,560 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 17:35:58,560 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 17:35:58,619 | DEBUG | Switch to new keys ...
+2015-11-17 17:35:58,645 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 17:35:58,646 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 17:35:58,657 | DEBUG | userauth is OK
+2015-11-17 17:36:03,874 | INFO | Authentication (publickey) failed.
+2015-11-17 17:36:03,882 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 17:36:03,883 | DEBUG | userauth is OK
+2015-11-17 17:36:04,023 | INFO | Authentication (publickey) failed.
+2015-11-17 17:36:04,026 | DEBUG | userauth is OK
+2015-11-17 17:36:04,035 | INFO | Authentication (password) successful!
+2015-11-17 17:36:04,040 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 17:36:04,041 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 17:36:04,041 | DEBUG | Secsh channel 1 opened.
+2015-11-17 17:36:04,045 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 17:36:04,046 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:14:09,258 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:14:09,261 | DEBUG | starting thread (client mode): 0x91efed90L
+2015-11-17 18:14:09,275 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:14:09,277 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:14:09,277 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:14:09,277 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:14:09,335 | DEBUG | Switch to new keys ...
+2015-11-17 18:14:09,362 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:14:09,363 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:14:09,373 | DEBUG | userauth is OK
+2015-11-17 18:14:14,579 | INFO | Authentication (publickey) failed.
+2015-11-17 18:14:14,583 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:14:14,584 | DEBUG | userauth is OK
+2015-11-17 18:14:14,741 | INFO | Authentication (publickey) failed.
+2015-11-17 18:14:14,743 | DEBUG | userauth is OK
+2015-11-17 18:14:14,760 | INFO | Authentication (password) successful!
+2015-11-17 18:14:14,773 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:14:14,774 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:14:14,775 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:14:14,778 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:14:14,781 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:16:18,249 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:16:18,252 | DEBUG | starting thread (client mode): 0x3f937d90L
+2015-11-17 18:16:18,265 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:16:18,267 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:16:18,267 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:16:18,267 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:16:18,330 | DEBUG | Switch to new keys ...
+2015-11-17 18:16:18,353 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:16:18,354 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:16:18,367 | DEBUG | userauth is OK
+2015-11-17 18:16:18,403 | INFO | Authentication (publickey) failed.
+2015-11-17 18:16:18,418 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:16:18,420 | DEBUG | userauth is OK
+2015-11-17 18:16:18,575 | INFO | Authentication (publickey) failed.
+2015-11-17 18:16:18,578 | DEBUG | userauth is OK
+2015-11-17 18:16:18,585 | INFO | Authentication (password) successful!
+2015-11-17 18:16:18,592 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:16:18,593 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:16:18,593 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:16:18,595 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:16:18,596 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:21:06,338 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:21:06,342 | DEBUG | starting thread (client mode): 0x95b0cd90L
+2015-11-17 18:21:06,355 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:21:06,356 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:21:06,356 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:21:06,357 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:21:06,419 | DEBUG | Switch to new keys ...
+2015-11-17 18:21:06,442 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:21:06,443 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:21:06,457 | DEBUG | userauth is OK
+2015-11-17 18:21:06,516 | INFO | Authentication (publickey) failed.
+2015-11-17 18:21:06,544 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:21:06,545 | DEBUG | userauth is OK
+2015-11-17 18:21:06,703 | INFO | Authentication (publickey) failed.
+2015-11-17 18:21:06,705 | DEBUG | userauth is OK
+2015-11-17 18:21:06,717 | INFO | Authentication (password) successful!
+2015-11-17 18:21:06,719 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:21:06,721 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:21:06,721 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:21:06,724 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:21:06,726 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:23:24,108 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:23:24,112 | DEBUG | starting thread (client mode): 0xc8084d90L
+2015-11-17 18:23:24,125 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:23:24,126 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:23:24,126 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:23:24,126 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:23:24,188 | DEBUG | Switch to new keys ...
+2015-11-17 18:23:24,213 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:23:24,214 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:23:24,229 | DEBUG | userauth is OK
+2015-11-17 18:23:24,259 | INFO | Authentication (publickey) failed.
+2015-11-17 18:23:24,278 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:23:24,279 | DEBUG | userauth is OK
+2015-11-17 18:23:24,436 | INFO | Authentication (publickey) failed.
+2015-11-17 18:23:24,438 | DEBUG | userauth is OK
+2015-11-17 18:23:24,459 | INFO | Authentication (password) successful!
+2015-11-17 18:23:24,469 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:23:24,470 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:23:24,470 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:23:24,474 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:23:24,477 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:27:15,083 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:27:15,087 | DEBUG | starting thread (client mode): 0x84496d90L
+2015-11-17 18:27:15,100 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:27:15,101 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:27:15,101 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:27:15,101 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:27:15,162 | DEBUG | Switch to new keys ...
+2015-11-17 18:27:15,188 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:27:15,188 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:27:15,200 | DEBUG | userauth is OK
+2015-11-17 18:27:15,249 | INFO | Authentication (publickey) failed.
+2015-11-17 18:27:15,253 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:27:15,254 | DEBUG | userauth is OK
+2015-11-17 18:27:15,410 | INFO | Authentication (publickey) failed.
+2015-11-17 18:27:15,413 | DEBUG | userauth is OK
+2015-11-17 18:27:15,424 | INFO | Authentication (password) successful!
+2015-11-17 18:27:15,427 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:27:15,428 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:27:15,428 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:27:15,432 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:27:15,433 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:32:20,433 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:32:20,436 | DEBUG | starting thread (client mode): 0x50082d90L
+2015-11-17 18:32:20,450 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:32:20,451 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:32:20,451 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:32:20,452 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:32:20,510 | DEBUG | Switch to new keys ...
+2015-11-17 18:32:20,537 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:32:20,538 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:32:20,550 | DEBUG | userauth is OK
+2015-11-17 18:32:20,594 | INFO | Authentication (publickey) failed.
+2015-11-17 18:32:20,602 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:32:20,603 | DEBUG | userauth is OK
+2015-11-17 18:32:20,741 | INFO | Authentication (publickey) failed.
+2015-11-17 18:32:20,744 | DEBUG | userauth is OK
+2015-11-17 18:32:20,750 | INFO | Authentication (password) successful!
+2015-11-17 18:32:20,758 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:32:20,759 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:32:20,759 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:32:20,763 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:32:20,764 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:32:20,765 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 18:32:20,766 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 18:32:20,766 | DEBUG | Secsh channel 2 opened.
+2015-11-17 18:32:20,769 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 18:32:20,771 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 18:32:20,771 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 18:32:20,771 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 18:32:20,772 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 18:32:20,772 | DEBUG | Secsh channel 3 opened.
+2015-11-17 18:32:20,811 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 18:32:20,812 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 18:32:20,812 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 18:32:20,812 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 18:32:20,813 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 18:32:20,813 | DEBUG | Secsh channel 4 opened.
+2015-11-17 18:32:20,855 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 18:32:20,856 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 18:34:03,982 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:34:03,985 | DEBUG | starting thread (client mode): 0x2d1d7d90L
+2015-11-17 18:34:03,999 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:34:04,000 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:34:04,000 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:34:04,000 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:34:04,061 | DEBUG | Switch to new keys ...
+2015-11-17 18:34:04,086 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:34:04,087 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:34:04,100 | DEBUG | userauth is OK
+2015-11-17 18:34:09,293 | INFO | Authentication (publickey) failed.
+2015-11-17 18:34:09,294 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:34:09,295 | DEBUG | userauth is OK
+2015-11-17 18:34:09,451 | INFO | Authentication (publickey) failed.
+2015-11-17 18:34:09,454 | DEBUG | userauth is OK
+2015-11-17 18:34:09,459 | INFO | Authentication (password) successful!
+2015-11-17 18:34:09,460 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:34:09,463 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:34:09,463 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:34:09,469 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:34:09,471 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:40:40,138 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:40:40,141 | DEBUG | starting thread (client mode): 0x5006cd90L
+2015-11-17 18:40:40,154 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:40:40,155 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:40:40,155 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:40:40,156 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:40:40,214 | DEBUG | Switch to new keys ...
+2015-11-17 18:40:40,217 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:40:40,218 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:40:40,255 | DEBUG | userauth is OK
+2015-11-17 18:40:40,294 | INFO | Authentication (publickey) failed.
+2015-11-17 18:40:40,319 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:40:40,320 | DEBUG | userauth is OK
+2015-11-17 18:40:40,477 | INFO | Authentication (publickey) failed.
+2015-11-17 18:40:40,479 | DEBUG | userauth is OK
+2015-11-17 18:40:40,485 | INFO | Authentication (password) successful!
+2015-11-17 18:40:40,486 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:40:40,488 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:40:40,488 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:40:40,490 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:40:40,492 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:41:37,728 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:41:37,731 | DEBUG | starting thread (client mode): 0x9618bd90L
+2015-11-17 18:41:37,745 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:41:37,746 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:41:37,746 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:41:37,746 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:41:37,806 | DEBUG | Switch to new keys ...
+2015-11-17 18:41:37,807 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:41:37,808 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:41:37,846 | DEBUG | userauth is OK
+2015-11-17 18:41:37,874 | INFO | Authentication (publickey) failed.
+2015-11-17 18:41:37,909 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:41:37,910 | DEBUG | userauth is OK
+2015-11-17 18:41:38,068 | INFO | Authentication (publickey) failed.
+2015-11-17 18:41:38,070 | DEBUG | userauth is OK
+2015-11-17 18:41:38,079 | INFO | Authentication (password) successful!
+2015-11-17 18:41:38,085 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:41:38,086 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:41:38,086 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:41:38,087 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:41:38,089 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:44:09,502 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:44:09,505 | DEBUG | starting thread (client mode): 0x38ed9d90L
+2015-11-17 18:44:09,519 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:44:09,520 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:44:09,521 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:44:09,521 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:44:09,580 | DEBUG | Switch to new keys ...
+2015-11-17 18:44:09,606 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:44:09,607 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:44:09,618 | DEBUG | userauth is OK
+2015-11-17 18:44:14,947 | INFO | Authentication (publickey) failed.
+2015-11-17 18:44:14,975 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:44:14,976 | DEBUG | userauth is OK
+2015-11-17 18:44:15,131 | INFO | Authentication (publickey) failed.
+2015-11-17 18:44:15,134 | DEBUG | userauth is OK
+2015-11-17 18:44:15,139 | INFO | Authentication (password) successful!
+2015-11-17 18:44:15,140 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:44:15,143 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:44:15,143 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:44:15,145 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:44:15,147 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:54:13,054 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:54:13,058 | DEBUG | starting thread (client mode): 0xbcf71d90L
+2015-11-17 18:54:13,071 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:54:13,072 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:54:13,073 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:54:13,073 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:54:13,132 | DEBUG | Switch to new keys ...
+2015-11-17 18:54:13,134 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:54:13,134 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:54:13,171 | DEBUG | userauth is OK
+2015-11-17 18:54:13,214 | INFO | Authentication (publickey) failed.
+2015-11-17 18:54:13,235 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:54:13,237 | DEBUG | userauth is OK
+2015-11-17 18:54:13,392 | INFO | Authentication (publickey) failed.
+2015-11-17 18:54:13,395 | DEBUG | userauth is OK
+2015-11-17 18:54:13,401 | INFO | Authentication (password) successful!
+2015-11-17 18:54:13,401 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:54:13,404 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:54:13,404 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:54:13,406 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:54:13,408 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:54:13,408 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 18:54:13,409 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 18:54:13,409 | DEBUG | Secsh channel 2 opened.
+2015-11-17 18:54:13,413 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 18:54:13,415 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 18:54:13,415 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 18:54:13,415 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 18:54:13,455 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 18:54:13,456 | DEBUG | Secsh channel 3 opened.
+2015-11-17 18:54:13,480 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 18:54:13,482 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 18:54:13,482 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 18:54:13,482 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 18:54:13,483 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 18:54:13,484 | DEBUG | Secsh channel 4 opened.
+2015-11-17 18:54:13,524 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 18:54:13,525 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 18:54:13,526 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 18:54:13,526 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 18:54:13,527 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 18:54:13,527 | DEBUG | Secsh channel 5 opened.
+2015-11-17 18:54:13,568 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 18:54:13,569 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 18:55:44,772 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:55:44,776 | DEBUG | starting thread (client mode): 0xd3785d90L
+2015-11-17 18:55:44,788 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:55:44,790 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:55:44,790 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:55:44,790 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:55:44,848 | DEBUG | Switch to new keys ...
+2015-11-17 18:55:44,851 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:55:44,852 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:55:44,887 | DEBUG | userauth is OK
+2015-11-17 18:55:44,924 | INFO | Authentication (publickey) failed.
+2015-11-17 18:55:44,953 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:55:44,954 | DEBUG | userauth is OK
+2015-11-17 18:55:45,111 | INFO | Authentication (publickey) failed.
+2015-11-17 18:55:45,114 | DEBUG | userauth is OK
+2015-11-17 18:55:45,120 | INFO | Authentication (password) successful!
+2015-11-17 18:55:45,120 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:55:45,123 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:55:45,123 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:55:45,125 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:55:45,127 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:55:45,127 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 18:55:45,129 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 18:55:45,129 | DEBUG | Secsh channel 2 opened.
+2015-11-17 18:55:45,132 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 18:55:45,134 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 18:55:45,135 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 18:55:45,135 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 18:55:45,175 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 18:55:45,175 | DEBUG | Secsh channel 3 opened.
+2015-11-17 18:55:45,200 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 18:55:45,201 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 18:55:45,201 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 18:55:45,202 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 18:55:45,203 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 18:55:45,203 | DEBUG | Secsh channel 4 opened.
+2015-11-17 18:55:45,244 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 18:55:45,245 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 18:55:45,245 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 18:55:45,246 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 18:55:45,287 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 18:55:45,287 | DEBUG | Secsh channel 5 opened.
+2015-11-17 18:55:45,310 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 18:55:45,312 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 18:56:57,371 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:56:57,374 | DEBUG | starting thread (client mode): 0xe5bd2d90L
+2015-11-17 18:56:57,388 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:56:57,390 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:56:57,390 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:56:57,390 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:56:57,449 | DEBUG | Switch to new keys ...
+2015-11-17 18:56:57,475 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:56:57,476 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:56:57,491 | DEBUG | userauth is OK
+2015-11-17 18:57:02,700 | INFO | Authentication (publickey) failed.
+2015-11-17 18:57:02,712 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:57:02,713 | DEBUG | userauth is OK
+2015-11-17 18:57:02,871 | INFO | Authentication (publickey) failed.
+2015-11-17 18:57:02,874 | DEBUG | userauth is OK
+2015-11-17 18:57:02,896 | INFO | Authentication (password) successful!
+2015-11-17 18:57:02,904 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:57:02,905 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:57:02,905 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:57:02,909 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:57:02,913 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:57:02,913 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 18:57:02,915 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 18:57:02,915 | DEBUG | Secsh channel 2 opened.
+2015-11-17 18:57:02,918 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 18:57:02,921 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 18:57:02,921 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 18:57:02,921 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 18:57:02,963 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 18:57:02,964 | DEBUG | Secsh channel 3 opened.
+2015-11-17 18:57:02,986 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 18:57:02,988 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 18:57:02,988 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 18:57:02,988 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 18:57:02,989 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 18:57:02,990 | DEBUG | Secsh channel 4 opened.
+2015-11-17 18:57:03,032 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 18:57:03,033 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 18:57:03,033 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 18:57:03,033 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 18:57:03,071 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 18:57:03,071 | DEBUG | Secsh channel 5 opened.
+2015-11-17 18:57:03,098 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 18:57:03,100 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 18:59:43,319 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 18:59:43,323 | DEBUG | starting thread (client mode): 0x84aed90L
+2015-11-17 18:59:43,335 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 18:59:43,336 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 18:59:43,336 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 18:59:43,336 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 18:59:43,395 | DEBUG | Switch to new keys ...
+2015-11-17 18:59:43,398 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 18:59:43,399 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 18:59:43,434 | DEBUG | userauth is OK
+2015-11-17 18:59:43,489 | INFO | Authentication (publickey) failed.
+2015-11-17 18:59:43,500 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 18:59:43,501 | DEBUG | userauth is OK
+2015-11-17 18:59:43,639 | INFO | Authentication (publickey) failed.
+2015-11-17 18:59:43,641 | DEBUG | userauth is OK
+2015-11-17 18:59:43,659 | INFO | Authentication (password) successful!
+2015-11-17 18:59:43,672 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 18:59:43,673 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 18:59:43,673 | DEBUG | Secsh channel 1 opened.
+2015-11-17 18:59:43,676 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 18:59:43,679 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 18:59:43,679 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 18:59:43,680 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 18:59:43,680 | DEBUG | Secsh channel 2 opened.
+2015-11-17 18:59:43,684 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 18:59:43,686 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 18:59:43,687 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 18:59:43,687 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 18:59:43,688 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 18:59:43,688 | DEBUG | Secsh channel 3 opened.
+2015-11-17 18:59:43,726 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 18:59:43,728 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 18:59:43,728 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 18:59:43,728 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 18:59:43,729 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 18:59:43,730 | DEBUG | Secsh channel 4 opened.
+2015-11-17 18:59:43,770 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 18:59:43,772 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 18:59:43,772 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 18:59:43,772 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 18:59:43,773 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 18:59:43,773 | DEBUG | Secsh channel 5 opened.
+2015-11-17 18:59:43,814 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 18:59:43,816 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:00:33,166 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:00:33,170 | DEBUG | starting thread (client mode): 0xea7d9d90L
+2015-11-17 19:00:33,184 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:00:33,185 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:00:33,185 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:00:33,186 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:00:33,249 | DEBUG | Switch to new keys ...
+2015-11-17 19:00:33,270 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:00:33,271 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:00:33,290 | DEBUG | userauth is OK
+2015-11-17 19:00:33,323 | INFO | Authentication (publickey) failed.
+2015-11-17 19:00:33,335 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:00:33,337 | DEBUG | userauth is OK
+2015-11-17 19:00:33,493 | INFO | Authentication (publickey) failed.
+2015-11-17 19:00:33,496 | DEBUG | userauth is OK
+2015-11-17 19:00:33,501 | INFO | Authentication (password) successful!
+2015-11-17 19:00:33,502 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:00:33,504 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:00:33,504 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:00:33,507 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:00:33,508 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:00:33,508 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:00:33,509 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:00:33,509 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:00:33,511 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:00:33,512 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:00:33,513 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:00:33,513 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:00:33,514 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:00:33,514 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:00:33,554 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:00:33,556 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:00:33,556 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:00:33,556 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:00:33,594 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:00:33,594 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:00:33,621 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:00:33,622 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:00:33,623 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:00:33,623 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:00:33,624 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:00:33,624 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:00:33,662 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:00:33,664 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:01:50,797 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:01:50,800 | DEBUG | starting thread (client mode): 0x9879bd90L
+2015-11-17 19:01:50,813 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:01:50,814 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:01:50,814 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:01:50,814 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:01:50,874 | DEBUG | Switch to new keys ...
+2015-11-17 19:01:50,876 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:01:50,877 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:01:50,913 | DEBUG | userauth is OK
+2015-11-17 19:01:50,948 | INFO | Authentication (publickey) failed.
+2015-11-17 19:01:50,978 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:01:50,979 | DEBUG | userauth is OK
+2015-11-17 19:01:51,121 | INFO | Authentication (publickey) failed.
+2015-11-17 19:01:51,123 | DEBUG | userauth is OK
+2015-11-17 19:01:51,129 | INFO | Authentication (password) successful!
+2015-11-17 19:01:51,130 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:01:51,132 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:01:51,132 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:01:51,134 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:01:51,136 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:01:51,136 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:01:51,137 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:01:51,137 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:01:51,141 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:01:51,142 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:01:51,142 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:01:51,142 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:01:51,143 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:01:51,144 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:01:51,182 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:01:51,183 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:01:51,184 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:01:51,184 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:01:51,225 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:01:51,226 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:01:51,249 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:01:51,251 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:01:51,251 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:01:51,251 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:01:51,252 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:01:51,252 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:01:51,294 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:01:51,295 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:02:44,667 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:02:44,671 | DEBUG | starting thread (client mode): 0xb2453d90L
+2015-11-17 19:02:44,684 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:02:44,685 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:02:44,685 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:02:44,685 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:02:44,748 | DEBUG | Switch to new keys ...
+2015-11-17 19:02:44,772 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:02:44,772 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:02:44,789 | DEBUG | userauth is OK
+2015-11-17 19:02:53,107 | INFO | Authentication (publickey) failed.
+2015-11-17 19:02:53,110 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:02:53,111 | DEBUG | userauth is OK
+2015-11-17 19:02:53,261 | INFO | Authentication (publickey) failed.
+2015-11-17 19:02:53,263 | DEBUG | userauth is OK
+2015-11-17 19:02:53,282 | INFO | Authentication (password) successful!
+2015-11-17 19:02:53,293 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:02:53,294 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:02:53,294 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:02:53,296 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:02:53,300 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:02:53,300 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:02:53,301 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:02:53,301 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:02:53,305 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:02:53,308 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:02:53,308 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:02:53,309 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:02:53,310 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:02:53,310 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:02:53,349 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:02:53,351 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:02:53,351 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:02:53,351 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:02:53,352 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:02:53,352 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:02:53,393 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:02:53,395 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:02:53,395 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:02:53,395 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:02:53,433 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:02:53,433 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:02:53,460 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:02:53,461 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:03:53,338 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:03:53,341 | DEBUG | starting thread (client mode): 0x35de2d90L
+2015-11-17 19:03:53,355 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:03:53,356 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:03:53,356 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:03:53,356 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:03:53,418 | DEBUG | Switch to new keys ...
+2015-11-17 19:03:53,442 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:03:53,443 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:03:53,457 | DEBUG | userauth is OK
+2015-11-17 19:03:53,485 | INFO | Authentication (publickey) failed.
+2015-11-17 19:03:53,507 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:03:53,508 | DEBUG | userauth is OK
+2015-11-17 19:03:53,664 | INFO | Authentication (publickey) failed.
+2015-11-17 19:03:53,667 | DEBUG | userauth is OK
+2015-11-17 19:03:53,673 | INFO | Authentication (password) successful!
+2015-11-17 19:03:53,673 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:03:53,675 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:03:53,675 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:03:53,678 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:03:53,679 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:03:53,679 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:03:53,680 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:03:53,681 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:03:53,684 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:03:53,685 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:03:53,686 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:03:53,686 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:03:53,687 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:03:53,687 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:03:53,725 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:03:53,726 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:03:53,727 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:03:53,728 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:03:53,729 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:03:53,729 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:03:53,769 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:03:53,770 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:03:53,771 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:03:53,771 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:03:53,772 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:03:53,772 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:03:53,813 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:03:53,814 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:08:56,995 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:08:56,998 | DEBUG | starting thread (client mode): 0x61eddd90L
+2015-11-17 19:08:57,011 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:08:57,012 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:08:57,013 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:08:57,013 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:08:57,073 | DEBUG | Switch to new keys ...
+2015-11-17 19:08:57,074 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:08:57,074 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:08:57,111 | DEBUG | userauth is OK
+2015-11-17 19:08:57,138 | INFO | Authentication (publickey) failed.
+2015-11-17 19:08:57,175 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:08:57,176 | DEBUG | userauth is OK
+2015-11-17 19:08:57,333 | INFO | Authentication (publickey) failed.
+2015-11-17 19:08:57,335 | DEBUG | userauth is OK
+2015-11-17 19:08:57,342 | INFO | Authentication (password) successful!
+2015-11-17 19:08:57,350 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:08:57,351 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:08:57,351 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:08:57,354 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:08:57,356 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:08:57,356 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:08:57,357 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:08:57,357 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:08:57,358 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:08:57,360 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:08:57,360 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:08:57,360 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:08:57,362 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:08:57,362 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:08:57,403 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:08:57,405 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:08:57,406 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:08:57,406 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:08:57,407 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:08:57,407 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:08:57,447 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:08:57,449 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:08:57,449 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:08:57,449 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:08:57,491 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:08:57,491 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:08:57,514 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:08:57,515 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:09:13,275 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:09:13,278 | DEBUG | starting thread (client mode): 0xb461d90L
+2015-11-17 19:09:13,291 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:09:13,292 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:09:13,292 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:09:13,292 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:09:13,354 | DEBUG | Switch to new keys ...
+2015-11-17 19:09:13,379 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:09:13,379 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:09:13,395 | DEBUG | userauth is OK
+2015-11-17 19:09:18,603 | INFO | Authentication (publickey) failed.
+2015-11-17 19:09:18,615 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:09:18,616 | DEBUG | userauth is OK
+2015-11-17 19:09:18,773 | INFO | Authentication (publickey) failed.
+2015-11-17 19:09:18,775 | DEBUG | userauth is OK
+2015-11-17 19:09:18,786 | INFO | Authentication (password) successful!
+2015-11-17 19:09:18,789 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:09:18,790 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:09:18,791 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:09:18,794 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:09:18,795 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:09:18,796 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:09:18,797 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:09:18,797 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:09:18,798 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:09:18,800 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:09:18,800 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:09:18,800 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:09:18,839 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:09:18,839 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:09:18,865 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:09:18,867 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:09:18,867 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:09:18,867 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:09:18,868 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:09:18,868 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:09:18,907 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:09:18,909 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:09:18,910 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:09:18,910 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:09:18,911 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:09:18,912 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:09:18,951 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:09:18,952 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:10:35,833 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:10:35,836 | DEBUG | starting thread (client mode): 0x196bdd90L
+2015-11-17 19:10:35,850 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:10:35,851 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:10:35,851 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:10:35,851 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:10:35,912 | DEBUG | Switch to new keys ...
+2015-11-17 19:10:35,913 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:10:35,913 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:10:35,950 | DEBUG | userauth is OK
+2015-11-17 19:10:35,978 | INFO | Authentication (publickey) failed.
+2015-11-17 19:10:36,014 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:10:36,015 | DEBUG | userauth is OK
+2015-11-17 19:10:36,171 | INFO | Authentication (publickey) failed.
+2015-11-17 19:10:36,174 | DEBUG | userauth is OK
+2015-11-17 19:10:36,179 | INFO | Authentication (password) successful!
+2015-11-17 19:10:36,180 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:10:36,183 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:10:36,183 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:10:36,185 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:10:36,187 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:10:36,187 | ERROR | remote_file_operation.py - cal_sha1sum line:145 | Can not open file: /home/rss/workspace/text.t
+2015-11-17 19:10:36,187 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:10:36,188 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:10:36,188 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:10:36,190 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:10:36,192 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:10:36,192 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,192 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:10:36,193 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb')
+2015-11-17 19:10:36,235 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb') -> 00000000
+2015-11-17 19:10:36,235 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,241 | DEBUG | [chan 1] close(00000000)
+2015-11-17 19:10:36,242 | ERROR | remote_file_operation.py - cal_sha1sum line:145 | Can not open file: /home/rss/workspace/text.a
+2015-11-17 19:10:36,243 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:10:36,244 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:10:36,244 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:10:36,245 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:10:36,246 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:10:36,247 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:10:36,247 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,286 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb')
+2015-11-17 19:10:36,288 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb') -> 00000000
+2015-11-17 19:10:36,288 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,294 | DEBUG | [chan 1] close(00000000)
+2015-11-17 19:10:36,295 | ERROR | remote_file_operation.py - cal_sha1sum line:145 | Can not open file: /home/rss/workspace/text.b
+2015-11-17 19:10:36,295 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:10:36,296 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:10:36,296 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:10:36,297 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:10:36,299 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:10:36,299 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,299 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:10:36,301 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb')
+2015-11-17 19:10:36,338 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb') -> 00000000
+2015-11-17 19:10:36,338 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,344 | DEBUG | [chan 1] close(00000000)
+2015-11-17 19:10:36,345 | ERROR | remote_file_operation.py - cal_sha1sum line:145 | Can not open file: /home/rss/workspace/text.c
+2015-11-17 19:10:36,346 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:10:36,347 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:10:36,347 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:10:36,348 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:10:36,350 | DEBUG | [chan 5] EOF received (5)
+2015-11-17 19:10:36,350 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,350 | DEBUG | [chan 5] EOF sent (5)
+2015-11-17 19:10:36,351 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb')
+2015-11-17 19:10:36,390 | DEBUG | [chan 1] open('/home/rss/Public/text.txt', 'rb') -> 00000000
+2015-11-17 19:10:36,390 | DEBUG | [chan 1] stat('/home/rss/Public/text.txt')
+2015-11-17 19:10:36,396 | DEBUG | [chan 1] close(00000000)
+2015-11-17 19:30:22,626 | WARNING | remote_file_operation.py - check_conn line:170 | Connection to 192.168.1.21 have not setup yet.
+2015-11-17 19:30:22,629 | DEBUG | starting thread (client mode): 0xfb3dd90L
+2015-11-17 19:30:22,643 | INFO | Connected (version 2.0, client OpenSSH_6.7p1)
+2015-11-17 19:30:22,644 | DEBUG | kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group14-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com'] client mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] server mac:[u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-512', u'hmac-sha1'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2015-11-17 19:30:22,644 | DEBUG | Ciphers agreed: local=aes128-ctr, remote=aes128-ctr
+2015-11-17 19:30:22,645 | DEBUG | using kex diffie-hellman-group14-sha1; server key type ssh-rsa; cipher: local aes128-ctr, remote aes128-ctr; mac: local hmac-sha1, remote hmac-sha1; compression: local none, remote none
+2015-11-17 19:30:22,705 | DEBUG | Switch to new keys ...
+2015-11-17 19:30:22,730 | DEBUG | Adding ssh-rsa host key for 192.168.1.21: 90cff5af56e8798fd82f249cbdb892ee
+2015-11-17 19:30:22,731 | DEBUG | Trying SSH agent key 820765c85453c6a2f70c5508e16de416
+2015-11-17 19:30:22,744 | DEBUG | userauth is OK
+2015-11-17 19:30:22,777 | INFO | Authentication (publickey) failed.
+2015-11-17 19:30:22,795 | DEBUG | Trying discovered key 820765c85453c6a2f70c5508e16de416 in /home/rss/.ssh/id_rsa
+2015-11-17 19:30:22,796 | DEBUG | userauth is OK
+2015-11-17 19:30:22,943 | INFO | Authentication (publickey) failed.
+2015-11-17 19:30:22,945 | DEBUG | userauth is OK
+2015-11-17 19:30:22,952 | INFO | Authentication (password) successful!
+2015-11-17 19:30:22,952 | DEBUG | [chan 1] Max packet in: 32768 bytes
+2015-11-17 19:30:22,954 | DEBUG | [chan 1] Max packet out: 32768 bytes
+2015-11-17 19:30:22,954 | DEBUG | Secsh channel 1 opened.
+2015-11-17 19:30:22,956 | DEBUG | [chan 1] Sesch channel 1 request ok
+2015-11-17 19:30:22,958 | INFO | [chan 1] Opened sftp connection (server version 3)
+2015-11-17 19:30:22,958 | DEBUG | [chan 2] Max packet in: 32768 bytes
+2015-11-17 19:30:22,959 | DEBUG | [chan 2] Max packet out: 32768 bytes
+2015-11-17 19:30:22,959 | DEBUG | Secsh channel 2 opened.
+2015-11-17 19:30:22,962 | DEBUG | [chan 2] Sesch channel 2 request ok
+2015-11-17 19:30:22,964 | DEBUG | [chan 2] EOF received (2)
+2015-11-17 19:30:22,964 | DEBUG | [chan 2] EOF sent (2)
+2015-11-17 19:30:22,964 | DEBUG | [chan 3] Max packet in: 32768 bytes
+2015-11-17 19:30:23,004 | DEBUG | [chan 3] Max packet out: 32768 bytes
+2015-11-17 19:30:23,004 | DEBUG | Secsh channel 3 opened.
+2015-11-17 19:30:23,029 | DEBUG | [chan 3] Sesch channel 3 request ok
+2015-11-17 19:30:23,031 | DEBUG | [chan 3] EOF received (3)
+2015-11-17 19:30:23,031 | DEBUG | [chan 4] Max packet in: 32768 bytes
+2015-11-17 19:30:23,031 | DEBUG | [chan 3] EOF sent (3)
+2015-11-17 19:30:23,032 | DEBUG | [chan 4] Max packet out: 32768 bytes
+2015-11-17 19:30:23,032 | DEBUG | Secsh channel 4 opened.
+2015-11-17 19:30:23,072 | DEBUG | [chan 4] Sesch channel 4 request ok
+2015-11-17 19:30:23,074 | DEBUG | [chan 4] EOF received (4)
+2015-11-17 19:30:23,074 | DEBUG | [chan 4] EOF sent (4)
+2015-11-17 19:30:23,074 | DEBUG | [chan 5] Max packet in: 32768 bytes
+2015-11-17 19:30:23,116 | DEBUG | [chan 5] Max packet out: 32768 bytes
+2015-11-17 19:30:23,116 | DEBUG | Secsh channel 5 opened.
+2015-11-17 19:30:23,139 | DEBUG | [chan 5] Sesch channel 5 request ok
+2015-11-17 19:30:23,141 | DEBUG | [chan 5] EOF received (5)

@@ -85,13 +85,18 @@ main()
     Json::Value params, list_item;
     params["ip"] = "192.168.1.21";
     list_item["task_id"] = 1;
-    list_item["remote_file"] = "/home/rss/dump.rdb";
+    list_item["remote_file"] = "/home/rss/abc/dump.rdb";
     list_item["local_file"] = "/home/rss/dump.rdb";
     params["dlfs"].append(list_item);
     list_item["task_id"] = 2;
     list_item["remote_file"] = "/home/rss/download.txt";
     list_item["local_file"] = "/home/rss/download.txt";
     params["dlfs"].append(list_item);
+    list_item["task_id"] = 3;
+    list_item["remote_file"] = "/home/rss/download.txt";
+    list_item["local_file"] = "/root/test.txt";
+    params["dlfs"].append(list_item);
+
     redis_cmd_download(params);
 
     return 0;

@@ -1,0 +1,12 @@
+OUT:= test_download
+TOP:=../../..
+# lib is very important
+LDFLASS:= -L$(TOP)/lib/bin  -l:libjsoncpp.a  -l:libconfuse.a
+
+all: $(OUT)
+
+
+$(OUT):test_download.cpp download.o
+	g++ -Wall $^ $(LDFLASS) -L/usr/lib -lpython2.7 -lpthread -o $@
+download.o:download.cpp
+	g++ -c -I/usr/include/python2.7/ -L/usr/lib -lpython2.7 -lpthread -o $@ $^
