@@ -5,11 +5,14 @@
 int
 main() {
 	glob_t globbuf;
-	int x = glob("*test.c", GLOB_NOSORT, NULL, &globbuf);
+	char *s = "*test.c";
+	int x = glob(s, GLOB_NOSORT, NULL, &globbuf);
 	printf("%d     %d\n", globbuf.gl_pathc, x);
 	printf("%s\n", globbuf.gl_pathv[0]);
 	printf("hello world\n\n\n");
-	x = glob("*.c", GLOB_NOSORT, NULL, &globbuf);
+
+	char *y = "*.c";
+	x = glob(y, GLOB_NOSORT, NULL, &globbuf);
 	printf("%d     %d\n", globbuf.gl_pathc, x);
 	printf("%s\n", globbuf.gl_pathv[0]);
 	printf("hello world\n");
