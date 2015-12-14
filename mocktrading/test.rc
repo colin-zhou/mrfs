@@ -1,0 +1,68 @@
+{	
+	"type":100,
+	"seq":1,
+	"data":{
+		"task":{
+			"taskid": 101,
+			"type":1,
+			"user":"rss-1",
+			"product":"IF",
+			"exhange":"G",
+			"quote_seq": 1,
+			"date_start":"2015-08-04",
+			"date_end":"2015-08-05",
+			"ratio": 0.5,
+			"strategy_cnt": 1
+		},
+		"config":{
+			"log":{
+				"name":"test_log",
+				"dir":"/opt/trader/logs",
+				"max_size":"10240",
+				"level":"LOG_INFO"
+			},
+			"user":{
+				"name":"rss",
+				"home":"./logs/",
+				"priority":"admin"
+			},
+			"strategy":{
+				"name":"if11",
+				"file":"/home/rss/develop/rss_agent/rss/agent/uploads/rss/research/hi5_dli_struct.so",
+				"file_type":"f",
+				"owner":"rss",
+				"type":"future",
+				"symbol":{
+					"name":"IF1408",
+					"quote":"squote",
+					"max_pos":568,
+					"cancel_order_per_day":1000,
+					"order_per_second":100,
+					"his_long_pos":"0",
+					"his_short_pos":"0",
+					"today_long_pos":"0",
+					"today_short_pos":"0",
+					"available_fund":"0.0"
+				}
+			},
+			"sim_quote":{
+				"name":"squote",
+				"file":"libquote.so",
+				"map_file":"/mnt/data/DataMap/rss_file_path.txt",
+				"delta_map_file":"/mnt/data/DataMap/curr_rss_file_path.txt"
+			},
+			"match":{
+				"name":"rss_match",
+				"file":"libmatch.so",
+				"item":{
+					"name":"fb",
+					"refix":"fb",
+					"fixed":"0",
+					"ratio":"0.0000263",
+					"unit":"0.2",
+					"multiple":"300"
+				}
+			}
+		}
+	}
+}

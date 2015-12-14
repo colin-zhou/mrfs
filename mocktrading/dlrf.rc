@@ -1,0 +1,8 @@
+{
+	"type":1,
+	"seq":100,
+	"data":{
+		"remote_files":["/home/rss/test.txt","/home/rss/abc.txt"],
+		"local_files":["/home/rss/test.txt", "/home/rss/abc.txt"]
+	}
+}

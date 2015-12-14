@@ -1,0 +1,14 @@
+{
+	"type":102,
+	"seq":12,
+	"data":{
+		"user": "rss",
+		"taskid": 58,
+		"type":1,
+		"scale":100,
+		"date":"20151016",
+		"start":10,
+		"end":200,
+		"view":"overview"
+	}
+}

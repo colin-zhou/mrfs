@@ -1,0 +1,44 @@
+\documentclass[11pt,a4paper]{article}
+
+%加入了一些针对XeTeX的改进并且加入了 \XeTeX 命令来输入漂亮的XeTeX logo
+\usepackage{xltxtra}
+%启用一些LaTeX中的功能
+\usepackage{xunicode}
+
+%%%% fontspec 宏包 %%%%
+\usepackage{fontspec}           
+% 指定字体
+\setmainfont[BoldFont=Adobe Heiti Std]{Adobe Song Std}
+\setsansfont[BoldFont=Adobe Heiti Std]{Adobe Kaiti Std}
+%\setmonofont{Bitstream Vera Sans Mono}
+
+%%%% 版面 %%%%
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1in]{geometry} 
+% 设置行距
+\linespread{1.3}                
+
+%%%% 缩进 %%%%
+% 自动首行缩进
+\usepackage{indentfirst}        
+% 设置首行缩进的距离
+\setlength{\parindent}{2.22em}  
+
+
+%连字符
+\defaultfontfeatures{Mapping=tex-text}
+%中文断行
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+    
+    %以下为正文部分  
+    \begin{document}
+    % 生成目录
+    \tableofcontents  
+    % 章节  
+    \section{\XeLaTeX}  
+    XeTeX 可以使用系统自带的字体，而不需要再另外生成
+    % 章节  
+    \section{……}  
+    \end{document}
+

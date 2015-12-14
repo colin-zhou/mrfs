@@ -1,0 +1,9 @@
+{
+	"type":101,
+	"seq":2,
+	"data": {
+		"user":"rss-1", 
+		"type":1 ,
+		"taskid":101
+	}
+}
