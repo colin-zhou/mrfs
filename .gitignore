@@ -3,3 +3,5 @@
 *.php
 *.o
 *.sublime*
+*.out
+*.log
