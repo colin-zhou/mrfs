@@ -3,35 +3,30 @@
 #include <stdlib.h>
 
 int cc[27];
-char ret[30];
-int next_must_exist(char *x, int cc[27]) {
-    int ti = *x - 'a';
-    if(cc[ti] == 1) {
-        return ti;
+char ret[27];
+
+char
+fetch_first_smallest(int vv[27], char *str)
+{
+    if(str == NULL || *str == '\0') {
+        return 'z';
     } else {
-        
-        int small = ti;
-        int tc = next_must_exist(x+1, cc);
-    }
-
-}
-
-int smallerExist(int n, char x) {
-    int i;
-    if (x != '\0') {
-        i = x-'a';
-        if (cc[i] == 1 && i > n) {
-            return 0;
+        int idx = *str - 'a';
+        if (vv[idx] == 1) {
+            return *str;
+        } else if (vv[idx] == 0) {
+            return fetch_first_smallest(vv, str+1);
+        } else {
+            char one = *str;
+            vv[idx]--;
+            char two = fetch_first_smallest(vv, str+1);
+            return one>two?two:one;
         }
     }
-    for(i = 0; i < n; i++) {
-        if(cc[i])
-            return 1;
-    }
-    return 0;
 }
-char* removeDuplicateLetters(char* s) {
-    s = deletedupnear(s);
+
+char* 
+removeDuplicateLetters(char* s) {
     memset(cc, 0, sizeof(cc));
     int i, ti, j = 0;
     char *ts = s;
@@ -43,11 +38,14 @@ char* removeDuplicateLetters(char* s) {
     ts = s;
     while(*ts != '\0') {
         ti = *ts - 'a';
-        if (cc[ti] == 1) {
+        if (cc[ti] == 1 || (ti == 0 && cc[ti] != 0)) {
             ret[j++] = *ts;
-            cc[ti]--;
+            cc[ti] = 0;
         } else if (cc[ti] > 1) {
-            if(smallerExist(ti, *(ts+1))) {
+            int tcc[27];
+            memcpy(tcc, cc, 27 * sizeof(int));
+            tcc[ti]--;
+            if(fetch_first_smallest(tcc, ts+1) < *ts ) {
                 cc[ti]--;
             } else {
                 ret[j++] = *ts;
@@ -62,7 +60,7 @@ char* removeDuplicateLetters(char* s) {
 
 int main()
 {
-    char *t = "bccab";
+    char *t = "abacb";
     printf("%s\n",removeDuplicateLetters(t));
     return 0;
 }
