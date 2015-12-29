@@ -13,7 +13,7 @@ Special thanks to @peisi for adding this problem and creating all test cases.
 
 Subscribe to see which companies asked this question
 
-Hide Tags Math Heap
+Hide Tags: Math Heap
 Show Similar Problems
 */
 
@@ -22,7 +22,7 @@ Show Similar Problems
 
 int
 nthSuperUglyNumber(int n, int* primes, int primesSize) {
-	
+    	
 }
 
 int
