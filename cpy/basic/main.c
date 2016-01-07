@@ -7,6 +7,8 @@ int
 main()
 {
 	// initial the interpreter
+    char xv[100] = "abcdefg";
+    PyObject * tstr = PyString_FromString(xv);
 	Py_Initialize();
 	if (!Py_IsInitialized()) {
 		return -1;
@@ -23,6 +25,7 @@ main()
 	PyObject * pFunc1 = NULL;
 	PyObject * pDict = NULL;
 	PyObject * pArgs = NULL;
+    PyObject * pFunc2 = NULL;
 
 	pName = PyString_FromString("pytest");
 	pModule1 = PyImport_Import(pName);
@@ -41,6 +44,16 @@ main()
 		getchar();
 		return -1;
 	}
+    pFunc2 = PyDict_GetItemString(pDict, "echo");
+    if (!pFunc2 || !PyCallable_Check(pFunc2)) {
+        printf("can't find function [echo]");
+        getchar();
+        return -1;
+    }
+    pArgs = PyTuple_New(1);
+    printf("array size = %d \n", PyTuple_Size(pArgs));
+    PyTuple_SetItem(pArgs, 0, tstr);
+    PyObject_CallObject(pFunc2, pArgs);
 	// create a Tuple(2)
 	pArgs = PyTuple_New(2);
 	// create long int and make Tumple points it

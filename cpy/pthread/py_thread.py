@@ -13,7 +13,8 @@ class MyThread(threading.Thread):
                         time.sleep(1)
 
 
-def createthread():
+def createthread(x):
+        print x
         print 'Python Create and run MyThread'
         background = MyThread()
         background.start()

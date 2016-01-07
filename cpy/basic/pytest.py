@@ -15,3 +15,9 @@ def foo(a):
         print "a = " + str(a)
         print "ret = " + str(a * a)
         return
+
+def echo(x):
+        print "in python function echo"
+        print x
+        return
+
