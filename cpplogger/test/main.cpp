@@ -4,7 +4,7 @@
 
 int main()
 {
-        printf("%cwhat the fuckt\n", 0x20);
+        printf("%cwhat\n", 0x20);
     	set_log_level(5);
 	    log_info("what");
     	sleep(1);

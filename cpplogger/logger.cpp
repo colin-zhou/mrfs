@@ -42,7 +42,7 @@ int my_log::get_proc(void)
                 p++;
         }
         char *q = _log_proc;
-        while(*p != '\0' && *p != '\r') { // end of a string
+        while(*p != '\0' && *p != '\r' && *p != '\n') { // end of a string
                 *q = *p++;
                 q++;
         }
