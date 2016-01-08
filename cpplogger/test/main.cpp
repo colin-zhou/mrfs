@@ -8,6 +8,5 @@ int main()
     	set_log_level(5);
 	    log_info("what");
     	sleep(1);
-
-	return 0;
+	    return 0;
 }

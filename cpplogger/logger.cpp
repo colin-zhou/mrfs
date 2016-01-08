@@ -1,6 +1,5 @@
 #include "logger.h"
 #include "logger_impl.h"
-#include <stdio.h>
 
 #define __100MB 104857600
 
@@ -28,7 +27,7 @@ my_log *my_log::_log_inst = NULL;
 int my_log::get_proc(void)
 {
         _log_pid = getpid();
-        char buff[256];
+        char buff[128];
         FILE *fp;
         snprintf(buff, sizeof(buff), "/proc/%d/status", _log_pid);
         fp = fopen(buff, "r");
