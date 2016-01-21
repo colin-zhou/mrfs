@@ -1,4 +1,4 @@
-out:=pipe
+out:=sh_cmd
 
-$(out):pipe.cpp
+$(out):sh_cmd.cpp
 	g++ --std=c++11 -o $@ $^
