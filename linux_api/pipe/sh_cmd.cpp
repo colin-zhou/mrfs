@@ -16,6 +16,8 @@ std::string sh_exec(const char* cmd) {
 	return result;
 }
 
+
+
 int main()
 {
 	const char* cmd = "ls -l\nla\nseq 10\n";

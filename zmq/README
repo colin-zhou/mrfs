@@ -1,0 +1,12 @@
+		ActiveMQ		RabbitMQ		ZeroMQ
+
+遵循规范		JMS1.1及J2EE1.4		AMPQ	---
+架构模型		消息代理架构Broker		消息代理架构Broker		C/S架构
+实现语言		Java			Erlang			C/C++
+支持消息协议	Stomp			AMPQ、Stomp等		---
+主要推动力量	Apache、Redhat		Lshift、Vmware、SpringSource	iMatix
+支持编程语言	C，Java，Python		C，Java，Python		C，Java，Python
+编程复杂度	复杂			简单			中等
+持久化		支持			支持，不支持第三方数据库	发送端缓存
+性能		Normal			Normal			High
+内存使用率	High			High			Normal
