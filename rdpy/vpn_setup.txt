@@ -1,0 +1,31 @@
+ VPN SETUP
+wget http://www.packetix-download.com/files/packetix/v4.18-9570-rtm-2015.07.26-tree/Linux/PacketiX_VPN_Client/64bit_-_Intel_x64_or_AMD64/vpnclient-v4.18-9570-rtm-2015.07.26-linux-x64-64bit.tar.gz
+
+tar xzvf vpnclient-v4.18-9570-rtm-2015.07.26-linux-x64-64bit.tar.gz
+cd vpnclient
+make
+./vpnclient start
+./vpncmd
+
+选择2后输入enter回车键
+进入设定模式后
+niccreate vpn
+电信
+accountcreate mycapital /server:14.215.128.98:8888 /hub:mycapital /user:ht88 /nic:vpn
+联通
+accountcreate mycapital /server:122.13.229.10:8888 /hub:mycapital /user:al82 /nic:vpn
+
+accountpasswordset mycapital /password:jambo712 /type:standard
+accountconnect mycapital
+accountstartupset mycapital
+
+其他命令
+查看连接
+accountlist
+关闭连接
+accountdisconnect mycapital
+退出
+exit
+
+自动获取dhcp的ip
+dhclient vpn_vpn
