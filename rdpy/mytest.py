@@ -5,7 +5,7 @@ from connect import mytest
 
 address= ['192.168.0.111']
 user=['admin','test', 'colin']
-passwd=['admin','201583', 'zhou']
+passwd=['admin','201583', 'zhou','abc']
 
 for add in address:
     for ur in user:
