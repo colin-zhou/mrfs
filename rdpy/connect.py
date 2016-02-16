@@ -127,7 +127,7 @@ class RDPClientQtFactory(rdp.ClientFactory):
             self._w.showFullScreen()
         else:
             self._w.show()
-        
+
         controller.setUsername(self._username)
         controller.setPassword(self._passwod)
         controller.setDomain(self._domain)
@@ -180,6 +180,9 @@ class TimerThread(threading.Thread):
         self._cfail = False
         self._ret = ret
 
+    def add_client(self, client):
+        self._client = client
+
     def stop(self):
         self._stopper.set()
 
@@ -194,13 +197,17 @@ class TimerThread(threading.Thread):
             if self._cfail:
                 # self._ret["connected"] = False
                 self._reactor.crash()
-                self._app.exit()
+                if self._client and self._client._w:
+                    self._client._w.close()
+                self._app.quit()
                 self.stop()
             # wait 10 seconds
             # you can change this according your demand
             elif self._cnt == 2:
                 self._reactor.crash()
-                self._app.exit()
+                if self._client and self._client._w:
+                    self._client._w.hide()
+                self._app.quit()
                 self._ret["connected"] = True
                 self.stop()
             else:
@@ -238,10 +245,11 @@ def mytest(ip, port, username, password):
     mytimer = TimerThread(app, reactor, ret)
     mytimer.start()
     timeout = 2
-    reactor.connectTCP(ip, int(port), RDPClientQtFactory(width, height, username, password, domain, fullscreen, keyboardLayout, optimized, "nego", recodedPath, mytimer), timeout)
+    my_client = RDPClientQtFactory(width, height, username, password, domain, fullscreen, keyboardLayout, optimized, "nego", recodedPath, mytimer)
+    mytimer.add_client(my_client)
+    reactor.connectTCP(ip, int(port), my_client, timeout)
     reactor.runReturn()
     app.exec_()
-    reactor = None
     return ret
 
 
@@ -249,39 +257,34 @@ if __name__ == '__main__':
 
 
     try:
+        res = mytest('192.168.3.29','3389','colin','zhou')
+    except Exception:
+        res = {"connected": False}
+    print res
+
+
+    try:
+        res = mytest('192.168.3.29','3389','colin','zhou')
+    except Exception:
+        res = {"connected": False}
+    print res
+
+
+    try:
+        res = mytest('192.168.3.29','3389','colin','zhou')
+    except Exception:
+        res = {"connected": False}
+    print res
+
+
+    try:
+        res = mytest('192.168.3.29','3389','colin','zhou')
+    except Exception:
+        res = {"connected": False}
+    print res
+
+    try:
         res = mytest('192.168.0.111','3389','colin','zhou')
-    except Exception:
-        res = {"connected": False}
-    print res
-
-
-    try:
-        res = mytest('192.168.0.111','3389','colin','zhou')
-    except Exception:
-        res = {"connected": False}
-    print res
-
-    try:
-        res = mytest('192.168.0.111','3389','coli1n','zhou')
-    except Exception:
-        res = {"connected": False}
-    print res
-
-    try:
-        res = mytest('192.168.0.111','3389','colin','zhou')
-    except Exception:
-        res = {"connected": False}
-    print res
-
-
-    try:
-        res = mytest('192.168.0.111','3389','colin','zhou')
-    except Exception:
-        res = {"connected": False}
-    print res
-
-    try:
-        res = mytest('192.168.0.111','3389','coli1n','zhou')
     except Exception:
         res = {"connected": False}
     print res
