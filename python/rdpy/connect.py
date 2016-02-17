@@ -203,7 +203,7 @@ class TimerThread(threading.Thread):
                 self.stop()
             # wait 10 seconds
             # you can change this according your demand
-            elif self._cnt == 2:
+            elif self._cnt == 3:
                 self._reactor.crash()
                 if self._client and self._client._w:
                     self._client._w.hide()
@@ -257,21 +257,22 @@ if __name__ == '__main__':
 
 
     try:
-        res = mytest('192.168.3.29','3389','colin','zhou')
+        res = mytest('192.168.1.106','3389','colin','zhou')
+    except Exception,e:
+        print "error:", e
+        res = {"connected": False}
+    print res
+
+
+    try:
+        res = mytest('192.168.1.106','3389','colin','zhou')
     except Exception:
         res = {"connected": False}
     print res
 
 
     try:
-        res = mytest('192.168.3.29','3389','colin','zhou')
-    except Exception:
-        res = {"connected": False}
-    print res
-
-
-    try:
-        res = mytest('192.168.3.29','3389','colin','zhou')
+        res = mytest('192.168.1.106','3389','colin','zhou')
     except Exception:
         res = {"connected": False}
     print res
