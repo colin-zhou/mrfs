@@ -198,7 +198,7 @@ class TimerThread(threading.Thread):
                 # self._ret["connected"] = False
                 self._reactor.crash()
                 if self._client and self._client._w:
-                    self._client._w.close()
+                    self._client._w.hide()
                 self._app.quit()
                 self.stop()
             # wait 10 seconds
