@@ -8,3 +8,5 @@ a few test
 mainly module or api test
 # shell script
 mainly shortcut for spec-task
+# git hooks
+email to boos
