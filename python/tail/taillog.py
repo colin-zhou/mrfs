@@ -14,6 +14,11 @@ event format{
 }
 '''
 
+class event_msg(object):
+
+    def __init__(name="name", file="filename", ):
+        self.
+
 class check_func_arr(object):
     '''generate check func to deal with the log line'''
     '''2016-03-01 15:25:33.180600759 agent.dbg.0.7.0/17678 oss TRACE start the task'''
@@ -36,12 +41,18 @@ class check_func_arr(object):
         if func_idx > 0 and func_idx < len(self.func_handler):
             del self.func_handler[func_idx]
 
+    # message in INFOMATION field
     def line_log_contains(self, line, basic_params, out_event):
+
         if isinstance(line, basestring):
             line_split = line.split(" ")
             info = line_split[column_info.INFORMATION]
-            if isinstance(basic_params, basic_params):
-                 
+            if isinstance(basic_params, dict):
+                if info.find(basic_params) != -1:
+                    out_event["name"] = 
+                else:
+
+
 
     def line_log_level(self, line, basic_params, out_event):
 
