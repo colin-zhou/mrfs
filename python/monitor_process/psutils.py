@@ -8,9 +8,7 @@ monitor_process = ["rss", "agent.dbg.1.0.0", "quote_ctp_lib_demo", "rq_feed_hand
 class process_monitor(object):
 
     def __init__(self, monitor_process):
-        self.monitor_process = monitor_process
-        self.get_process_id()
-        self.get_process_info()
+        self.update_monitor(monitor_process)
 
     def get_process_id(self):
         if isinstance(self.monitor_process, list):
@@ -22,7 +20,6 @@ class process_monitor(object):
                     p = psutil.Process(ppid)
                     if p.name() in self.name_pid_d:
                         self.name_pid_d[p.name()] = ppid
-            return self.name_pid_d
         return None
 
     def update_monitor(self, monitor_process):
@@ -31,7 +28,7 @@ class process_monitor(object):
         self.name_io_d = None
         self.name_mem_d = None
         self.name_pid_d = None
-        self.get_process_info()
+        self.get_process_id()
         self.get_process_info()
 
     def update_info(self):
@@ -45,7 +42,7 @@ class process_monitor(object):
                 self.name_io_d = dict.fromkeys(self.monitor_process, None)
             if not self.name_conn_d:
                 self.name_conn_d = dict.fromkeys(self.monitor_process, None)
-            for name,pid in self.monitor_process.items():
+            for name,pid in self.name_pid_d.items():
                 if pid != -1:
                     p = psutil.Process(pid)
                     self.name_io_d[name] = p.io_counters()
