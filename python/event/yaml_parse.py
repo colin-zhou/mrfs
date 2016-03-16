@@ -1,12 +1,17 @@
+# -*- coding: utf-8 -*-
+
 import yaml
 from my_event import log_event, pro_event
 from listen_event_mgr import listen_event
+from utils import singleton
 
+
+@singleton
 class event_parser(object):
 
     class const:
-        LOG="my.event.log"
-        PRO="my.event.process"
+        LOG = "my.event.log"
+        PRO = "my.event.process"
 
     def __init__(self):
         self.my_listen_event = listen_event()
@@ -65,32 +70,41 @@ class event_parser(object):
 
     def event_syntax_parse(self, yaml_str):
         if self.event_syntax_check(yaml_str):
-            self.todo = []
-            for event_desc in self.tmp_dict:
-                for event_type in self.tmp_dict[event_desc]:
-                    print event_type
-                    tvalue = True
-                    if event_type == self.const.LOG:
-                        tvalue = self.log_event_parse(self.tmp_dict[event_desc][event_type])
-                    elif event_type == self.const.PRO:
-                        tvalue = self.pro_event_parse(self.tmp_dict[event_desc][event_type])
-                    else:
-                        return False
-                    if not tvalue:
-                        return False
-            for eve_obj in self.todo:
-                self.my_listen_event.insert_event(eve_obj["event"], eve_obj["etype"])
-            return True
+            try:
+                self.todo = []
+                for event_desc in self.tmp_dict:
+                    for event_type in self.tmp_dict[event_desc]:
+                        # print event_type
+                        tvalue = True
+                        if event_type == self.const.LOG:
+                            tvalue = self.log_event_parse(self.tmp_dict[event_desc][event_type])
+                        elif event_type == self.const.PRO:
+                            tvalue = self.pro_event_parse(self.tmp_dict[event_desc][event_type])
+                        else:
+                            return False
+                        if not tvalue:
+                            return False
+                for eve_obj in self.todo:
+                    self.my_listen_event.insert_event(eve_obj["event"], eve_obj["etype"])
+                return True
+            except Exception:
+                pass
         return False
 
     def get_my_listen_event(self):
         return self.my_listen_event
 
     def get_listen_process(self):
-        return self.get_listen_process
+        return self.listen_process
 
     def get_listen_logfile(self):
-        return self.get_listen_logfile
+        return self.listen_logfile
+
+    def clear_logfile(self):
+        self.listen_logfile = []
+
+    def clear_process(self):
+        self.listen_process = []
 
 
 if __name__ == "__main__":
@@ -98,7 +112,7 @@ if __name__ == "__main__":
     document = """
         some log event description:
             my.event.log:
-                location: my/log_test
+                location: /var/log/mysys
                 program: my_agent
                 level: error
                 info: 'failed'
@@ -122,3 +136,5 @@ if __name__ == "__main__":
     x = event_parser()
     result = x.event_syntax_parse(document)
     print result
+    print x.get_listen_process()
+    print x.get_listen_logfile()
