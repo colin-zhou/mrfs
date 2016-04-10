@@ -12,7 +12,7 @@ class event_vector(object):
         for s_event in self.e_vector:
             if s_event == event:
                 return True
-        return False 
+        return False
 
     def insert(self, event):
         if not self.exist(event):

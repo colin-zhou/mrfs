@@ -8,7 +8,7 @@ except NameError:
         pass
 
 if __name__ == '__main__':
-        q = qconnection.QConnection(host='localhost', port=9026,
+        q = qconnection.QConnection(host='localhost', port=9001,
                                     username='superuser1',
                                     password='password', timeout=3.0)
         q.open()

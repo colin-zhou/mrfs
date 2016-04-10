@@ -2,10 +2,16 @@
 
 
 import psutil
+import threading
+from time import sleep
+from listen_event import listen_event
 
-class process_monitor(object):
+class process_monitor(threading.Thread):
 
-    def __init__(self, monitor_process):
+    def __init__(self, monitor_process, equeue):
+        super(process_monitor, self).__init__()
+        self.stop_flag = False
+        self.event_queue = equeue
         self.update_monitor(monitor_process)
 
     def get_process_id(self):
@@ -27,6 +33,13 @@ class process_monitor(object):
         self.get_process_id()
         self.get_process_info()
 
+    def check_info(self, info):
+        
+
+
+    def stop(self):
+        self.stop_flag = True
+
     def update_info(self):
         self.get_process_info()
 
@@ -40,10 +53,19 @@ class process_monitor(object):
                     self.name_conn_d[name] = p.connections()
             return [self.name_pid_d, self.name_conn_d]
 
-    def print_all_info(self):
-        print self.get_process_info()
+    def run(self):
+        while not self.stop_flag:
+            info = self.get_process_info()
+            self.check_info(info)
+            sleep(1)
+
+
+
+
 
 if __name__ == "__main__":
     monitor_process = ["agent.dbg.1.0.0", "quote_ctp_lib_demo"]
-    a = process_monitor(monitor_process)
-    a.print_all_info()
+    from multiprocessing import Queue
+    myqueue = Queue()
+    a = process_monitor(monitor_process, myqueue)
+    a.start()

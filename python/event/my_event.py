@@ -81,6 +81,7 @@ class pro_event(base_event):
         "location": "/home/rss/agent",
         "program": "abc",
         "asure": {
+            "running": 1,
             "connection": 3
         }
         "time": "2016-01-29 12:00:00",
