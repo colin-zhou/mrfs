@@ -1,0 +1,4 @@
+strategy,hi51atest_shag_day.so_101,hi51test_shag_day.so_102,hi52test_shag_day.so_103,other,avg,n_signals
+hi51atest_shag_day.so_101,1.000000,0.774580,0.513189,0.800959,0.643885,417
+hi51test_shag_day.so_102,0.774580,1.000000,0.472406,0.450331,0.623493,453
+hi52test_shag_day.so_103,0.513189,0.472406,1.000000,0.553957,0.492798,417
