@@ -73,8 +73,10 @@ class Download(Thread):
                 self.ssh_entity.ssh_connect()
                 checksum_cnt -= 1
 
+        # remote checksum failed
         if not remote_checksum:
             return False
+
         # checksum cmp before download
         local_checksum = self.local_sha1sum(local_file, task_id)
         if remote_checksum == local_checksum:
@@ -94,6 +96,7 @@ class Download(Thread):
                     download_cnt -= 1
             if not download_ret:
                 return False
+        
         # checksum after download
         local_checksum = self.local_sha1sum(local_file, task_id)
         if remote_checksum != local_checksum:
