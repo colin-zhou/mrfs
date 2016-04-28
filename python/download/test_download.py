@@ -27,4 +27,38 @@ dl_cmd = {
     }
 }
 
+import os
+import re
+def delete_file_folder(src):  
+    '''delete files and folders''' 
+    if os.path.isfile(src):
+        try:
+            os.remove(src) 
+        except:
+            pass 
+    elif os.path.isdir(src):
+        for item in os.listdir(src):
+            itemsrc=os.path.join(src,item)
+            delete_file_folder(itemsrc)
+        try:
+            os.rmdir(src)
+        except:
+            pass
+
+def file_exsit_check(files):
+    for f in files:
+        f = re.sub('^~', os.path.expanduser("~"), f)
+        if os.path.isfile(f):
+            print f, "exsit"
+        else:
+            print f, "not exist"
+
+print "delete all local files"
+delete_file_folder("/home/rss/workspace/download/")
+
+print "before download task check"
+file_exsit_check(dl_cmd["data"]["local_files"])
+
 main(json.dumps(ser_cfg), json.dumps(dl_cmd))
+
+file_exsit_check(dl_cmd["data"]["local_files"])

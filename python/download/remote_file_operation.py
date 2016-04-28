@@ -63,34 +63,46 @@ class Download(Thread):
             ret = False
         return ret
 
-    def download(self, remote_file, local_file, task_id):
-        try:
-            if not self.ssh_entity.ssh_connect():
-                self.ret_map[task_id] = (-1, "try reconn sshclient failed")
-                return False
+    def download(self, remote_file, local_file, task_id, redo_cnt=3):
+        checksum_cnt = redo_cnt
+        while checksum_cnt:
             remote_checksum = self.remote_sha1sum(remote_file, task_id)
-            if remote_checksum is None:
-                self.ret_map[task_id] = (-1, "download remote checksum error")
-                return False
-            # checksum before download
-            local_checksum = self.local_sha1sum(local_file, task_id)
-            if remote_checksum == local_checksum:
-                return True
+            if remote_checksum:
+                break
             else:
-                self.ssh_entity.sftp.get(remote_file, local_file)
-            # checksum after download
-            local_checksum = self.local_sha1sum(local_file, task_id)
-            if remote_checksum != local_checksum:
-                # delete the broken file
-                self.local_delete(local_file)
-                self.ret_map[task_id] = (-1, "download checksum diff error")
-                return False
-            else:
-                return True
-        except Exception, e:
-            # print str(e)
-            self.ret_map[task_id] = (-1, "%s %s" % (remote_file, str(e)))
+                self.ssh_entity.ssh_connect()
+                checksum_cnt -= 1
+
+        if not remote_checksum:
             return False
+        # checksum cmp before download
+        local_checksum = self.local_sha1sum(local_file, task_id)
+        if remote_checksum == local_checksum:
+            return True
+        else:
+            download_cnt = redo_cnt
+            download_ret = False
+            while download_cnt:
+                try:
+                    self.ssh_entity.sftp.get(remote_file, local_file)
+                    download_ret = True
+                    break
+                except Exception as e:
+                    self.ret_map[task_id] = (-1, "%s sftp.get failed %s" %
+                                             (remote_file, str(e)))
+                    self.ssh_entity.ssh_connect()
+                    download_cnt -= 1
+            if not download_ret:
+                return False
+        # checksum after download
+        local_checksum = self.local_sha1sum(local_file, task_id)
+        if remote_checksum != local_checksum:
+            # delete the broken file
+            self.local_delete(local_file)
+            self.ret_map[task_id] = (-1, "download checksum diff error")
+            return False
+        else:
+            return True
 
     def local_delete(self, local_file):
         try:
@@ -162,10 +174,14 @@ class SSH(object):
         return connected
 
     def is_connected(self):
-        transport = self.clt.get_transport() if self.clt else None
-        return transport and transport.is_active()
+        try:
+            transport = self.clt.get_transport() if self.clt else None
+            transport.send_ignore()
+            return transport and transport.is_active()
+        except:
+            return False
 
-
+        
 def task_deserialize(task_list, n_task_list):
     o_task_list = task_list["data"]
     remote_files = o_task_list["remote_files"]
@@ -212,8 +228,6 @@ def download_file(conn_cfg, o_task_list):
 
         ssh_mgr.ssh_connect()
 
-        print idx, id(ssh_mgr)
-
         downloadhandler = Download(ssh_mgr, t_task_list, ret_map)
         downloadhandler.run()
     return ret_map
@@ -230,8 +244,7 @@ def main(ser_cfg, dl_cmd):
         dl_ret = download_file(connf_cfg, task_list)
         ret = dlret_serialize(dl_ret, task_list)
         return ret
-    except Exception, e:
-        import traceback
-        traceback.print_exc()
-        print "error ", str(e)
+    except Exception:
+        # import traceback
+        # traceback.print_exc()
         return None
