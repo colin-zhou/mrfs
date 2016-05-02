@@ -8,31 +8,26 @@ sudo pip install paramiko
 Copyright(c) 2007-2015, by MY Capital Inc.
 """
 
-from threading import Thread
 from hashlib import sha1 as lsha1
 from paramiko import AutoAddPolicy, SSHClient
 import json
 import os
 import re
+import logging
 
+logging.basicConfig(filename="download.log", level=logging.DEBUG)
 
-class Download(Thread):
+class Download(object):
     """
-    a download thread which use ssh_client to fetch the remote file to
-    specified path. after the download this thread exit automatically
+    a download module which use ssh_client to fetch the remote file to
+    specified path. after the download this module automatically
     """
     def __init__(self, ssh_entity, dl_task_list, ret_map):
-        self.ssh_client = ssh_entity                    # the local SSH entity
+        self.ssh_entity = ssh_entity                    # the local SSH entity
         self.dl_task_list = dl_task_list
         self.ret_map = ret_map
-        Thread.__init__(self)
 
     def run(self):
-        self.clt, self.sftp, err = self.ssh_client.ssh_connect()
-        if not self.clt and not self.sftp:
-            for task in self.dl_task_list:
-                self.ret_map[task] = (-1, "ssh connect failed! %s" % err)
-                return
         for task in self.dl_task_list:
             try:
                 task_id = task[0]
@@ -40,12 +35,16 @@ class Download(Thread):
                 local_file = task[2]
                 # expand '~' in local file path
                 local_file = re.sub('^~', os.path.expanduser("~"), local_file)
+                logging.debug("remote=%s,local=%s" % (remote_file, local_file))
                 if not self.parent_path_exists(local_file):
                     self.ret_map[task_id] = (-1, "no permission opt files")
                 elif self.download(remote_file, local_file, task_id):
+                    logging.debug("download success")
                     self.chmod(local_file, "644")
+                    logging.debug("chmod success")
                     self.ret_map[task_id] = (0, "download success")
             except Exception, e:
+                logging.warning('Exception in run: %s' % str(e))
                 self.ret_map[task_id] = (-1, str(e))
 
     def parent_path_exists(self, local_file):
@@ -54,63 +53,53 @@ class Download(Thread):
         if not os.path.exists(p_path):
             try:
                 os.makedirs(p_path)
-            except Exception:
+            except Exception, e:
+		logging.warning('Exception in parent_path_exists: %s' % str(e))
                 ret = False
         return ret
-
+        
     def chmod(self, filename, mode):
         inner_mode = int(mode, 8)
         ret = True
         try:
             os.chmod(filename, inner_mode)
-        except:
+        except Exception, e:
+	    logging.warning('Exception in chmod:%s' % str(e))
             ret = False
         return ret
 
-    def download(self, remote_file, local_file, task_id, redo_cnt=3):
-        checksum_cnt = redo_cnt
-        while checksum_cnt:
+    def download(self, remote_file, local_file, task_id):
+        try:
+            logging.debug("into the download function")
             remote_checksum = self.remote_sha1sum(remote_file, task_id)
-            if remote_checksum:
-                break
-            else:
-                self.clt, self.sftp, err = self.ssh_client.ssh_connect()
-                checksum_cnt -= 1
-
-        # remote checksum failed
-        if not remote_checksum:
-            return False
-
-        # checksum cmp before download
-        local_checksum = self.local_sha1sum(local_file, task_id)
-        if remote_checksum == local_checksum:
-            return True
-        else:
-            download_cnt = redo_cnt
-            download_ret = False
-            while download_cnt:
-                try:
-                    self.sftp.get(remote_file, local_file)
-                    download_ret = True
-                    break
-                except Exception as e:
-                    self.ret_map[task_id] = (-1, "%s sftp.get failed %s" %
-                                             (remote_file, str(e)))
-                    self.clt, self.sftp, err = self.ssh_client.ssh_connect()
-                    download_cnt -= 1
-            if not download_ret:
+            logging.debug("remote checksum finished")
+            if remote_checksum is None:
+                self.ret_map[task_id] = (-1, "download file remote checksum error")
                 return False
-        
-        # checksum after download
-        local_checksum = self.local_sha1sum(local_file, task_id)
-        if remote_checksum != local_checksum:
-            # delete the broken file
-            self.local_delete(local_file)
-            self.ret_map[task_id] = (-1, "download checksum diff error")
+            # checksum before download
+            local_checksum = self.local_sha1sum(local_file, task_id)
+            logging.debug("local checksum finisehd")
+            if remote_checksum == local_checksum:
+                return True
+            else:
+                logging.debug("sftp get before")
+                self.ssh_entity.sftp.get(remote_file, local_file)
+                logging.debug("sftp get after")
+            # checksum after download
+            local_checksum = self.local_sha1sum(local_file, task_id)
+            if remote_checksum != local_checksum:
+                # delete the broken file
+                self.local_delete(local_file)
+                self.ret_map[task_id] = (-1, "download file checksum cmp error")
+                return False
+            else:
+                return True
+        except Exception, e:
+            logging.warning("Exception in downloadfunc %s" % str(e))
+            # print str(e)
+            self.ret_map[task_id] = (-1, "%s %s" % (remote_file, str(e)))
             return False
-        else:
-            return True
-
+    
     def local_delete(self, local_file):
         try:
             os.remove(local_file)
@@ -124,15 +113,16 @@ class Download(Thread):
                 for line in open_file:
                     sha_handler.update(line)
             return sha_handler.hexdigest()
-        # except (OSError, IOError):
         except Exception, e:
+	    logging.warning("Exception in local_checksum %s" % str(e))
             self.ret_map[task_id] = (-1, "local_sha1sum %s %s" %
                                      (local_file, str(e)))
             return None
 
     def remote_sha1sum(self, remote_file, task_id):
         try:
-            out_info = self.clt.exec_command("sha1sum " + remote_file)[1]
+            clt = self.ssh_entity.clt
+            out_info = clt.exec_command("sha1sum " + remote_file)[1]
             remote_sum = out_info.read()
             rf_checksum = remote_sum.split(' ')[0]
             if rf_checksum:
@@ -142,6 +132,7 @@ class Download(Thread):
                                          remote_file)
                 return None
         except Exception, e:
+	    logging.warning("Exception in remote_checksum %s" % str(e))
             self.ret_map[task_id] = (-1, "remote_sha1sum %s %s" %
                                      (remote_file, str(e)))
             return None
@@ -149,94 +140,105 @@ class Download(Thread):
 
 # TODO: add dis-connect check
 class SSH(object):
-    """package for ssh_client"""
+    """
+    package for ssh_client, in this class stores the sftp handlers and the
+    ssh_client
+    """
     def __init__(self, host, user, password, port=22):
         self.host = host
         self.user = user
         self.password = password
         self.port = port
 
-    def ssh_connect(self, reconn_cnt=2):
-        clt = SSHClient()
-        clt.load_system_host_keys()
-        clt.set_missing_host_key_policy(AutoAddPolicy())
-        connected = False
-        while reconn_cnt > 0:
-            try:
-                clt.connect(hostname=self.host, username=self.user,
-                            password=self.password, port=self.port)
-                sftp = clt.open_sftp()
-                connected = True
-                break
-            except Exception as e:
-                errmsg = str(e)
-                reconn_cnt -= 1
-        if connected:
-            return clt, sftp, None
-        else:
-            return None, None, errmsg
+    def client_init(self):
+        self.clt = SSHClient()
+        self.clt.load_system_host_keys()
+        self.clt.set_missing_host_key_policy(AutoAddPolicy())
 
-    def ssh_close(self, clt, sftp):
-        if sftp:
-            sftp.close()
-        if clt:
-            clt.close()
-        
+    def ssh_connect(self, task_list, ret_map):
+        try:
+            self.client_init()
+            self.clt.connect(hostname=self.host, username=self.user,
+                             password=self.password, port=self.port,
+                             timeout=3)
+            self.sftp = self.clt.open_sftp()
+        except Exception, e:
+            self.ssh_close()
+            for task in task_list:
+                if len(task) > 1:
+                    ret_map[task[0]] = (-1, "ssh connect error %s" %
+                                        str(e))
+            return False
+        return True
+
+    def ssh_close(self):
+        try:
+            if self.sftp:
+                self.sftp.close()
+                self.sftp = None
+        except:
+            pass
+        try:
+            if self.clt:
+                self.clt.close()
+		self.clt = None
+        except:
+            pass
+
+
 def task_deserialize(task_list, n_task_list):
-    o_task_list = task_list["data"]
-    remote_files = o_task_list["remote_files"]
-    local_files = o_task_list["local_files"]
-    tsk_size = min(len(remote_files), len(local_files))
-    for i in range(tsk_size):
-        tarr = []
-        tarr.append(i)
-        tarr.append(remote_files[i])
-        tarr.append(local_files[i])
-        n_task_list.append(tarr)
+    try:
+        o_task_list = task_list["data"]
+        remote_files = o_task_list["remote_files"]
+        local_files = o_task_list["local_files"]
+        tsk_size = min(len(remote_files), len(local_files))
+        for i in range(tsk_size):
+            tarr = []
+            tarr.append(i)
+            tarr.append(remote_files[i])
+            tarr.append(local_files[i])
+            n_task_list.append(tarr)
+    except Exception as e:
+        logging.warning("Task deserialize failed %s" % str(e))
 
 
 def dlret_serialize(dl_ret, task_list):
-    ret = {}
-    ret["seq"] = task_list["seq"]
-    ret["type"] = task_list["type"]
-    ret["return"] = 1
-    ret["data"] = {"msg": [], "remote_file": []}
-    for key, value in dl_ret.iteritems():
-        if value[0] == -1:
-            ret["return"] = -1
+    try:
+        ret = {}
+        ret["seq"] = task_list["seq"]
+        ret["type"] = task_list["type"]
+        ret["return"] = 1
+        ret["data"] = {"msg": [], "remote_file": []}
+        for key, value in dl_ret.iteritems():
+            if value[0] == -1:
+                ret["return"] = -1
         # print key, value
-        ret["data"]["msg"].append(value[1])
-        ret["data"]["remote_file"].append(task_list["data"][
-                                          "remote_files"][key])
-    return json.dumps(ret)
-
+            ret["data"]["msg"].append(value[1])
+            ret["data"]["remote_file"].append(task_list["data"][
+                                              "remote_files"][key])
+	real_ret = json.dumps(ret)
+    except Exception as e:
+        logging.warning("Return serialize failed %s" % str(e))
+    return real_ret
 
 def download_file(conn_cfg, o_task_list):
-    tasks_per_thread = 3
+    tasks_per_thread = 200
     task_list = []
     ret_map = {}
     task_deserialize(o_task_list, task_list)
+    ssh_mgr = SSH(conn_cfg["host"], conn_cfg["user"], conn_cfg["password"],
+                  conn_cfg["port"])
+    if not ssh_mgr.ssh_connect(task_list, ret_map):
+        return ret_map
     task_nums = len(task_list)
     download_threads = -(-task_nums // tasks_per_thread)  # ceil division
-    all_threads = []
-    ssh_mgr = SSH(conn_cfg["host"], conn_cfg["user"],
-                      conn_cfg["password"], conn_cfg["port"])
-    for idx in range(download_threads):
-
-        t_task_list = task_list[idx * tasks_per_thread:
-                                (idx + 1) * tasks_per_thread]
-
-        download_thread = Download(ssh_mgr, t_task_list, ret_map)
-        download_thread.start()
-        print id(ssh_mgr)
-        all_threads.append(download_thread)
-
-    for thread in all_threads:
-        try:
-            if thread.is_alive:
-                thread.join()
-        except:
-            pass
+    for i in range(download_threads):
+        t_task_list = task_list[i * tasks_per_thread:
+                                (i + 1) * tasks_per_thread]
+        downloadhandler = Download(ssh_mgr, t_task_list, ret_map)
+        downloadhandler.run()
+    ssh_mgr.ssh_close()
+    
     return ret_map
 
 
@@ -251,10 +253,6 @@ def main(ser_cfg, dl_cmd):
         dl_ret = download_file(connf_cfg, task_list)
         ret = dlret_serialize(dl_ret, task_list)
         return ret
-    except Exception:
-        import logging
-        logging.basicConfig(filename='example.log',level=logging.DEBUG)
-        import traceback
-        tv = traceback.format_exc()
-        logging.debug(tv)
+    except Exception, e:
+        logging.warning("[E]error msg is %s" % str(e))
         return None

@@ -4,51 +4,41 @@ from remote_file_operation import main
 import json
 
 ser_cfg = {
-    "host": "192.168.3.181",
+    "host": "192.168.3.10",
     "port": 22,
     "user": "rss",
     "password": ""
 }
 
 dl_cmd1 = {
-    "type": 102,
-    "seq": 1,
-    "data" : {
+     "type": 102,
+     "seq": 2,
+     "data" : {
       "local_files" : [
-         "~/agent_download/1/198/0_hi52atest_shbu_day.so",
-         "~/agent_download/1/198/0_1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "~/agent_download/1/198/1_hi51atest_shbu_day.so",
-         "~/agent_download/1/198/1_1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "~/agent_download/1/198/2_hi5atest_shbu_day.so",
-         "~/agent_download/1/198/2_1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "~/agent_download/1/198/3_hi55test_shbu_day.so",
-         "~/agent_download/1/198/3_1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "~/agent_download/1/198/4_hi52test_shbu_day.so",
-         "~/agent_download/1/198/4_1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "~/agent_download/1/198/5_hi51test_shbu_day.so",
-         "~/agent_download/1/198/5_1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "~/agent_download/1/198/6_hi50test_shbu_day.so",
-         "~/agent_download/1/198/6_1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "~/agent_download/1/198/7_hi5test_shbu_day.so",
-         "~/agent_download/1/198/7_1c8c4992-0d31-11e6-9cbb-c4346b7b583d"
+         "~/agent_download/1/207/0_hi85test_shcu_day.so",
+         "~/agent_download/1/207/1_hi76test_shcu_day.so",
+         "~/agent_download/1/207/2_hi75test_shcu_day.so",
+         "~/agent_download/1/207/3_hi73test_shcu_day.so",
+         "~/agent_download/1/207/4_hi52atest_shcu_day.so",
+         "~/agent_download/1/207/5_hi51atest_shcu_day.so",
+         "~/agent_download/1/207/6_hi5atest_shcu_day.so",
+         "~/agent_download/1/207/7_hi55test_shcu_day.so",
+         "~/agent_download/1/207/8_hi52test_shcu_day.so",
+         "~/agent_download/1/207/9_hi51test_shcu_day.so",
+         "~/agent_download/1/207/10_hi5test_shcu_day.so"
       ],
       "remote_files" : [
-         "/mnt/data/LiveSo/20160428/shbu/hi52atest_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "/mnt/data/LiveSo/20160428/shbu/hi51atest_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "/mnt/data/LiveSo/20160428/shbu/hi5atest_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "/mnt/data/LiveSo/20160428/shbu/hi55test_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "/mnt/data/LiveSo/20160428/shbu/hi52test_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "/mnt/data/LiveSo/20160428/shbu/hi51test_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "/mnt/data/LiveSo/20160428/shbu/hi50test_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d",
-         "/mnt/data/LiveSo/20160428/shbu/hi5test_shbu_day.so",
-         "/home/rss/colin/rss/src/rss/site/media/so_config/8/1/1c8c4992-0d31-11e6-9cbb-c4346b7b583d"
+         "/mnt/data/LiveSo/20160428/shcu/hi85test_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi76test_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi75test_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi73test_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi52atest_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi51atest_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi5atest_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi55test_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi52test_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi51test_shcu_day.so",
+         "/mnt/data/LiveSo/20160428/shcu/hi5test_shcu_day.so"
       ]
    }
 }
@@ -477,12 +467,12 @@ dl_cmd11 = {
 import os
 import re
 def delete_file_folder(src):  
-    '''delete files and folders''' 
+    '''delete files and folders'''
     if os.path.isfile(src):
         try:
-            os.remove(src) 
+            os.remove(src)
         except:
-            pass 
+            pass
     elif os.path.isdir(src):
         for item in os.listdir(src):
             itemsrc=os.path.join(src,item)
@@ -506,17 +496,34 @@ def file_exsit_check(files):
 # print "before download task check"
 # file_exsit_check(dl_cmd["data"]["local_files"])
 
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd1))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd2))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd3))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd4))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd5))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd6))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd7))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd8))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd9))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd10))
-print main(json.dumps(ser_cfg), json.dumps(dl_cmd11))
+def test_download_py():
+    for idx in range(1, 660):
+        for ydx in range(0, 22):
+            dl_cmd1["data"]["local_files"][ydx] = "{0}{1}".format(dl_cmd2["data"]["local_files"][ydx], idx)
+        print dl_cmd1["data"]["local_files"][0]
+
+        ret = main(json.dumps(ser_cfg), json.dumps(dl_cmd1))
+        js = json.loads(ret)
+        print js["data"]["msg"], "idx=", idx
 
 
-# file_exsit_check(dl_cmd["data"]["local_files"])
+def func_write_test():
+    import redis
+    redis_config = {
+        "host": "192.168.3.10",
+        "port": 6379,
+        "db": 0
+    }
+    reids_key = "a:rss:cmd:192.168.1.16(debian)"
+
+    mconn = redis.client.StrictRedis(**redis_config)
+
+    for idx in range(1, 600):
+        for ydx in range(0, 11):
+            dl_cmd1["data"]["local_files"][ydx] = "{0}{1}".format(dl_cmd2["data"]["local_files"][ydx], idx)
+        print dl_cmd1["data"]["local_files"][0]
+        mconn.rpush(reids_key, json.dumps(dl_cmd1))
+
+
+if __name__ == "__main__":
+    func_write_test()
