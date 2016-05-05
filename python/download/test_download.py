@@ -514,7 +514,7 @@ def func_write_test():
         "port": 6379,
         "db": 0
     }
-    reids_key = "a:rss:cmd:192.168.1.16(debian)"
+    reids_key = "a:rss:cmd:192.168.3.10(debian-rss)"
 
     mconn = redis.client.StrictRedis(**redis_config)
 
