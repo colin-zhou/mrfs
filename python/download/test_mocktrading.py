@@ -39,6 +39,7 @@ task_cmd1={
    "seq" : 36064,
    "type" : 100
 }
+
 task_cmd2={
    "data" : {
       "task" : {
@@ -108,6 +109,7 @@ task_cmd3={
    "seq" : 36066,
    "type" : 100
 }
+
 task_cmd4={
    "data" : {
       "task" : {
@@ -142,6 +144,7 @@ task_cmd4={
    "seq" : 36067,
    "type" : 100
 }
+
 task_cmd5={
    "data" : {
       "task" : {
