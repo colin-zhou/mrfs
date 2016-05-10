@@ -1,0 +1,5 @@
+python setup.py build_ext --inplace
+
+
+cdef is a c type, return c type means those function can be called from c
+module

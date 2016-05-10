@@ -1,0 +1,12 @@
+Note that you can easily export an external C function from your Cython module
+by declaring it as cpdef. This generates a Python wrapper for it and adds it to
+the module dict.
+
+"""
+>>> sin(0)
+    0.0
+"""
+
+cdef extern from "math.h":
+    cpdef double sin(double x)
+
