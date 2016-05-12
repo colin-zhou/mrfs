@@ -1,0 +1,40 @@
+workpath="/home/rss/DailyReport/management/daily_records/2016"
+
+usage(){
+    echo "usage: mywork [rcpa],read,commit,push,total work"
+}
+
+read(){
+    cd $workpath
+    git pull
+    git st
+    git tree
+}
+
+commit(){
+    cd $workpath
+    git add .
+    git commit -m `date +"%Y%m%d"`
+    git pull -r
+}
+
+push(){
+    cd $workpath
+    git push origin master
+}
+
+if [ "$#" != "1" ];then
+    usage;
+elif [ $1 = "-r" ];then
+    read;
+elif [ $1 = "-c" ];then
+    commit;
+elif [ $1 = "-p" ];then
+    push;
+elif [ $1 = "-a" ];then
+    read;
+    commit;
+    push;
+else
+    usage;
+fi
