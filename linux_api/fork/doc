@@ -1,0 +1,43 @@
+新进程有自己的数据空间，环境和文件描述符，fork和exec函数结合在一起使用就是创建新进程所需要的一切了。
+
+fork失败，将返回-1,失败通常是父进程所拥有的子进程数目超过了规定的限制，CHILD_MAX,此时errno将被设为EAGAIN，如果进程表没有足够的空间用于创建新的表单或虚拟内存不足，errno变量将被设为ENOMEM。
+
+fork
+启动一个子进程时，子进程就有了它自己的生命周期并将独立运行。可以在主进程中调用wait函数让父进程等待子进程的结束。
+
+pid_t在sys/types.h中。
+
+
+wait中有几个判断返回的宏函数
+#include <sys/types.h>
+#include <sys/wait.h>
+pid_t wait(int *stat_loc);
+
+WIFEXITED(stat_loc) 如果正常那个结束就返回非0值
+WEXITSTATUS(stat_loc) 如果上面非0,这个就返回退出码
+WIFSIGNALED(stat_loc) 正常为0
+WTERMSIG(stat_loc) 如果上面的为非0,这个就是返回信号代码
+WIFSTOPPED(stat_loc) 进程意外推出，就取一个非0值
+WSTOPSIG(stat_loc) 如果上面非0,这个返回信号代码
+
+
+父进程与子进程关系保持，除非父进程正常结束或者wait返回。如果子进程先退出，进程表单不会退出，会保留因此可能成为zombie，defunct
+如果此时父进程异常终止，子进程将自动把pid为1的进程作为自己的父进程，子进程现在是一个不再运行的zombie进程。
+
+在init清理zombie之前，它会一直存在，进程表越大，这一过程就越慢，应尽量避免产生僵尸进程。
+
+还有一个系统调用可用来等待子进程的结束，它是waitpid函数，可以用它来等待某个特定的进程结束。
+#include <sys/types.h>
+#include <sys/wait.h>
+
+pid_t waitpid(pid_t pid, int *stat_loc, int options);
+如果pid为-1,则返回任意子进程的信息，options-> WNOHANG, wait not
+hang，不会挂起，查看子进程是否已经结束。查看子进程是否结束的函数。
+
+waitpid(child_pid, (int *)0, WNOHANG);
+
+如果子进程没有结束或者意外结束，返回0,否则返回child_pid。如果失败返回-1,errno，失败情况又包含多种。
+
+Linux系统中的进程可以相互协作，相互发送消息，互相中断，甚至可以共享内存段，本质上来说，他们是操作系统内各自独立的实体，要想在他们之间共享变量不容易实现。Linux的进程都是轻量级的，编写多个互相协作的进程比线程要容易的多。
+
+

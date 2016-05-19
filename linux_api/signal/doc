@@ -1,0 +1,64 @@
+SIG_IGN信号处理函数
+SIG_DFL默认行为defualt
+
+#include<signal.h>
+
+void (signal(int sig, void (*func)(int)))(int);
+返回的实际上是一个同类函数，即先前用来处理这个信号的函数。
+
+
+#include <signal.h>
+#include <sys/types.h>
+
+int kill(pid_t pid, int sig);
+成功则返回0,要想发送一个信号，发送进程必须拥有相应的权限，以为这两个进程必须拥有相同的用户ID，你只能发送信号给属于自己的进程，但是超级用户可以发送信号给任何进程。失败返回-1,并标志errno变量。
+errno EINVAL,信号无效
+errno EPERM,权限不够
+errno ESRCH,目标进程不存在
+
+
+进程可以通过alarm函数在经过预定时间后发送一个SIGALRM信号。
+#include <unistd.h>
+unsigned int alarm(unsigned int seconds);
+
+
+等待信号函数
+#include <unistd.h>
+int pause(void)
+把程序执行挂起，直到一个信号出现为止，当程序收到一个信号时，预设的信号处理函数开始运行，程序也将恢复正常的执行。
+
+健壮的signal处理函数
+#include <signal.h>
+
+int sigaction(int sig, const struct sigaction * act, struct sigaction *oact);
+结构至少包含三个成员
+void (*) (int) sa_handler ，信号处理函数SIG_DFL, SIG_IGN
+sigset_t sa_mask，signals to block in sa_handler，不会传递给进程的信号
+int sa_flags, 信号行为修改器
+
+若第三个参数不为空，会把原来的参数写到里边。成功返回0,失败返回-1,信号无效或者不允许catch进行ignore或catch，也会错误。
+
+信号集函数：
+#include <signal.h>
+
+int sigaddset(sigset_t *set, int signo);
+int sigemptyset(sigset_t *set);
+int sigfillset(sigset_t *set);
+int sigdelset(sigset_t *set, int signo);
+
+返回-1,失败，0成功。
+#include <signal.h>
+int sigismember(sigset_t *set, int signo);
+
+int sigprocmask(int how, const sigset_t *set, sigset_t *oset);
+how: SIG_BLOCK, 添加，SIG_UNBLOCK,删除，SIG_SETMASK,把信号屏蔽字设置为set中的信号。
+
+如果set为空，那么就只是把当前信号屏蔽字的值保存到oset中。如果how无效，返回-1,errno EINVAL
+
+如果一个信号被进程阻塞，它就不会传递给进程，但会停留在待处理状态，程序可以通过调用函数sigpending来查看它阻塞的信号中有哪些正停留在待处理状态。
+#include <signal.h>
+
+int sigpending(sigset_t *set),如果程序需要处理信号，同时又需要控制信号处理函数的调用时间，这个函数就很有用了。
+
+挂起等待信号
+int sigsuspend(const sigset_t *sigmask);
