@@ -1,0 +1,14 @@
+apply: 
+file: patch < hello.patch
+directory: patch -p1 < patch.file
+
+
+undone: 
+file:patch -R < hello.path
+file:patch -Rp1 < patch.file
+
+create 
+file: diff -u old new > hello.path
+directory: diff -rupN xxx/ yyy/ > patch.file
+
+
