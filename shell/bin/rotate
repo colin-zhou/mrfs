@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 COLS=`cat file.txt | awk '{print NF}'`
 COLS=$COLS-0
 ROWS=`cat file.txt | wc -l`
