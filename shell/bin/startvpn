@@ -1,0 +1,58 @@
+#!/bin/bash
+
+start(){
+	/home/colin/Software/vpnclient/vpnclient start
+	/home/colin/Software/vpnclient/vpncmd < /home/colin/Software/vpnclient/vpncfg
+	/etc/init.d/networking restart
+}
+usage(){
+	echo "--usage: myvpn start|stop|check--"
+}
+stop(){
+	echo "kill all vpn service"
+	pkill -9 vpn
+}
+
+check_user()
+{
+	username=$(id -nu)
+	if [ "$username" != "root" ]; then
+		echo ""
+		echo "----root permission is needed----"
+		echo "---------------------------------"
+		echo "---------------------------------"
+		echo "---------------------------------"
+		usage;
+		echo ""
+		exit 1
+    fi
+}
+
+check(){
+	NUM=$(ps aux | grep '/vpnclient'  | grep -v 'grep' | wc -l)
+	if [ $NUM -eq 2 ]; then
+		echo "myvpn maybe work well!"
+	else
+		stop;
+		sleep 1
+		start;
+		echo "myvpn must failed"
+	fi
+}
+
+check_user;
+if [ $# -ne 1 ];then
+	usage;
+elif [ $1 = "start" ];then
+	start;
+elif [ $1 = "stop" ];then
+	stop;
+elif [ $1 = "restart" ];then
+	stop;
+	sleep 1
+	start;
+elif [ $1 = "check" ];then
+	check;
+else
+	usage;
+fi
