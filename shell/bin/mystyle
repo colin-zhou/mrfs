@@ -1,0 +1,4 @@
+#!/bin/bash
+# astyle the c/c++ code
+
+astyle --style=kr -T -S -N -w -Y -U -k3 -W3 -J -xC80 -xL -Z -xe -m0 -n $*
