@@ -1,7 +1,3 @@
-#!/bin/bash
-
-# for submit daily report
-
 workpath="/home/rss/DailyReport/management/daily_records/2016"
 
 usage(){
@@ -12,7 +8,6 @@ read(){
     cd $workpath
     git pull
     git st
-    git tree
 }
 
 commit(){
