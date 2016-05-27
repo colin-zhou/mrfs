@@ -1,0 +1,1 @@
+cc -D_REENTRENT thread1.c -o thread1 -lpthread

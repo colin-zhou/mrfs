@@ -1,0 +1,23 @@
+
+
+#define FUNC(func)    \
+    func(i,2,3,4);    \
+    printf;           \
+    add(i);
+
+
+int i = 1;
+
+func(i,2,3,4);
+printf;
+add(i);
+
+
+func2(i,2,3,4);
+printf;
+add(i);
+
+.....
+
+
+
