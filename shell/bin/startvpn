@@ -1,8 +1,8 @@
 #!/bin/bash
 
 start(){
-	/home/colin/Software/vpnclient/vpnclient start
-	/home/colin/Software/vpnclient/vpncmd < /home/colin/Software/vpnclient/vpncfg
+	/home/colin/Software/vpnclient_o/vpnclient start
+	/home/colin/Software/vpnclient_o/vpncmd < /home/colin/Software/vpnclient_o/vpncfg
 	/etc/init.d/networking restart
 }
 usage(){
