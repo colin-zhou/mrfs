@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+        int n, idx;
+        double res = 0;
+                scanf("int put n: %d", &n);
+                    for (idx = 1; idx <=n; idx++) {
+                                res += double(1)/idx;
+                                    }
+                        printf("the result is %lf\n", res);
+                            return 0;
+}
