@@ -6,7 +6,7 @@ js functions write in projects
 a few test
 # c/c++
 mainly module or api test
-# shell script
+# shell/python script
 mainly shortcut for spec-task
 # git hooks
-email to boos
+email to boss
