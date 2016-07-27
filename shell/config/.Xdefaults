@@ -1,0 +1,51 @@
+! Xdefaults for rxvt-unicode.
+! color scheme
+URxvt.background: black
+URxvt.foreground: white
+URxvt.scrollBar: False
+URxvt.scrollBar_right: True
+URxvt.scrollBar_floating: False
+URxvt.scrollstyle: plain
+URxvt.troughColor: Green
+URxvt.scrollColor: black
+
+URxvt.saveLines: 1000
+URxvt.preeditType: Root
+URxvt.borderLess: True 
+
+! multi-tab
+URxvt.perl-ext-common: default,tabbed
+URxvt.tabbed.tabbar-fg: 9
+!URxvt.tabbed.tabbar-bg: 40
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 23
+URxvt.tabbed.autohide: True
+URxvt.tabbed.new-button: False
+
+!!
+URxvt.transparent: False
+URxvt.tintColor:   gray
+!URxvt.shading:     30 
+
+!! coding
+URxvt.multichar_encoding: utf-8
+!URxvt.imLocale: en_US.UTF-8
+URxvt.imLocale: zh_CN.UTF-8
+
+! input method
+!Urxvt.inputMethod: fcitx
+Urxvt.inputMethod: ibus 
+!URxvt.preeditType: OverTheSpot
+
+! set the artificial transparency
+! URxvt.inheritPixmap: True
+
+! font
+Xft.dpi:96
+URxvt.font:xft:YaHei Consolas Hybrid:style=Regular:size=11:antialias=True
+URxvt.boldfont:xft:YaHei Consolas Hybrid:style=Regular:size=11:antialias=True
+!URxvt.boldFont:xft:SimHei:style=Regular:size=9:antialias=True
+
+
+URxvt.fading:  30
+

@@ -1,0 +1,28 @@
+#!/bin/python
+
+import sys
+import os
+import xmltodict
+import json
+
+def usage():
+	print "usage: formatxml filename"
+
+def parsefile():
+	try:
+		#print sys.argv
+		fn = os.path.abspath(sys.argv[1])	
+		fstr = None
+		with open(fn) as f:
+			ret_obj = xmltodict.parse(f)
+			fstr = json.dumps(ret_obj, indent=2)	
+		print str(fstr)
+	except Exception:
+		import traceback
+		traceback.print_exc()
+
+if __name__ == "__main__":
+	if len(sys.argv) != 2:
+		usage()
+		sys.exit(1)
+	parsefile()
