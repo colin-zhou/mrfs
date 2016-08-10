@@ -12,13 +12,16 @@ import getpass
 import traceback
 import subprocess
 
-group    = None
-user     = None
-local_ip = None
-cpath = os.path.dirname(os.path.abspath(__file__)) 
+group     = None
+user      = None
+local_ip  = None
+master_ip = None
+gid       = None
+uid       = None
+#cpath     = os.path.dirname(os.path.abspath(__file__)) 
 
 def usage():
-    print "su - master_install group:user"
+    print "su - minion_install master_ip group:user"
     sys.exit(-1)
 
 def get_local_ip():
@@ -30,7 +33,7 @@ def get_local_ip():
 
 def install():
     try:
-        p = subprocess.Popen(['yum', '-y', 'install', 'salt-master'], 
+        p = subprocess.Popen(['yum', '-y', 'install', 'salt-minion'], 
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         ret = p.wait()
         for res in p.stdout:
@@ -39,32 +42,49 @@ def install():
         ## ret = os.system("yum -y install salt-master") can't wait here
         if ret == 0:
            return True
-    except Exception as e:
-        print "salt-master failed!"
-        print str(e)
+    except Exception, ex:
+        print "salt-minion failed!"
+        print ex
     sys.exit(-1)
+
 
 def check_user():
     cur_user = getpass.getuser()
     if cur_user != "root":
         usage()
+
+
+def check_master(host):
+    try:
+        socket.inet_aton(host)
+    except socket.error:
+        return False
+    p = subprocess.Popen(['ping', '-c', '1', host], stdout=subprocess.PIPE,
+                         stderr=subprocess.STDOUT)
+    #response = os.system("ping -c 1 %s" % host)
+    response = p.wait()
+    if response != 0:
+        return False
+    return True
     
+
 def check_params():
-    global group, user
-    if len(sys.argv) != 2:
+    global group, user, master_ip
+    if len(sys.argv) != 3:
         usage()
-    group, user = sys.argv[1].split(':')
-    if not group or not user:
+    master_ip = sys.argv[1]
+    group, user = sys.argv[2].split(':')
+    if not group or not user or not check_master(master_ip):
         usage()
 
 def master_config():
-    global user, cpath, local_ip
+    global user, cpath, master_ip, local_ip
     write_item = {
-                  'interface' : local_ip,
+                  'master' : master_ip,
                   'user' : user,
-                  'file_roots': { 'base':[cpath] }
+                  'id': local_ip
                  } 
-    with open("/etc/salt/master", "a") as tf:
+    with open("/etc/salt/minion", "a") as tf:
         tf.write(yaml.dump(write_item, default_flow_style=False))
 
 
@@ -79,7 +99,7 @@ def ensure_path_exist(path):
 
 
 def config():
-    global group, user
+    global group, user, uid, gid
     # change the salt dir's group:user
     default_dir = ['/etc/salt',
                    '/var/cache/salt',
@@ -92,16 +112,30 @@ def config():
     for dir_item in default_dir:
         try:
             for root, dirs, files in os.walk(dir_item):
-                for momo in dirs:
+                for mono in dirs:
                     os.chown(os.path.join(root, mono), uid, gid)
                 for mono in files:
                     os.chown(os.path.join(root, mono), uid, gid)
             os.chown(dir_item, uid, gid)
-        except:
+        except Exception, ex:
             traceback.print_exc()
+            print ex 
     # change config in /etc/salt/master
     master_config()
-    
+
+
+def demote(uid, gid):
+    def result():
+        os.setgid(gid)
+        os.setuid(uid)
+    return result
+
+
+# start minion with specified group:user
+def start_minion_service():
+    global uid, gid
+    p = subprocess.Popen(['salt-minion', '>/dev/null', '2>&1', '&'], preexec_fn=demote(uid, gid))
+
 
 def main():
     try:
@@ -111,9 +145,12 @@ def main():
         check_params()
         install()
         config()
-        print "Install and config salt-master success"
-    except Exception as e:
+        start_minion_service()
+        print "Install and config salt-minion success and started"
+    except Exception, ex:
         traceback.print_exc()
+        print ex
+
 
 if __name__ == "__main__":
     main()

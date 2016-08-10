@@ -12,14 +12,13 @@ import getpass
 import traceback
 import subprocess
 
-group     = None
-user      = None
-local_ip  = None
-master_ip = None
-#cpath     = os.path.dirname(os.path.abspath(__file__)) 
+group    = None
+user     = None
+local_ip = None
+cpath = os.path.dirname(os.path.abspath(__file__)) 
 
 def usage():
-    print "su - minion_install master_ip group:user"
+    print "su - master_install group:user"
     sys.exit(-1)
 
 def get_local_ip():
@@ -31,7 +30,7 @@ def get_local_ip():
 
 def install():
     try:
-        p = subprocess.Popen(['yum', '-y', 'install', 'salt-minion'], 
+        p = subprocess.Popen(['yum', '-y', 'install', 'salt-master'], 
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         ret = p.wait()
         for res in p.stdout:
@@ -40,49 +39,32 @@ def install():
         ## ret = os.system("yum -y install salt-master") can't wait here
         if ret == 0:
            return True
-    except Exception, ex:
-        print "salt-minion failed!"
-        print ex
+    except Exception as e:
+        print "salt-master failed!"
+        print str(e)
     sys.exit(-1)
-
 
 def check_user():
     cur_user = getpass.getuser()
     if cur_user != "root":
         usage()
-
-
-def check_master(host):
-    try:
-        socket.inet_aton(host)
-    except socket.error:
-        return False
-    p = subprocess.Popen(['ping', '-c', '1', host], stdout=subprocess.PIPE,
-                         stderr=subprocess.STDOUT)
-    #response = os.system("ping -c 1 %s" % host)
-    response = p.wait()
-    if response != 0:
-        return False
-    return True
     
-
 def check_params():
-    global group, user, master_ip
-    if len(sys.argv) != 3:
+    global group, user
+    if len(sys.argv) != 2:
         usage()
-    master_ip = sys.argv[1]
-    group, user = sys.argv[2].split(':')
-    if not group or not user or not check_master(master_ip):
+    group, user = sys.argv[1].split(':')
+    if not group or not user:
         usage()
 
 def master_config():
-    global user, cpath, master_ip, local_ip
+    global user, cpath, local_ip
     write_item = {
-                  'master' : master_ip,
+                  'interface' : local_ip,
                   'user' : user,
-                  'id': local_ip
+                  'file_roots': { 'base':[cpath] }
                  } 
-    with open("/etc/salt/minion", "a") as tf:
+    with open("/etc/salt/master", "a") as tf:
         tf.write(yaml.dump(write_item, default_flow_style=False))
 
 
@@ -94,7 +76,6 @@ def ensure_path_exist(path):
             pass
         else:
             raise
-
 
 def config():
     global group, user
@@ -110,14 +91,13 @@ def config():
     for dir_item in default_dir:
         try:
             for root, dirs, files in os.walk(dir_item):
-                for mono in dirs:
+                for momo in dirs:
                     os.chown(os.path.join(root, mono), uid, gid)
                 for mono in files:
                     os.chown(os.path.join(root, mono), uid, gid)
             os.chown(dir_item, uid, gid)
-        except Exception, ex:
+        except:
             traceback.print_exc()
-            print ex 
     # change config in /etc/salt/master
     master_config()
     
@@ -130,11 +110,9 @@ def main():
         check_params()
         install()
         config()
-        print "Install and config salt-minion success"
-    except Exception, ex:
+        print "Install and config salt-master success"
+    except Exception as e:
         traceback.print_exc()
-        print ex
-
 
 if __name__ == "__main__":
     main()
