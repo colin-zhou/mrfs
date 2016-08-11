@@ -25,9 +25,9 @@ config = {
         'tarfile':'ctp_result.tar.gz'
     },
     'send_to': [ {
-                    'ip':'192.168.3.181',
-                    'user': 'rss',
-                    'path': '/home/rss/runtest' } 
+        'ip':'192.168.3.181',
+        'user': 'rss',
+        'path': '/home/rss/runtest' } 
     ]
 }
 
@@ -71,6 +71,9 @@ class AutoBuild():
 
     def __kill_pro(self, process):
         os.killpg(os.getpgid(process.pid), signal.SIGTERM)
+    
+    def __send_to(self):
+        pass 
 
     def exec_bash(self, bash_file):
         try:
