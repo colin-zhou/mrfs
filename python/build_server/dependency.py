@@ -1,5 +1,10 @@
 #!/bin/python
-# -*-coding:utf-8-*-
+#-*- coding:utf-8 -*-
+
+"""
+intall python-redis, python-git
+install and config salt-minion
+"""
 
 import os
 import sys
@@ -12,17 +17,20 @@ import getpass
 import traceback
 import subprocess
 
+
 group     = None
 user      = None
 local_ip  = None
 master_ip = None
 gid       = None
 uid       = None
-#cpath     = os.path.dirname(os.path.abspath(__file__)) 
+pip_list = ["redis", "GitPython"]
+yum_list = ["python-pip","salt-minion"]
 
 def usage():
-    print "su - minion_install master_ip group:user"
+    print "su - dependency master group:user"
     sys.exit(-1)
+
 
 def get_local_ip():
     global local_ip
@@ -31,21 +39,52 @@ def get_local_ip():
     local_ip = s.getsockname()[0]
     s.close()
 
-def install():
+
+def pip_install(package):
     try:
-        p = subprocess.Popen(['yum', '-y', 'install', 'salt-minion'], 
+        print "pip install %s" % package
+        p = subprocess.Popen(['pip', 'install', package],
+                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        ret = p.wait()
+        for res in p.stdout:
+            print res
+            if res.find("error") > 0:
+                print "pip install %s failed" % package
+                sys.exit(-1)
+        if ret == 0:
+            print "pip install %s success" % package
+            return True
+    except Exception, ex:
+        print "pip install %s failed" % package
+        print ex
+    sys.exit(-1)
+
+
+def yum_install(software):
+    try:
+        print "yum install %s" % software
+        p = subprocess.Popen(['yum', '-y', 'install', software], 
                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         ret = p.wait()
         for res in p.stdout:
             if res.find("error") > 0:
-                return False
+                print "yum install %s error!" % software
+                sys.exit(-1)
         ## ret = os.system("yum -y install salt-master") can't wait here
         if ret == 0:
+           print "yum install %s success" % software
            return True
     except Exception, ex:
-        print "salt-minion failed!"
+        print "yum install %s error!" % software
         print ex
     sys.exit(-1)
+
+
+def install_all():
+    for tp in yum_list:
+        yum_install(tp)
+    for tp in pip_list:
+        pip_install(tp)
 
 
 def check_user():
@@ -77,6 +116,7 @@ def check_params():
     if not group or not user or not check_master(master_ip):
         usage()
 
+
 def master_config():
     global user, cpath, master_ip, local_ip
     write_item = {
@@ -99,6 +139,7 @@ def ensure_path_exist(path):
 
 
 def config():
+    print "begin to config salt-minion"
     global group, user, uid, gid
     # change the salt dir's group:user
     default_dir = ['/etc/salt',
@@ -143,13 +184,14 @@ def main():
         get_local_ip()
         check_user()
         check_params()
-        install()
+
+        install_all()
         config()
         start_minion_service()
         print "Install and config salt-minion success and started"
     except Exception, ex:
+        print ex
         traceback.print_exc()
 
 if __name__ == "__main__":
     main()
-
