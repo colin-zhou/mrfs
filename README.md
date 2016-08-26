@@ -1,12 +1,11 @@
-# reserve
-files useless but i don't want to discard
-# js
-js functions write in projects
-# python
-a few test
-# c/c++
-mainly module or api test
-# shell/python script
-mainly shortcut for spec-task
-# git hooks
-email to boss
+# Reserve
+    files useless but i don't want to discard
+# Javascript
+    js functions write in projects
+# Python
+    a few test
+# C/C++
+    mainly module or api test
+# Shell/Python scripts
+    mainly shortcut for spec-task
+# Git hooks
