@@ -10,7 +10,7 @@ from qpython import*
 # https://github.com/exxeleron/qPython
 # https://kx.com/documentation.php
 
-q = qconnection.QConnection(host='localhost', port=9001,
+q = qconnection.QConnection(host='192.168.3.10', port=9001,
                             username='superuser1',
                             password='password', timeout=3.0)
 try:
