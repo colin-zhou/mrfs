@@ -1,0 +1,17 @@
+1. 命令的方式
+server_addr.sun_family = AF_UNIX;
+strcpy(server_addr.sun_path, "/tmp/unix.domain");
+server_len = sizeof(struct sockaddr_un);
+client_len = server_len;
+
+2. 抽象命名空间
+#define SERVER_NAME @socket_server
+server_addr.sun_family = AF_LOCAL;
+strcpy(server_addr.sun_path, SERVER_NAME);
+server_addr.sun_path[0] = 0;
+server_len = strlen(SERVER_NAME) + offsetof(struct sockaddr_un, sun_path);
+其中offsetof函数在stddef.h中，占位符@，不算作实际名称。必须同时是某种类型。
+
+
+
+
