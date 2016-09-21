@@ -1,0 +1,16 @@
+可支持逐层构造json object的c library主要有如下:
+
+LibU. (依赖makl)
+json-c.
+jsonsl (只支持hash,list,string)
+WJElement.
+parson.(只支持double类型)
+jansson
+由于agent主要用到构造与序列化两个功能， 考察这些库的构造 & 解析速度对比（3层 json 解析，一层json构造，100次，Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz， 16G Memory）：
+
+jsoncpp     libU      json-c     WJElement      parson     jansson
+构造 |-- 0.069--|--0.119--|--0.053--|--0.052--|--0.0065--|--0.045--| 
+解析 |-- 1.219--|--4.554--|--0.628--|--1.157--|--1.0757--|--3.280--|
+
+https://github.com/miloyip/nativejson-benchmark 分析了主流的多款json库，在stringify中最佳的C library是json-c
+https://chadaustin.me/2013/01/json-parser-benchmarking/ 得到的结论是 jansson 与 yajl 对比其他C++library 性能更差。
