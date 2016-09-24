@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# print the pid of a specified program
+
+import os
+import sys
+
+def usage():
+    print "usage: python ppid xxx"
+    sys.exit(1)
+
+def param_check():
+    if len(sys.argv) != 2:
+        usage()
+
+def main():
+    param_check()
+    pids = [pid for pid in os.listdir('/proc') if pid.isdigit()]
+    for pid in pids:
+        try:
+            str = open(os.path.join('/proc', pid, 'cmdline'), 'rb').read()
+            prog = os.path.basename(str)
+            if prog.find(sys.argv[1]):
+                print "path = ", str, "pid = ", pid
+        except IOError: # proc has already terminated
+            continue
+
+if __name__ == "__main__":
+    main()
