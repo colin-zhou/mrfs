@@ -29,19 +29,18 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias aclocal-1.6='aclocal-1.14'
 alias cdsite='cd ~/nrss/rss/src/rss/site'
-alias cdrt='cd ~/nrss/rss/src/rss/rtserver'
+alias cdrt='cd ~/nrss/rss/src/rss/new_rtserver'
 alias cdrss='cd ~/nrss/rss'
 alias cdagent='cd ~/nrss/rss/src/rss/rss_agent/rss/src'
 alias cdgit='cd ~/Git/'
 alias cdjs='cd /home/rss/nrss/rss/src/rss/site/core/static/platform/js'
-alias cdwork='cd /home/rss/DailyReport/management/daily_records/2016'
-alias cddoc='cd /home/rss/Documents/design_spec'
-alias cdeng='cd /home/rss/nrss/rss/src/rss/rss_engine/'
 alias cdinc='cd /home/rss/nrss/rss/src/rss/lib/include'
+alias g='grep --color=always -EnR '
 alias q='$QHOME/l32/q'
 
 # from the "xttitle(1)" man page - put info in window title  
-update_title()   {  
+update_title()
+{  
 #	  [ $TERM = xterm -o $TERM = xterm-color ] && xttitle "[$$] ${USER}@${HOSTNAME}:$PWD"
 	ip=`/sbin/ifconfig |grep "inet addr"|head -n 1|awk -F "." {'print $4'}|awk -F " " {'print $1'}`
 #	[ $TERM = xterm -o $TERM = xterm-color ] && xttitle "[$$] $(basename `pwd`)"
@@ -54,6 +53,21 @@ cd()
 {  
 	builtin cd "${@}"
 	update_title
+}
+
+# find in glibc include files
+flibc() {
+    grep "${@}" --color=always -EnR "/usr/src/glibc-2.19"
+}
+
+# find in glibc source code file 
+fhead() {
+    grep "${@}" --color=always -EnR "/usr/include"
+}
+
+# find api in 2, 3 volumns in man
+fman() {
+    apropos "${@}" | grep "([23])"
 }
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[1;31m\]($?)\[\033[00m\]\$ '
@@ -106,3 +120,10 @@ commitdiff () {
 # autojump
 [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 
+# find source code
+ff () {
+    find . -name "*$@*" -print; 
+}
+fff () {
+    find . -type f -print0 | xargs -0 grep -l $@
+}
