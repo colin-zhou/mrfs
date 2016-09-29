@@ -69,6 +69,13 @@ fhead() {
 fman() {
     apropos "${@}" | grep "([23])"
 }
+# store current path 
+spwd() {
+    echo "cd `pwd`" >/tmp/cwd 
+}
+rpwd() {
+    . /tmp/cwd
+}
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[1;31m\]($?)\[\033[00m\]\$ '
 
