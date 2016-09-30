@@ -11,15 +11,20 @@ export PATH=$PATH:$QHOME/l32
 # You may uncomment the following lines if you want `ls' to be colorized:
 export LS_OPTIONS='--color=auto'
 eval "`dircolors`"
+
+alias df='df -h'
+alias gt='gnome-terminal'
+alias gtnt='gnome-terminal --tab'
+
 alias ls='ls $LS_OPTIONS'
 alias ll='ls $LS_OPTIONS -l'
 alias l='ls $LS_OPTIONS -lA'
 alias lf='ls $LS_OPTIONS -F'
 alias la='ls $LS_OPTIONS -a'
-alias df='df -h'
-alias gt='gnome-terminal'
-alias gtnt='gnome-terminal --tab'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 alias jslint='/home/rss/node_modules/jslint/bin/jslint.js'
+
 #
 # Some more alias to avoid making mistakes:
 # alias rm='rm -i'
