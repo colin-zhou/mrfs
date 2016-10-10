@@ -1,0 +1,196 @@
+﻿\input{bheader.tex}
+
+\begin{document}
+\title{C Coding Tips}
+\author{BSS Group}
+\date{2016-08-25}
+\maketitle
+
+\begin{frame}
+\frametitle{编码规范}
+\begin{enumerate}
+        \item 推荐参考Linux Kernel编码风格/或BSD C/C++编码风格,没有强制的要求.
+                参考: Kernel源码目录: Documentation/CodingStyle 
+
+        \item 建议:
+                \begin{enumerate}
+                \item Tab缩进为8字符;
+                \item if语句使用\{\}包围,尤其对于单行语句;
+                \item 单行最大字符为80字符,C++代码不超过100字符;
+                \end{enumerate}
+        \item 代码格式化工具
+        \begin{enumerate}
+        \item Visual Studio 
+        \item vim '='
+        \item asytle [astyle.sourceforge.net]
+                参数:
+                astyle --style=kr -s8 -S -N -w -Y -U -k3 -W3 -J -xC80 -xL -Z -xe -m0 -n $*
+        \end{enumerate}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{关键字}
+
+\begin{enumerate}
+\item  const 
+\item static 
+\item restrict
+\item inline
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{简化编译}
+使用Makefile,一个最小模板:
+
+CFLAGS:= -O0 -g3 -I/usr/xx/include
+LDFLAGS:=-L/usr/xx/lib
+OUT:=test.out
+
+all:\$(OUT)
+$(OUT): src.c
+    gcc -o $(OUT) $(CFLAGS) src.c $(LDFLAGS) 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{编译选项}
+        
+\begin{enumerate}
+\item -O 优化选项
+\item -g 调试选项
+\item -fPIC -fpic, 生成位置无关代码
+\item -shared 生成动态库
+\item -Wl,--no-undefined  禁止动态库编译时在找不到符号时生成动态库.
+\item -Wl,-rpath=. -Wl,--enable-new-dtags 
+        指定程序运行时,依赖库的搜索路径,搜索路径具有优先级,可参考(man dlopen);
+        SEARCH:LD_LIBRARY_PATH, RPATH, RUNPATH三者比较;
+\item -Wl,-soname=libxx.so.1
+        指定动态库的soname, 用于控制动态库版本.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{工具链}
+
+\begin{enumerate}
+\item ldd
+\item nm
+        \begin{enumerate}
+        \item  nm -C
+                查看命名修饰(name mangling)前的名称.
+        \item  nm |grep '\<T\>'
+                查看实现的函数.
+        \end{enumerate}
+\item objdump
+        \begin{enumerate}
+        \item  objdump -DS
+                反汇编
+        \end{enumerate}
+\item readelf
+        \begin{enumerate}
+        \item  readelf -d|grep SONAME
+                查看动态库版本
+        \item  readelf -d|grep RUNPATH
+                 查看运行时库搜索路径
+        \end{enumerate}
+\item strip
+        删除符号表        
+
+使用man手册浏览上述命令所有选项.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{基本的BASH环境}
+        \begin{enumerate}
+        \item  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./
+                添加运行时搜索路径
+        \item ldconfig -d ./ 
+                维护当前目录动态库版本.
+        \item cp,scp, rsync
+                拷贝文件,或通过网络拷贝文件,注意scp默认行为会破坏符号链接, 请使用rsync -av方式.
+
+        \item ssh 通过网络登陆主机
+                \begin{enumerate}
+                \item 建议在$HOME/.ssh/config 文件中配置主机IP, 用户名等;
+                \item 使用ssh-copy-id上传密钥,节省密码输入操作;
+                \end{enumerate}
+
+        \item  chmod +x
+                使用批处理脚本,增加可执行权限.
+        \item ulimited -c unlimited 
+                产生core文件的开关
+                或查看IPC的系统限制
+        \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{可配置的程序}
+        \begin{enumerate}
+        \item  命令行
+                参考man 3 getopt
+        \item 配置文件
+                尽量采用标准格式,如xml, json, linux常用配置文件格式(libconfuse解析)的方式等.
+        \item  环境变量
+                man getenv
+        \end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{libc}
+
+\begin{enumerate}
+\item 内存操作: malloc, free ,remalloc, memset, memcpy etc.
+\item 字符串操作 strncpy, strcmp etc.
+\item 文件操作 fopen, fread,
+\end{enumerate}
+
+参考:
+\begin{enumerate}
+\item 头文件位于/usr/include ,
+\item 函数参数,返回值,特性,错误码请参考man手册.
+\item https://www.gnu.org/software/libc/manual/html_node/
+\end{enumerate}
+
+替代选择:
+\begin{enumerate}
+\item 内存管理: jemalloc, tcmalloc
+\item 字符串操作, 注意越界
+\item 文件操作建议使用系统调用open和mmap方式.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{基础知识-pthread}
+
+\begin{enumerate}
+\item  线程操作, create, join, detach, exit
+\item  锁,pthread_mutex_xxx, pthread_spin_xxx , pthread_rwlock_xxx
+\end{enumerate}
+
+
+\begin{frame}
+\frametitle{基础知识-IPC}
+
+\begin{enumerate}
+\item Sys V和Posix两种方式.
+\item 信号量 sem_xxx, semxxx
+\item 共享内存 shm_xxx, shmxxx
+\item 消息队列  mq_xxx msgxxx
+\end{enumerate}
+man pthreads,  man svipc
+参考\it{Unix环境高级编程}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{END}
+\end{frame}
+
+\end{document}
