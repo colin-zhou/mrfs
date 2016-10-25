@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+#################################################
+########## add path to ~/.bashrc ################
+#################################################
+
+usage(){
+    echo "usage: addpath somepath"
+    if [ -d $1 ]; then
+        cd $1
+    fi
+    exit -1
+}
+
+curDir=$(
+    cd $(dirname "$0")
+    pwd
+)
+
+check(){
+    exist=$(echo $PATH | grep $1 | wc -l)
+    if [ $exist -eq 1 ]; then
+        echo "path $1 already exist"
+        exit 0
+    fi
+}
+
+if [ $# -lt 1 ]; then
+    usage
+else
+    oldpath=$(pwd)
+    cd $(dirname "$0")
+    realpath=$(readlink -f "$1")
+    if [ -d $realpath ]; then
+        check $realpath
+        echo "export PATH=$realpath:\$PATH" >> $HOME/.bashrc
+        source $HOME/.bashrc
+        echo "addpath success"
+    else
+        echo "added path not exist"
+        usage $oldpath 
+    fi
+fi
