@@ -46,4 +46,5 @@
 	ci = commit
 	unstage = reset HEAD --
 	last = log -1 HEAD
-
+    sshow = "!f(){ git stash show stash^{/$*} -p; }; f"
+    sapply = "!f() { git stash apply stash^{/$*}; }; f"
