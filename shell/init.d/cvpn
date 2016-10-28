@@ -1,0 +1,35 @@
+#!/bin/bash
+#
+# chkconfig: - 57 75
+# description: vpn service
+
+start() {
+    echo "Starting cvpn ..."
+    echo "Starting vpnc ..."
+    nohup ss-local > /dev/null 2>&1 &
+    nohup vpnc-connect > /dev/null 2>&1 &
+}
+
+stop() {
+    echo "Stopping cvpn ..."
+    echo "Stopping vpnc ..."
+    killall ss-local > /dev/null 2>&1
+    killall vpnc > /dev/null 2>&
+}
+
+# See how we were called.
+case "$1" in
+    start)
+        start
+    ;;
+    stop)
+        stop
+    ;;
+    restart|force-reload)
+        stop
+        start
+    ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart|force-reload}"
+        exit 2
+esac
