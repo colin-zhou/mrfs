@@ -48,3 +48,5 @@
 	last = log -1 HEAD
     sshow = "!f(){ git stash show stash^{/$*} -p; }; f"
     sapply = "!f() { git stash apply stash^{/$*}; }; f"
+[https]
+	proxy = http://127.0.0.1:1080

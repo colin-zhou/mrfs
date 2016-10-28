@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "stop all $1"
+pgrep -x $1 | xargs kill -9

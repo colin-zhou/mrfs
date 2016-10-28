@@ -1,0 +1,27 @@
+" forces vim to source .vimrc file if it present in working directory
+set exrc
+" this option will restrict usage of some commands in non-default .vimrc
+" files, commands that write to file or execute shell commands are not allowed
+" and map commands are displayed.
+set secure
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+
+" highlight column number 110 with color
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
+" file type detection
+augroup project
+    autocmd!
+    autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxgen
+augroup END
+
+" path variable
+" gf command(and related, <c-w><c-f> to open in new tab) which open file whose
+" name is under or after the cursor, this feature is extremely useful for
+" browsing header files
+let &path.="src/include,/usr/include/AL,"

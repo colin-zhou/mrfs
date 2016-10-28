@@ -1,0 +1,251 @@
+set nocompatible
+set hlsearch
+set cindent
+""set smartindent
+""set autowrite
+""set autoindent
+set nobackup
+set noswapfile
+set nu
+set mouse=a
+syntax on
+set tabstop=8
+set shiftwidth=8
+set expandtab
+set smarttab
+set softtabstop=8
+set nowrap
+
+
+filetype on
+filetype plugin on
+set fileencodings=gbk,utf8
+""set laststatus=2
+"set statusline=[%M%f:%c]\ %n%=%P
+""禁止显示菜单和工具条
+"set guioptions-=m
+"set guioptions-=T
+
+set diffopt+=iwhite
+set switchbuf+=usetab,newtab
+
+"GET Bundle
+"git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 'kshenoy/vim-signature'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-scripts/cscope.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'ctrlpvim/ctrlp.vim'
+"Bundle 'vim-scripts/c.vim'
+"Bundle 'scrooloose/nerdtree'
+Bundle 'mileszs/ack.vim'
+Plugin 'flazz/vim-colorschemes'
+"Bundle 'tdcdev/ycm_simple_conf'
+"Bundle 'nathanaelkane/vim-indent-guides'
+
+""bundle usage
+"
+let mapleader = ";" 
+
+map H gT
+map L gt
+map J <Esc>:A<CR>
+nmap <F1> <nop>
+imap <F1> <nop>
+"
+"set shellslash
+"set grepprg=grep\ -nH\ $*
+""filetype indent on
+"let g:tex_flavor='latex'
+"
+source $HOME/.vim/plugin/a.vim
+"source $HOME/.vim/bundle/plugin/im.vim
+""set autochdir
+""set tags=tags,$k/tags;
+""Tlist
+""let Tlist_Use_Right_Window=1
+""let Tlist_File_Fold_Auto_Close=1
+"map <Leader><F3>  s/^/<p>/<CR> s/$/<\/p>/<CR>  
+"<Esc>^i<p><Esc>$a</p><Esc>
+"vnoremap <Leader>y "+y
+"vnoremap <Leader>p "+p
+map <Leader>q $a{<Esc>o}<Esc>O
+map <Leader>e  <Esc>o\begin{enumerate}<Esc>o\item <Esc>o\end{enumerate}<Esc>
+map <Leader>i  <Esc>^i\item <Esc>
+"map <Leader>w  <Esc>da(i
+"map <Leader>ww  <Esc>da{
+"map <Leader>c  <Esc>$a/*  */<Esc>F i
+"
+""Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --system-libclang' }
+map <Leader>q $a{<Esc>o}<Esc>O
+map <Leader>t <ESC>:tabfind 
+map <Leader>s <ESC>:w<CR>
+nmap <Leader>yd <ESC>:YcmCompleter GoToDefinition<CR>
+nmap <Leader>yb <ESC>:YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <Leader>yc <ESC>:YcmDiags<CR>
+"nmap <Leader>ce <ESC>:YcmCompleter GoToDeclaration<CR>
+"nmap <Leader>fd <ESC>:YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap <F1> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <Leader> <Plug>(easymotion-prefix)
+"nnoremap <Leader><F1> :Grep -E --exclude="*.o"<CR><CR><CR>
+nnoremap <Leader><F1> :Ack 
+"nnoremap <Leader>sb :GrepBuffer -ir<CR><CR>
+map <leader><F2> :source .vim<cr> :rviminfo .viminfo<cr>
+map <leader><F3> :mksession! .vim<cr> :wviminfo! .viminfo<cr>
+"let g:syntastic_c_checkers = ['YouCompleteMe']
+"let g:syntastic_c_check_header = 1
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf = 0
+"let g:ycm_extra_conf_globlist = ['~/git/*','!~/*']
+"let g:ycm_complete_in_comments_and_strings = 1
+"let g:ycm_collect_identifiers_from_comments_and_strings = 1
+"let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
+"" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+"" let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+"" let g:ycm_add_preview_to_completeopt = 1
+"" let g:ycm_autoclose_preview_window_after_completion = 1
+"
+"""" vim indent guides
+"" 随 vim 自启动
+"let g:indent_guides_enable_on_vim_startup=1
+"let g:indent_guides_start_level=3
+"let g:indent_guides_guide_size=1
+"" 快捷键 i 开/关缩进可视化
+"nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+"
+""" TEST PLUGIN 
+""za，打开或关闭当前折叠；zM，关闭所有折叠；zR，打开所有折叠
+"set foldmethod=indent
+"set nofoldenable
+"
+"let g:SignatureMap = {
+"        \ 'Leader'             :  "m",
+"        \ 'PlaceNextMark'      :  "m,",
+"        \ 'ToggleMarkAtLine'   :  "m.",
+"        \ 'PurgeMarksAtLine'   :  "m-",
+"        \ 'DeleteMark'         :  "dm",
+"        \ 'PurgeMarks'         :  "mda",
+"        \ 'PurgeMarkers'       :  "m<BS>",
+"        \ 'GotoNextLineAlpha'  :  "']",
+"        \ 'GotoPrevLineAlpha'  :  "'[",
+"        \ 'GotoNextSpotAlpha'  :  "`]",
+"        \ 'GotoPrevSpotAlpha'  :  "`[",
+"        \ 'GotoNextLineByPos'  :  "]'",
+"        \ 'GotoPrevLineByPos'  :  "['",
+"        \ 'GotoNextSpotByPos'  :  "mn",
+"        \ 'GotoPrevSpotByPos'  :  "mp",
+"        \ 'GotoNextMarker'     :  "[+",
+"        \ 'GotoPrevMarker'     :  "[-",
+"        \ 'GotoNextMarkerAny'  :  "]=",
+"        \ 'GotoPrevMarkerAny'  :  "[=",
+"        \ 'ListLocalMarks'     :  "ms",
+"        \ 'ListLocalMarkers'   :  "m?"
+"        \ }
+"
+""" NERDtree
+"" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+"nmap <Leader><F1>  :NERDTreeToggle<CR>
+"" 设置NERDTree子窗口宽度
+"let NERDTreeWinSize=32
+"" 设置NERDTree子窗口位置
+"let NERDTreeWinPos="right"
+"" 显示隐藏文件
+"let NERDTreeShowHidden=1
+"" NERDTree 子窗口中不显示冗余帮助信息
+"let NERDTreeMinimalUI=1
+"" 删除文件时自动删除文件对应 buffer
+"let NERDTreeAutoDeleteBuffer=1
+"
+"
+"" 设置环境保存项
+"" set
+"set sessionoptions="blank,buffers,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
+"" " 保存 undo 历史
+"set undodir=~/.undo_history/
+"set undofile
+"" " 保存快捷键
+"" " 恢复快捷键
+"
+"
+"let g:ycm_global_ycm_extra_conf = '.ycm_extra_conf.py'
+""
+let g:ycm_confirm_extra_conf=0    "打开vim时不再询问是否加载ycm_extra_conf.py配置
+""let g:ycm_collect_identifiers_from_tag_files = 1 "使用ctags生成的tags文件
+"""let g:ycm_complete_in_comments=1  
+""let g:ycm_confirm_extra_conf=0  
+""let g:ycm_simple_conf_active =1
+""let g:ycm_key_invoke_completion = '<C-/>'
+""nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+""
+""set tags+=$k/tags
+""" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键  
+"""inoremap <leader>; <C-x><C-o>  
+""" 补全内容不以分割子窗口形式出现，只显示补全列表  
+""set completeopt-=preview  
+""let g:ycm_min_num_of_chars_for_completion=1  
+""let g:ycm_cache_omnifunc=0  
+""let g:ycm_seed_identifiers_with_syntax=1  
+""
+ 
+""let g:syntastic_check_on_open = 1
+""let g:syntastic_cpp_include_dirs = ['$k/include/']
+"""let g:syntastic_cpp_remove_include_errors = 1
+"""let g:syntastic_cpp_check_header = 1
+"""let g:syntastic_cpp_compiler = 'clang++'
+"""let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+"""let g:syntastic_error_symbol = ''
+"""let g:syntastic_warning_symbol = ''
+"""let g:syntastic_enable_balloons = 1
+""
+
+" CtrlP
+"let g:ctrlp_prompt_mappings = {
+"        \'AcceptSelection("e")': ['<2-LeftMouse>'],
+"        \'AcceptSelection("t")': ['<cr>'],
+"\}
+
+" s: Find this C symbol
+nnoremap  <leader>cs :call cscope#find('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <leader>cg :call cscope#find('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <leader>cd :call cscope#find('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <leader>cc :call cscope#find('c', expand('<cword>'))<CR>
+" t: Find this text string
+nnoremap  <leader>ct :call cscope#find('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap  <leader>ce :call cscope#find('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap  <leader>cf :call cscope#find('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <leader>ci :call cscope#find('i', expand('<cword>'))<CR>
+let g:cscope_silent= 1
+
+
+nmap <F8> :TagbarToggle<CR>
+
+""
+""
+map <Leader> <Plug>(easymotion-prefix)
+" 使用 Grep.vim 插件在工程内全局查找，设置快捷键。快捷键速记法：search in
+" project
+"nnoremap <F3> :Grep -ir<CR><CR><CR>
+" " 使用 Grep.vim 插件在工程内全局查找，设置快捷键。快捷键速记法：search in
+" buffer
+colorscheme desert 
+
+
+"set foldnestmax=2      "deepest fold is 10 levels
+"set nofoldenable        "dont fold by default
+"set foldlevel=1         "this is just what i use
+"autocmd FileType c setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\s*//'
+"setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\s*//'
+"autocmd FileType c setlocal foldmethod=syntax
+"au BufNewFile,BufRead *.cpp,*.c,*.h,*.java syn region myCComment start="/\*" end="\*/" fold keepend transparent
