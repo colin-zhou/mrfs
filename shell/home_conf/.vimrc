@@ -40,7 +40,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 Plugin 'taglist.vim'
 
 " All of your Plugins must be added before the following line
