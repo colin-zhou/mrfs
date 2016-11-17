@@ -1,5 +1,6 @@
 [core]
 	pager = less -JFRSX
+	editor = vim
 [user]
 	name = Zhou Chaolin
 	email = zhouchaolin@mycapital.net

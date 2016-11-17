@@ -24,6 +24,7 @@ alias la='ls $LS_OPTIONS -a'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias jslint='/home/rss/node_modules/jslint/bin/jslint.js'
+alias lsd='ls -ld */'
 
 #
 # Some more alias to avoid making mistakes:
@@ -138,4 +139,20 @@ ff () {
 }
 fff () {
     find . -type f -print0 | xargs -0 grep -l $@
+}
+
+# check if dos or unix
+checkdos() {
+    if awk  '/\r$/{exit 0;} 1{exit 1;}' $1; then
+        echo "$1 is DOS"
+    #else
+    #    echo "$1 not DOS"
+    fi
+}
+
+checkcurdos() {
+    files=$(find ./ -name "*.h" -o -name "*.cpp" -o -name "*.c")
+    for file in $files; do
+        checkdos $file
+    done
 }
