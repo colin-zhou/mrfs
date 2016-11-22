@@ -47,6 +47,7 @@
 	ci = commit
 	unstage = reset HEAD --
 	last = log -1 HEAD
+    dfile = diff --name-status --oneline
     sshow = "!f(){ git stash show stash^{/$*} -p; }; f"
     sapply = "!f() { git stash apply stash^{/$*}; }; f"
 [https]

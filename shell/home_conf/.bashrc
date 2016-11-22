@@ -25,6 +25,8 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias jslint='/home/rss/node_modules/jslint/bin/jslint.js'
 alias lsd='ls -ld */'
+alias lss='find ./ -name "*.cpp" -o -name "*.c" -o -name "*.h"'
+alias 170='ssh rss@192.168.1.170'
 
 #
 # Some more alias to avoid making mistakes:
