@@ -126,6 +126,11 @@ extract () {
     esac
 }
 
+# add gtest path
+if [ -d /opt/gtest/ ];then
+    export GTEST_HOME=/opt/gtest/
+    export LD_LIBRARY_PATH=$GTEST_HOME/lib:$LD_LIBRARY_PATH
+fi
 
 # git top two commit diff
 commitdiff () {
