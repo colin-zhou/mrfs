@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-colo molokai
+" color molokai
 set wildmenu
 
 " set the runtime path to include Vundle and initialize
@@ -40,6 +40,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'brookhong/cscope.vim'
 " Plugin 'klen/python-mode'
 Plugin 'taglist.vim'
 
@@ -76,3 +77,7 @@ set wrap
 set textwidth=0 wrapmargin=0
 set tags=./tags;/
 " indent
+
+" cscope part
+nmap <F6> :cn<cr>
+nmap <F7> :cp<cr>
