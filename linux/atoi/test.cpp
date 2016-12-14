@@ -13,6 +13,8 @@ int main()
 
     printf("%d %d\n", atoi(x), atoi(y));
     printf("%d\n", atoi(z));
+    printf("%d\n", atoi("123:"));
+    printf("%d\n", atoi("adfadf"));
     // 12345, 0
     // 错误即返回0
     return 0;
