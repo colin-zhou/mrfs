@@ -2,6 +2,8 @@
 #-*- coding:utf-8 -*-
 
 import unittest
+import fixtures
+
 try:
     import mylib
 except ImportError:
@@ -31,3 +33,32 @@ class TestSkipped(unittest.TestCase):
     def test_skip_at_runtime(self):
         if True:
             self.skipTest("finally i don't want to run it")
+
+
+class TestMe(unittest.TestCase):
+    def setUp(self):
+        self.list = [1,2,3]
+
+    def test_length(self):
+        self.list.append(4)
+        self.assertEqual(len(self.list), 4)
+
+    def test_has_one(self):
+        self.assertEqual(len(self.list), 3)
+        self.assertIn(1, self.list)
+
+# rule: path.to.your.module:ClassOfYourTest.test_method
+# nosetests --process
+
+# fixtures.TestWithFixutes inherts from unittest.TestCase
+
+class TestEnviron(fixtures.TestWithFixtures):
+    def test_environ(self):
+        fixture = self.useFixture(
+            fixtures.EnvironmentVariable("FOOBAR", "42")
+        )
+        self.assertEqual(`os.environ.get("FOOBAR"), "42")
+
+    def test_environ_no_fixture(self):
+        self.assertEqual(os.environ.get("FOOBAR"), None)
+
