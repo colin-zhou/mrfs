@@ -1,0 +1,123 @@
+time: 2016-12-21 11:15:25.887496Z
+tags: worker-1
+test: test_1.TestFail.test_range
+time: 2016-12-21 11:15:25.888549Z
+successful: test_1.TestFail.test_range [ multipart
+]
+tags: -worker-1
+time: 2016-12-21 11:15:25.890530Z
+tags: worker-1
+test: test_1.TestMe.test_has_one
+time: 2016-12-21 11:15:25.891546Z
+successful: test_1.TestMe.test_has_one [ multipart
+]
+tags: -worker-1
+time: 2016-12-21 11:15:25.893105Z
+tags: worker-1
+test: test_1.TestMe.test_length
+time: 2016-12-21 11:15:25.894209Z
+successful: test_1.TestMe.test_length [ multipart
+]
+tags: -worker-1
+time: 2016-12-21 11:15:25.897231Z
+tags: worker-0
+test: test_1.TestSkipped.test_fail
+time: 2016-12-21 11:15:25.897556Z
+skip: test_1.TestSkipped.test_fail [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+F
+do not run this0
+]
+tags: -worker-0
+time: 2016-12-21 11:15:25.898299Z
+tags: worker-0
+test: test_1.TestSkipped.test_mylib
+time: 2016-12-21 11:15:25.898595Z
+skip: test_1.TestSkipped.test_mylib [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+16
+mylib is not available0
+]
+tags: -worker-0
+time: 2016-12-21 11:15:25.899364Z
+tags: worker-0
+test: test_case.TestStringMethods.test_split
+time: 2016-12-21 11:15:25.899711Z
+successful: test_case.TestStringMethods.test_split [ multipart
+]
+tags: -worker-0
+time: 2016-12-21 11:15:25.930172Z
+tags: worker-2
+test: test_1.TestEnviron.test_environ
+time: 2016-12-21 11:15:25.930752Z
+successful: test_1.TestEnviron.test_environ [ multipart
+]
+tags: -worker-2
+time: 2016-12-21 11:15:25.931245Z
+tags: worker-2
+test: test_1.TestEnviron.test_environ_no_fixture
+time: 2016-12-21 11:15:25.931571Z
+successful: test_1.TestEnviron.test_environ_no_fixture [ multipart
+]
+tags: -worker-2
+time: 2016-12-21 11:15:25.932192Z
+tags: worker-2
+test: test_1.TestSkipped.test_skip_at_runtime
+time: 2016-12-21 11:15:25.932559Z
+skip: test_1.TestSkipped.test_skip_at_runtime [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+1E
+finally i don't want to run it0
+]
+tags: -worker-2
+time: 2016-12-21 11:15:25.933966Z
+tags: worker-2
+test: test_case.TestStringMethods.test_isupper
+time: 2016-12-21 11:15:25.934241Z
+successful: test_case.TestStringMethods.test_isupper [ multipart
+]
+tags: -worker-2
+time: 2016-12-21 11:15:25.928703Z
+tags: worker-3
+test: test_1.TestKey.test_key
+time: 2016-12-21 11:15:25.936840Z
+failure: test_1.TestKey.test_key [ multipart
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+306
+Traceback (most recent call last):
+  File "/home/colin/Git/reserve/python/unittest/test_1.py", line 17, in test_key
+    self.assertEqual(a,b)
+  File "/usr/lib64/python2.7/unittest/case.py", line 553, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib64/python2.7/unittest/case.py", line 782, in assertListEqual
+    self.assertSequenceEqual(list1, list2, msg, seq_type=list)
+  File "/usr/lib64/python2.7/unittest/case.py", line 764, in assertSequenceEqual
+    self.fail(msg)
+  File "/usr/lib64/python2.7/unittest/case.py", line 450, in fail
+    raise self.failureException(msg)
+AssertionError: Lists differ: ['a', 'b'] != ['b']
+
+First differing element 0:
+a
+b
+
+First list contains 1 additional elements.
+First extra element 1:
+b
+
+- ['a', 'b']
++ ['b']
+0
+]
+tags: -worker-3
+time: 2016-12-21 11:15:25.941866Z
+tags: worker-3
+test: test_case.TestStringMethods.test_upper
+time: 2016-12-21 11:15:25.942113Z
+successful: test_case.TestStringMethods.test_upper [ multipart
+]
+tags: -worker-3

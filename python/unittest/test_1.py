@@ -3,6 +3,7 @@
 
 import unittest
 import fixtures
+import os
 
 try:
     import mylib
@@ -57,7 +58,7 @@ class TestEnviron(fixtures.TestWithFixtures):
         fixture = self.useFixture(
             fixtures.EnvironmentVariable("FOOBAR", "42")
         )
-        self.assertEqual(`os.environ.get("FOOBAR"), "42")
+        self.assertEqual(os.environ.get("FOOBAR"), "42")
 
     def test_environ_no_fixture(self):
         self.assertEqual(os.environ.get("FOOBAR"), None)

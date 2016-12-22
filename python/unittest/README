@@ -1,0 +1,9 @@
+1. python -m subunit.run scenario
+2. python -m subunit.run scenarios | subunit2pyunit
+3. python -m subunit.run discover | subunit2pyunit
+4. python -m subunit.run --list | subunit-ls --exists
+(testrepository)
+5. testr run --parallel --concurrency=2
+6. nosetests --cover-package=ceilometer --with-coverage tests/test_pipeline.py --cover-min-percentage=COVER_MIN_PERCENTAGE
+7. python setup.py testr --coverage
+8. tox -e py26

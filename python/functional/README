@@ -1,0 +1,21 @@
+1. sorted(iterable, key=None, reverse=False)
+
+2. for i, item in enumerate(mylist)
+
+3. itertools.izip, itertoolz.imap, itertoolz.ifilter
+
+4. from first import first
+    first([-1,0,2,1], key=lambda x: x> 0)
+    next(itertools.ifilter(lambda x: x>0, [-1,0,1,2])) # IndexError
+
+5. import operator
+   from functools import partial
+   from first import first
+
+   first([-1,0,1,2], key=partial(operator.le, 0))
+
+
+6. import itertools
+   a= [{'foo': 'bar'}, {'foo': 'bar', 'x':34}, {'foo':'bzx', 'y':33}]
+   import operator
+   list(itertools.groupby(a, operator.itemgetter('foo')))

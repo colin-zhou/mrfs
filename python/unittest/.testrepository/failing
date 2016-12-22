@@ -1,0 +1,34 @@
+time: 2016-12-21 11:15:25.928703Z
+tags: worker-3
+test: test_1.TestKey.test_key
+time: 2016-12-21 11:15:25.936840Z
+failure: test_1.TestKey.test_key [ multipart
+Content-Type: text/x-traceback;charset=utf8
+traceback
+306
+Traceback (most recent call last):
+  File "/home/colin/Git/reserve/python/unittest/test_1.py", line 17, in test_key
+    self.assertEqual(a,b)
+  File "/usr/lib64/python2.7/unittest/case.py", line 553, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib64/python2.7/unittest/case.py", line 782, in assertListEqual
+    self.assertSequenceEqual(list1, list2, msg, seq_type=list)
+  File "/usr/lib64/python2.7/unittest/case.py", line 764, in assertSequenceEqual
+    self.fail(msg)
+  File "/usr/lib64/python2.7/unittest/case.py", line 450, in fail
+    raise self.failureException(msg)
+AssertionError: Lists differ: ['a', 'b'] != ['b']
+
+First differing element 0:
+a
+b
+
+First list contains 1 additional elements.
+First extra element 1:
+b
+
+- ['a', 'b']
++ ['b']
+0
+]
+tags: -worker-3

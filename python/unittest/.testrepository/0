@@ -1,0 +1,139 @@
+time: 2016-12-21 11:15:10.460521Z
+tags: worker-0
+test: test_1.TestMe.test_has_one
+time: 2016-12-21 11:15:10.461652Z
+successful: test_1.TestMe.test_has_one [ multipart
+]
+tags: -worker-0
+time: 2016-12-21 11:15:10.463771Z
+tags: worker-0
+test: test_case.TestStringMethods.test_isupper
+time: 2016-12-21 11:15:10.464833Z
+successful: test_case.TestStringMethods.test_isupper [ multipart
+]
+tags: -worker-0
+time: 2016-12-21 11:15:10.466495Z
+tags: worker-0
+test: test_case.TestStringMethods.test_upper
+time: 2016-12-21 11:15:10.467552Z
+successful: test_case.TestStringMethods.test_upper [ multipart
+]
+tags: -worker-0
+time: 2016-12-21 11:15:10.471737Z
+tags: worker-1
+test: test_1.TestSkipped.test_fail
+time: 2016-12-21 11:15:10.472986Z
+skip: test_1.TestSkipped.test_fail [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+F
+do not run this0
+]
+tags: -worker-1
+time: 2016-12-21 11:15:10.475539Z
+tags: worker-1
+test: test_1.TestSkipped.test_skip_at_runtime
+time: 2016-12-21 11:15:10.475870Z
+skip: test_1.TestSkipped.test_skip_at_runtime [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+1E
+finally i don't want to run it0
+]
+tags: -worker-1
+time: 2016-12-21 11:15:10.476816Z
+tags: worker-1
+test: test_case.TestStringMethods.test_split
+time: 2016-12-21 11:15:10.477200Z
+successful: test_case.TestStringMethods.test_split [ multipart
+]
+tags: -worker-1
+time: 2016-12-21 11:15:10.474867Z
+tags: worker-2
+test: test_1.TestEnviron.test_environ
+time: 2016-12-21 11:15:10.475284Z
+failure: test_1.TestEnviron.test_environ [ multipart
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+D8
+Traceback (most recent call last):
+  File "/home/colin/Git/reserve/python/unittest/test_1.py", line 60, in test_environ
+    self.assertEqual(os.environ.get("FOOBAR"), "42")
+NameError: global name 'os' is not defined
+0
+]
+tags: -worker-2
+time: 2016-12-21 11:15:10.477812Z
+tags: worker-2
+test: test_1.TestEnviron.test_environ_no_fixture
+time: 2016-12-21 11:15:10.478060Z
+failure: test_1.TestEnviron.test_environ_no_fixture [ multipart
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+E3
+Traceback (most recent call last):
+  File "/home/colin/Git/reserve/python/unittest/test_1.py", line 63, in test_environ_no_fixture
+    self.assertEqual(os.environ.get("FOOBAR"), None)
+NameError: global name 'os' is not defined
+0
+]
+tags: -worker-2
+time: 2016-12-21 11:15:10.479771Z
+tags: worker-2
+test: test_1.TestKey.test_key
+time: 2016-12-21 11:15:10.480632Z
+failure: test_1.TestKey.test_key [ multipart
+Content-Type: text/x-traceback;charset=utf8,language=python
+traceback
+306
+Traceback (most recent call last):
+  File "/home/colin/Git/reserve/python/unittest/test_1.py", line 16, in test_key
+    self.assertEqual(a,b)
+  File "/usr/lib64/python2.7/unittest/case.py", line 553, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib64/python2.7/unittest/case.py", line 782, in assertListEqual
+    self.assertSequenceEqual(list1, list2, msg, seq_type=list)
+  File "/usr/lib64/python2.7/unittest/case.py", line 764, in assertSequenceEqual
+    self.fail(msg)
+  File "/usr/lib64/python2.7/unittest/case.py", line 450, in fail
+    raise self.failureException(msg)
+AssertionError: Lists differ: ['a', 'b'] != ['b']
+
+First differing element 0:
+a
+b
+
+First list contains 1 additional elements.
+First extra element 1:
+b
+
+- ['a', 'b']
++ ['b']
+0
+]
+tags: -worker-2
+time: 2016-12-21 11:15:10.509694Z
+tags: worker-3
+test: test_1.TestFail.test_range
+time: 2016-12-21 11:15:10.510097Z
+successful: test_1.TestFail.test_range [ multipart
+]
+tags: -worker-3
+time: 2016-12-21 11:15:10.510714Z
+tags: worker-3
+test: test_1.TestMe.test_length
+time: 2016-12-21 11:15:10.511036Z
+successful: test_1.TestMe.test_length [ multipart
+]
+tags: -worker-3
+time: 2016-12-21 11:15:10.511600Z
+tags: worker-3
+test: test_1.TestSkipped.test_mylib
+time: 2016-12-21 11:15:10.511902Z
+skip: test_1.TestSkipped.test_mylib [ multipart
+Content-Type: text/plain;charset=utf8
+reason
+16
+mylib is not available0
+]
+tags: -worker-3
