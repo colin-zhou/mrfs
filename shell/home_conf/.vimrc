@@ -81,3 +81,4 @@ set tags=./tags;/
 " cscope part
 nmap <F6> :cn<cr>
 nmap <F7> :cp<cr>
+map <F5> :!cscope -Rbq<CR>:cs reset<CR><CR>
