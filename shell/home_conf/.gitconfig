@@ -38,7 +38,7 @@
 	enabled = true
 [alias]
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
-	br = branch -a
+	bra = branch
 	clog = log --date=short --pretty=format:\"%Cred%ad %Cblue%h %Cgreen%an %Creset%s%C(yellow)%d\"
 	slog = log --date=short --pretty=format:\"%C(124)%ad %C(24)%h %C(34)%an %C(252)%s%C(178)%d\"
 	llog = log --date=short --format=\"%C(94)--------------------------------------------------------------------------------%n%C(24)%h %C(124)%ad %C(34)%an %C(22)<%ae>%C(130)%d%n%C(178) %s%n%n%B(1)\"
