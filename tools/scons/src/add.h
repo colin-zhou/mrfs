@@ -7,15 +7,8 @@
     #define STATIC static 
 #endif
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
-//int cacl(int i1, int i2);
-int add(int i1, int i2);
-
-#ifdef __cplusplus
-}
-#endif
+int cacl(int i1, int i2);
+//int add(int i1, int i2);
 
 #endif

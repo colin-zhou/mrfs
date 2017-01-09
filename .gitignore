@@ -9,3 +9,7 @@
 *.a
 .ropeproject
 *.json
+*.dblite
+*.gcda
+*.gcno
+*.xml
