@@ -27,6 +27,8 @@ alias jslint='/home/rss/node_modules/jslint/bin/jslint.js'
 alias lsd='ls -ld */'
 alias lss='find ./ -name "*.cpp" -o -name "*.c" -o -name "*.h"'
 alias q='QHOME=~/q rlwrap -r ~/q/m32/q'
+#alias vim='vim -p'
+alias mytop='top -u $(whoami)'
 
 #
 # Some more alias to avoid making mistakes:
@@ -91,6 +93,7 @@ export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export PATH=$PATH:~/nrss/arcanist/bin/
+export PATH=$PATH:/usr/local/lib
 
 ulimit -c unlimited
 
