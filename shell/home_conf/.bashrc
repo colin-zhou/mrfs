@@ -166,3 +166,7 @@ checkcurdos() {
         checkdos $file
     done
 }
+
+has_debug_info() {
+  readelf -S "$1" | grep -q " \(.debug_info\)\|\(.gnu_debuglink\) "
+}
