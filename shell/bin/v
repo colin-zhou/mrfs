@@ -1,0 +1,1 @@
+vimx -p $(echo $1|sed -r "s/:/ +/"|sed -r "s/:.+//")
