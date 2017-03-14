@@ -170,3 +170,5 @@ checkcurdos() {
 has_debug_info() {
   readelf -S "$1" | grep -q " \(.debug_info\)\|\(.gnu_debuglink\) "
 }
+# added by Anaconda3 4.2.0 installer
+export PATH="/home/colin/anaconda3/bin:$PATH"
