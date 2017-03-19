@@ -172,3 +172,9 @@ has_debug_info() {
 }
 # added by Anaconda3 4.2.0 installer
 export PATH="/home/colin/anaconda3/bin:$PATH"
+
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+    export TERM='xterm-256color'
+else
+    export TERM='xterm-color'
+fi
