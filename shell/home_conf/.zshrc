@@ -86,9 +86,13 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias g='grep --color=always -EnR '
 
-export PATH="$PATH:/home/colin/Git/arcanist/bin/:/opt/cmake-3.6.1/bin"
+if [[ -d /home/colin/Git/arcanist ]]; then
+    export PATH="$PATH:/home/colin/Git/arcanist/bin/:/opt/cmake-3.6.1/bin"
+fi
 
 
 # for python virtual env
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi

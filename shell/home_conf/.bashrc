@@ -170,11 +170,20 @@ checkcurdos() {
 has_debug_info() {
   readelf -S "$1" | grep -q " \(.debug_info\)\|\(.gnu_debuglink\) "
 }
-# added by Anaconda3 4.2.0 installer
-export PATH="/home/colin/anaconda3/bin:$PATH"
 
+# added by Anaconda3 4.2.0 installer
+if [ -d /home/colin/anaconda3/bin ];then
+    export PATH="/home/colin/anaconda3/bin:$PATH"
+fi
+
+# set color mainly for remote connections
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
     export TERM='xterm-256color'
 else
     export TERM='xterm-color'
 fi
+
+cpu_num() {
+    cat /proc/cpuinfo|grep "physical id" |grep "0"|wc -l
+}
+
