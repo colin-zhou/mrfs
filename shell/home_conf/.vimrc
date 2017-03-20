@@ -88,3 +88,6 @@ map <F5> :!cscope -Rbq<CR>:cs reset<CR><CR>
 
 " make comments looks better
 hi Comment ctermfg=6 
+
+" support paste auto indent
+set pastetoggle=<F2>
