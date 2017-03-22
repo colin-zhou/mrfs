@@ -20,3 +20,10 @@ pip install MySQL-python
 pip install sqlalchemy
 pip install faker
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# init local links
+cur_path=$(cd $(dirname $1);pwd)
+cd ~
+rm .bashrc && ln -s $cur_path/home_conf/.bashrc ./
+rm .vimrc && ln -s $cur_path/home_conf/.vimrc ./
+rm .gitconfig && ln -s $cur_path/home_conf/.gitconfig ./
