@@ -92,8 +92,11 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[1;31m\]($?)\[\033[
 export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-export PATH=$PATH:~/nrss/arcanist/bin/
-export PATH=$PATH:/usr/local/lib
+export PATH=$PATH:~/nrss/arcanist/bin/:/usr/local/bin
+
+if [ -d /home/colin/bin ]; then
+    export PATH=$PATH:/home/colin/bin
+fi
 
 ulimit -c unlimited
 
