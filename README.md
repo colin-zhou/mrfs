@@ -1,72 +1,34 @@
-# My Reserve Codes
-Files useless but i don't want to discard
-
+# Api Usage and Config 
 ## Getting Started
-What things you need to install the software and how to install them
+This needn't install
 
 ```
-Give examples
+1. clone the project
+2. ln -s configuration
 ```
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Stay what the step will be
+Install wonderful tools and configuration those
 
 ```
-Give the example
+1. cd shell && bash init_install.sh(for centos)
 ```
-
-And repeat
-
-```
-until finished
-```
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-example
-```
-
-## Specification
-
-Add additional notes about how to deploy this on a live system
 
 ### Javascript
     common functions
 
 ### Python
-    common functions
+    common functions and api test
 
 ### C/C++
-    common functions or api test
+    common functions and api test
 
-### Shell/Python scripts
+### Shell bash scripts
     mainly shortcut for spec-task
 
-### Git hooks
-
 ## Authors
-* **TEST** - *Initial work* - [PurpleBooth](https://github.com/)
+* **Colin** - *Blog* - [PurpleBooth](http://blog.csdn.net/zcliatb)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-* etc
