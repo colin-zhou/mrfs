@@ -4,7 +4,7 @@ This needn't install
 
 ```
 1. clone the project
-2. ln -s configuration
+2. ln -s those configuration
 ```
 ### Installing
 
@@ -27,8 +27,7 @@ Install wonderful tools and configuration those
     mainly shortcut for spec-task
 
 ## Authors
-* **Colin** - *Blog* - [PurpleBooth](http://blog.csdn.net/zcliatb)
+* **Colin** - [Blog](http://blog.csdn.net/zcliatb)
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
