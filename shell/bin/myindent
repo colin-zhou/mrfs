@@ -11,6 +11,8 @@
 # With the -T <type> we can inform indent about non-ansi types that
 # we've added, so indent doesn't insert spaces in odd places.
 # 
+linux=uname | grep Linux | wc -l
+if [ "$linux" = "1" ];then
 indent --linux-style							\
        --ignore-profile							\
        --preserve-mtime							\
@@ -36,3 +38,6 @@ indent --linux-style							\
        -T cfg_bool_t -T cfg_func_t -T cfg_free_func_t -T cfg_errfunc_t	\
        -T cfg_print_func_t -T cfg_callback_t -T cfg_validate_callback_t	\
 $*
+else
+indent $*
+fi
