@@ -1,0 +1,25 @@
+start(){
+    sslocal -c /home/colin/Configuration/config.json -d start
+}
+
+stop() {
+    sslocal -c /home/colin/Configuration/config.json -d stop
+}
+
+case "$1" in
+start)
+    start
+    ;;
+stop)
+    stop
+    ;;
+restart)
+    stop
+    sleep 1
+    start
+    ;;
+*)
+    echo "Usage: $0 {start|reload|stop}"
+    exit 1
+    ;;
+esac

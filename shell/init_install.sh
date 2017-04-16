@@ -19,6 +19,7 @@ pip install --upgrade pip
 pip install MySQL-python
 pip install sqlalchemy
 pip install faker
+pip install shadowsocks
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # init local links

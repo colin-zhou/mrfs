@@ -1,0 +1,9 @@
+[Unit]
+Description=Shadowsocks
+
+[Service]
+TimeoutStartSec=0
+ExecStart=ss-local -c /home/colin/Configuration/config.json
+
+[Install]
+WantedBy=multi-user.target
