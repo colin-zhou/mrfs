@@ -190,3 +190,10 @@ cpu_num() {
     cat /proc/cpuinfo|grep "physical id" |grep "0"|wc -l
 }
 
+# ls file and directory
+lsf() {
+    ls -la | grep '^-'
+}
+lsd() {
+    ls -la | grep '^d'
+}
