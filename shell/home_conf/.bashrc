@@ -171,7 +171,7 @@ checkcurdos() {
 }
 
 has_debug_info() {
-  readelf -S "$1" | grep -q " \(.debug_info\)\|\(.gnu_debuglink\) "
+    readelf -S "$1" | grep -q " \(.debug_info\)\|\(.gnu_debuglink\) "
 }
 
 # added by Anaconda3 4.2.0 installer
@@ -191,9 +191,10 @@ cpu_num() {
 }
 
 # ls file and directory
-lsf() {
+lsfile () {
     ls -la | grep '^-'
 }
-lsd() {
+
+lsdir () {
     ls -la | grep '^d'
 }
