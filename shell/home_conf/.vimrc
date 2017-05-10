@@ -95,3 +95,21 @@ hi Comment ctermfg=6
 
 " support paste auto indent
 set pastetoggle=<F2>
+
+" nerdtree
+map <leader>t :NERDTreeToggle<CR>
+" show lines
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" show the hidden file
+let NERDTreeShowHidden=1
+" set the window size
+let NERDTreeWinSize=31
+" share nerdtree before vim startup
+let g:nerdtree_tabs_open_on_console_startup=1
+" ignore file list
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" list bookmark list
+let NERDTreeShowBookmarks=1
+" if only open files in nerdtree then close
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
