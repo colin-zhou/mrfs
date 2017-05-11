@@ -1,6 +1,7 @@
 [core]
 	pager = less -JFRSX
 	editor = vim
+	excludesfile = /Users/colin/.gitignore_global
 [user]
 	name = Zhou Chaolin
 	email = zhouchaolin@mycapital.net
@@ -54,3 +55,9 @@
     sapply = "!f() { git stash apply stash^{/$*}; }; f"
 [https]
 	proxy = http://127.0.0.1:1080
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
