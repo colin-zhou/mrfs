@@ -29,6 +29,7 @@ alias lss='find ./ -name "*.cpp" -o -name "*.c" -o -name "*.h"'
 alias q='QHOME=~/q rlwrap -r ~/q/m32/q'
 #alias vim='vim -p'
 alias mytop='top -u $(whoami)'
+alias nbpy=''
 
 #
 # Some more alias to avoid making mistakes:
@@ -38,15 +39,10 @@ alias mytop='top -u $(whoami)'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias aclocal-1.6='aclocal-1.14'
-alias cdsite='cd ~/nrss/rss/src/rss/site'
-alias cdrt='cd ~/nrss/rss/src/rss/new_rtserver'
-alias cdrss='cd ~/nrss/rss'
-alias cdagent='cd ~/nrss/rss/src/rss/rss_agent/rss/src'
 alias cdgit='cd ~/Git/'
-alias cdjs='cd /home/rss/nrss/rss/src/rss/site/core/static/platform/js'
-alias cdinc='cd /home/rss/nrss/rss/src/rss/lib/include'
 alias g='grep --color=always -EnR '
 alias q='$QHOME/l32/q'
+alias vgc='valgrind --leak-check=full --freelist-vol=100000000 --log-file=log.txt -v'
 
 # from the "xttitle(1)" man page - put info in window title  
 update_title()
@@ -197,4 +193,15 @@ lsfile () {
 
 lsdir () {
     ls -la | grep '^d'
+}
+
+randomstring () {
+    strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 32 | tr -d '\n'; echo
+}
+
+startvnc() {
+    vncserver -depth 24 -name aru_desktop -httpport 9001
+}
+killvnc() {
+    vncserver -kill :1
 }
