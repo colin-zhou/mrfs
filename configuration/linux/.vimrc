@@ -30,14 +30,15 @@ if version >= 500
     " different version somewhere else.
     " Plugin 'ascenator/L9', {'name': 'newL9'}
     Plugin 'scrooloose/nerdtree'
+    Plugin 'lokaltog/vim-powerline'
     Plugin 'scrooloose/syntastic'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'tpope/vim-surround'
     Plugin 'kien/ctrlp.vim'
     Plugin 'bling/vim-airline'
     Plugin 'majutsushi/tagbar'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'pangloss/vim-javascript'
+    " Plugin 'airblade/vim-gitgutter'
+    " Plugin 'pangloss/vim-javascript'
     Plugin 'mattn/emmet-vim'
     Plugin 'ervandew/supertab'
     Plugin 'nathanaelkane/vim-indent-guides'
@@ -113,3 +114,7 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let NERDTreeShowBookmarks=1
 " if only open files in nerdtree then close
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+" vim power-line
+set laststatus=2
+let g:Powerline_symbols='unicode'
+set t_Co=256
