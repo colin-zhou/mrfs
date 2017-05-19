@@ -118,3 +118,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeT
 set laststatus=2
 let g:Powerline_symbols='unicode'
 set t_Co=256
+
+" auto match brackets
+set sm
