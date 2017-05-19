@@ -51,7 +51,8 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump osx brew node npm zsh-syntax-highlighting)
+
+plugins=(git autojump osx brew node npm zsh-syntax-highlighting python pip virtualenv jira colorize colored-man)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -75,6 +76,12 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# texlive bin and man path
+if [ -d "/usr/local/texlive/2016/bin/x86_64-darwin" ];then
+    export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2016/bin/x86_64-darwin"
+    export MANPATH="/usr/local/man:$MANPATH"
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -86,6 +93,24 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace > /dev/null 2>&1 &"
 export PATH="/usr/local/bin:$PATH"
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Owner
+export USER_NAME="ZHOU CHAOLIN"
+
+# FileSearch
+function f() { find . -iname "*$1*" ${@:2} }
+function r() { grep "$1" ${@:2} -R . }
+
+#mkdir and cd
+function mkcd() { mkdir -p "$@" && cd "$_"; }
+
+# Aliases
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+alias vim="mvim -v"
+alias kvpn='sudo vpnc-disconnect'
+alias ctags="`brew --prefix`/bin/ctags"
+alias g='grep --color=always -EnR'
+alias svpn='sudo vpnc-connect'
 
 mount10() {
     echo "123" | sshfs -C -o reconnect rss@192.168.3.10:/home/rss/bss_latest /Users/colin/Workspace/bss_server
