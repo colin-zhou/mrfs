@@ -31,7 +31,7 @@ if version >= 500
     " Plugin 'ascenator/L9', {'name': 'newL9'}
     Plugin 'scrooloose/nerdtree'
     Plugin 'lokaltog/vim-powerline'
-    Plugin 'scrooloose/syntastic'
+    " Plugin 'scrooloose/syntastic'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'tpope/vim-surround'
     Plugin 'kien/ctrlp.vim'
