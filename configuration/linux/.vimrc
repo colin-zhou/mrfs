@@ -98,6 +98,9 @@ hi Comment ctermfg=6
 " support paste auto indent
 set pastetoggle=<F2>
 
+" disable highlight when need to cancel
+nmap <F3> :nohlsearch<CR>
+
 " nerdtree
 map <leader>t :NERDTreeToggle<CR>
 " show lines
