@@ -50,7 +50,7 @@
 	last = log -1 HEAD
     dfile = diff --name-status --oneline
     hfile = log --follow --pretty=oneline --
-    hdfile= log --follow -p --
+    hdfile = log --follow -p --
     sshow = "!f(){ git stash show stash^{/$*} -p; }; f"
     sapply = "!f() { git stash apply stash^{/$*}; }; f"
 [https]
