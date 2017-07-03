@@ -46,7 +46,7 @@ if version >= 500
     "scope jump configuration
     Plugin 'brookhong/cscope.vim'
     "python-mode is a ide for developing python
-    Plugin 'klen/python-mode'
+    "Plugin 'klen/python-mode'
     "Plugin 'taglist.vim'
     
     " All of your Plugins must be added before the following line
