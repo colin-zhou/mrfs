@@ -85,7 +85,7 @@ fi
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias g='grep --color=always -EnR '
-alias pynb='jupyter notebook --notebook-dir=/home/colin/Workspace --no-browser'
+alias pynb='jupyter notebook --notebook-dir=/home/colin/Workspace --no-browser >1 2>&1 &'
 
 if [[ -d /home/colin/Git/arcanist ]]; then
     export PATH="$PATH:/home/colin/Git/arcanist/bin/:/opt/cmake-3.6.1/bin"
