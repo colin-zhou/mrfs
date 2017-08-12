@@ -26,10 +26,10 @@ alias pbpaste='xclip -selection clipboard -o'
 alias jslint='/home/rss/node_modules/jslint/bin/jslint.js'
 alias lsd='ls -ld */'
 alias lss='find ./ -name "*.cpp" -o -name "*.c" -o -name "*.h"'
-alias q='QHOME=~/q rlwrap -r ~/q/m32/q'
+alias wq='QHOME=~/q rlwrap q'
 #alias vim='vim -p'
 alias mytop='top -u $(whoami)'
-alias nbpy=''
+alias pynb="nohup jupyter notebook --notebook-dir=/home/rss/Workspace/jupyter > /dev/null 2>&1 &"
 
 #
 # Some more alias to avoid making mistakes:

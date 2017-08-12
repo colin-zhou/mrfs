@@ -9,7 +9,7 @@ if version >= 500
     call vundle#begin()
     " alternatively, pass a path where Vundle should install plugins
     "call vundle#begin('~/some/path/here')
-    
+
     " let Vundle manage Vundle, required
     "git operation wrapper
     " Plugin 'airblade/vim-gitgutter'
@@ -48,7 +48,7 @@ if version >= 500
     "python-mode is a ide for developing python
     "Plugin 'klen/python-mode'
     "Plugin 'taglist.vim'
-    
+
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
     filetype plugin indent on    " required
@@ -232,3 +232,7 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:syntastic_python_flake8_args='--ignore=E501,F401,H306,H404,H405'
+
+""C/C++ auto indent
+autocmd FileType c,cpp set shiftwidth=4 | set expandtab
