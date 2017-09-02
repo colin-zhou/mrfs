@@ -45,6 +45,7 @@ if version >= 500
     Plugin 'brookhong/cscope.vim'
     " Plugin 'klen/python-mode'
     Plugin 'taglist.vim'
+    Plugin 'valloric/youcompleteme'
     
     " All of your Plugins must be added before the following line
     call vundle#end()            " required

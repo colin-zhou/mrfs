@@ -85,9 +85,14 @@ fi
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias g='grep --color=always -EnR '
+alias pynb='jupyter notebook --notebook-dir=/home/colin/Workspace --no-browser >1 2>&1 &'
 
 if [[ -d /home/colin/Git/arcanist ]]; then
     export PATH="$PATH:/home/colin/Git/arcanist/bin/:/opt/cmake-3.6.1/bin"
+fi
+
+if [[ -d /opt/spark-2.2.0-bin-hadoop2.7 ]]; then
+    export PATH="$PATH:/opt/spark-2.2.0-bin-hadoop2.7/bin"
 fi
 
 
@@ -96,3 +101,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
+
+# ls tcp connection
+lscnt() {
+    netstat -n | awk '/^tcp/ {++b[$NF]} END {for(a in b) print a, b[a]}'
+}
