@@ -236,4 +236,4 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 ""C/C++ auto indent
 autocmd FileType c,cpp set shiftwidth=4 | set expandtab
-let g:syntastic_python_flake8_args='--ignore=E501,F401,H306,H404,H405,H301'
+let g:syntastic_python_flake8_args='--ignore=E501,F401,H306,H404,H405,H301,H233'
