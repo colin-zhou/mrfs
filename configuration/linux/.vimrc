@@ -30,7 +30,7 @@ if version >= 500
     "bottom bar show the mode, line and other information
     Plugin 'lokaltog/vim-powerline'
     "basically for c++ syntax check show the error alert
-    Plugin 'scrooloose/syntastic'
+    "Plugin 'scrooloose/syntastic'
     "fuzzy find needed file plugin, pretty cool
     Plugin 'kien/ctrlp.vim'
     "fuzzy find function in file
