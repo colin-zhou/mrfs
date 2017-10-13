@@ -82,6 +82,14 @@ if [ -d "/usr/local/texlive/2016/bin/x86_64-darwin" ];then
     export MANPATH="/usr/local/man:$MANPATH"
 fi
 
+if [ -d "/Users/colin/Git/arcanist/bin" ];then
+    export PATH=$PATH:/Users/colin/Git/arcanist/bin
+fi
+
+if [ -d "/usr/local/bin" ];then
+    export PATH=$PATH:/usr/local/bin
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -114,4 +122,12 @@ alias svpn='sudo vpnc-connect'
 
 mount10() {
     echo "123" | sshfs -C -o reconnect rss@192.168.3.10:/home/rss/bss_latest /Users/colin/Workspace/bss_server
+}
+
+connect20() {
+    ssh -p 2222 colin@192.168.20.11
+}
+
+connect3() {
+    ssh colin@192.168.3.3
 }
