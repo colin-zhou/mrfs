@@ -25,3 +25,5 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 npm install -g spaceship-zsh-theme
 
 # basic software
+brew cask install sublime-text
+sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
