@@ -121,6 +121,7 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias g='grep --color=always -EnR'
 alias svpn='sudo vpnc-connect'
 alias adbphone='adb -d shell sh /data/data/me.piebridge.brevent/brevent.sh'
+alias subl='subl --add'
 
 mount10() {
     echo "123" | sshfs -C -o reconnect rss@192.168.3.10:/home/rss/bss_latest /Users/colin/Workspace/bss_server
