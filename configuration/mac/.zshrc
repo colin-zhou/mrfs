@@ -100,6 +100,10 @@ fi
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace > /dev/null 2>&1 &"
+# if alias
+if [ -f ~/q/m32/q ];then
+    alias q='QUHOME=~/q rlwrap -r ~/q/m32/q'
+fi
 export PATH="/usr/local/bin:$PATH"
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
