@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-const char *file="./1.so";
+const char *file="./test/1.so";
 typedef void(*func_t)(void);
 
 int main()
