@@ -38,7 +38,7 @@
 #------------------------------------------------------------------------------
 c.NotebookApp.password = u'sha1:2e2e65056049:3ea8b0d906e17c7d45158206c333d62b785dfcdb'
 c.NotebookApp.ip = '*'
-c.NotebookApp.notebook_dir = '/Users/colin/Workspace'
+c.NotebookApp.notebook_dir = '/Users/colin/Workspace/jupyter_dir'
 c.NotebookApp.allow_origin = '*'
 c.NotebookApp.open_browser = False
 c.NotebookApp.port = 8888

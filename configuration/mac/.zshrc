@@ -99,7 +99,11 @@ fi
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace > /dev/null 2>&1 &"
+if [ -d "/Users/colin/Workspace/jupyter_dir" ]; then
+    alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace/jupyter_dir > /dev/null 2>&1 &"
+else
+    alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace > /dev/null 2>&1 &"
+fi
 # if alias
 if [ -f ~/q/m32/q ];then
     alias q='QUHOME=~/q rlwrap -r ~/q/m32/q'
