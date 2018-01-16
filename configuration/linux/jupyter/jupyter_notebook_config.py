@@ -36,12 +36,6 @@
 #------------------------------------------------------------------------------
 # NotebookApp(JupyterApp) configuration
 #------------------------------------------------------------------------------
-c.NotebookApp.password = u'sha1:2e2e65056049:3ea8b0d906e17c7d45158206c333d62b785dfcdb'
-c.NotebookApp.ip = '*'
-c.NotebookApp.notebook_dir = '/User/colin/Workspace'
-c.NotebookApp.allow_origin = '*'
-c.NotebookApp.open_browser = False
-c.NotebookApp.port = 8888
 
 ## Set the Access-Control-Allow-Credentials: true header
 #c.NotebookApp.allow_credentials = False
@@ -165,7 +159,7 @@ c.NotebookApp.port = 8888
 #c.NotebookApp.iopub_msg_rate_limit = 1000
 
 ## The IP address the notebook server will listen on.
-#c.NotebookApp.ip = 'localhost'
+c.NotebookApp.ip = '0.0.0.0'
 
 ## Supply extra arguments that will be passed to Jinja environment.
 #c.NotebookApp.jinja_environment_options = {}
@@ -205,7 +199,7 @@ c.NotebookApp.port = 8888
 #c.NotebookApp.nbserver_extensions = {}
 
 ## The directory to use for notebooks and kernels.
-#c.NotebookApp.notebook_dir = ''
+c.NotebookApp.notebook_dir = '/home/colin/Workspace'
 
 ## Whether to open in a browser after starting. The specific browser used is
 #  platform dependent and determined by the python standard library `webbrowser`

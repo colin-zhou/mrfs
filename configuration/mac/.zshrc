@@ -7,7 +7,8 @@ export ZSH=/Users/colin/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,6 +83,14 @@ if [ -d "/usr/local/texlive/2016/bin/x86_64-darwin" ];then
     export MANPATH="/usr/local/man:$MANPATH"
 fi
 
+if [ -d "/Users/colin/Git/arcanist/bin" ];then
+    export PATH=$PATH:/Users/colin/Git/arcanist/bin
+fi
+
+if [ -d "/usr/local/bin" ];then
+    export PATH=$PATH:/usr/local/bin
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -90,7 +99,15 @@ fi
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace > /dev/null 2>&1 &"
+if [ -d "/Users/colin/Workspace/jupyter_dir" ]; then
+    alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace/jupyter_dir > /dev/null 2>&1 &"
+else
+    alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace > /dev/null 2>&1 &"
+fi
+# if alias
+if [ -f ~/q/m32/q ];then
+    alias q='QUHOME=~/q rlwrap -r ~/q/m32/q'
+fi
 export PATH="/usr/local/bin:$PATH"
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -111,7 +128,25 @@ alias kvpn='sudo vpnc-disconnect'
 alias ctags="`brew --prefix`/bin/ctags"
 alias g='grep --color=always -EnR'
 alias svpn='sudo vpnc-connect'
+alias adbphone='adb -d shell sh /data/data/me.piebridge.brevent/brevent.sh'
+alias subl='subl --add'
 
 mount10() {
     echo "123" | sshfs -C -o reconnect rss@192.168.3.10:/home/rss/bss_latest /Users/colin/Workspace/bss_server
 }
+
+connect20() {
+    ssh -p 2222 colin@192.168.20.11
+}
+
+connect3() {
+    ssh colin@192.168.3.3
+}
+
+
+source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+
+source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"

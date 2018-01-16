@@ -30,7 +30,7 @@ if version >= 500
     "bottom bar show the mode, line and other information
     Plugin 'lokaltog/vim-powerline'
     "basically for c++ syntax check show the error alert
-    Plugin 'scrooloose/syntastic'
+    "Plugin 'scrooloose/syntastic'
     "fuzzy find needed file plugin, pretty cool
     Plugin 'kien/ctrlp.vim'
     "fuzzy find function in file
@@ -236,4 +236,4 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 ""C/C++ auto indent
 autocmd FileType c,cpp set shiftwidth=4 | set expandtab
-let g:syntastic_python_flake8_args='--ignore=E501,F401,H306,H404,H405,H301'
+let g:syntastic_python_flake8_args='--ignore=E501,F401,H306,H404,H405,H301,H233'

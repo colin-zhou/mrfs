@@ -91,6 +91,10 @@ if [[ -d /home/colin/Git/arcanist ]]; then
     export PATH="$PATH:/home/colin/Git/arcanist/bin/:/opt/cmake-3.6.1/bin"
 fi
 
+if [[ -d /var/www/html/phabricator/arcanist/bin ]]; then
+    export PATH="$PATH:/var/www/html/phabricator/arcanist/bin"
+fi 
+
 if [[ -d /opt/spark-2.2.0-bin-hadoop2.7 ]]; then
     export PATH="$PATH:/opt/spark-2.2.0-bin-hadoop2.7/bin"
 fi
