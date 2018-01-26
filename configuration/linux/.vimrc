@@ -49,7 +49,8 @@ if version >= 500
     Plugin 'brookhong/cscope.vim'
     "python-mode is a ide for developing python
     "Plugin 'klen/python-mode'
-    "Plugin 'taglist.vim'
+    "func taglist
+    Plugin 'taglist.vim'
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -98,7 +99,7 @@ nmap <F7> :cp<cr>
 map <F5> :!cscope -Rbq<CR>:cs reset<CR><CR>
 
 " make comments looks better
-hi Comment ctermfg=6 
+hi Comment ctermfg=6
 
 " support paste auto indent
 set pastetoggle=<F2>
@@ -127,6 +128,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeT
 set laststatus=2
 let g:Powerline_symbols='unicode'
 set t_Co=256
+
+" taglist
+map <silent> <leader>tl :TlistToggle<cr>
 
 " auto match brackets, show the matching part of the pair for [] {} and ()
 set showmatch
