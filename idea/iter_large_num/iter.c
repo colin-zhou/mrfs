@@ -11,16 +11,16 @@ int main()
     uint64_t t1, t2;
     gettimeofday(&a, &c);
     int j = 0;
-    for (int i = 0; i < 10000000; i++){
+    for (int i = 0; i < 100000000; i++){
         strcmp("abcefg", "hahahah1");
         strcmp("abcefg", "hahahah2");
-        strcmp("abcefg", "hahahah3");
-        strcmp("abcefg", "hahahah4");
-        strcmp("abcefg", "hahahah5");
-        strcmp("abcefg", "hahahah2");
-        strcmp("abcefg", "hahahah3");
-        strcmp("abcefg", "hahahah4");
-        strcmp("abcefg", "hahahah5");
+        //strcmp("abcefg", "hahahah3");
+        //strcmp("abcefg", "hahahah4");
+        //strcmp("abcefg", "hahahah5");
+        //strcmp("abcefg", "hahahah2");
+        //strcmp("abcefg", "hahahah3");
+        //strcmp("abcefg", "hahahah4");
+        //strcmp("abcefg", "hahahah5");
         j++;
     }
     gettimeofday(&b, &c);
