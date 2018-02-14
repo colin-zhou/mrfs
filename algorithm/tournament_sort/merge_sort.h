@@ -9,6 +9,11 @@
 #define decode_tick_col(v) ((0xFFFFF000 & v) >> 12)
 #define decode_tick_row(v) (0xFFF & v)
 
+enum SORT_METHOD {
+    BY_LOCAL_TIME=0,    /* sort by the quote recv time */
+    BY_EXCH_TIME=1      /* sort by the quote exch time */
+};
+
 /**
  * input the python list of channel source
  * sort those quote and provide API to fetch

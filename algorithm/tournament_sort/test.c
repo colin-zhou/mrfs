@@ -33,40 +33,37 @@ get_random_data(int size)
     d->data = (void*) tick;
     d->itemsize = sizeof(common_quote_t);
 	d->size = size;
-	printf("\n");
     for(int i = 0; i < size; i++) {
         tick[i].local_time = rand() % 10 + i * 10;
         tick[i].exch_time = tick[i].local_time;
-		printf("%llu ", tick[i].local_time);
     }
-	printf("\n");
     return d;
 }
 
 void **
 test_load_quote()
 {
-    channel_data_t *d1 = get_random_data(3);
-    channel_data_t *d2 = get_random_data(3);
-    channel_data_t *d3 = get_random_data(3);
-    channel_data_t *d4 = get_random_data(3);
+    channel_data_t *d1 = get_random_data(3000000);
+    channel_data_t *d2 = get_random_data(3000000);
+    channel_data_t *d3 = get_random_data(3000000);
+    channel_data_t *d4 = get_random_data(3000000);
     x[0] = d1;
     x[1] = d2;
     x[2] = d3;
     x[3] = d4;
-    printf("\n");
-    for (int i = 0; i < 3; i++)
-        printf("%llu ", ((common_quote_t *)(d1->data))[i].exch_time);
-    printf("\n");
-    for (int i = 0; i < 3; i++)
-        printf("%llu ", ((common_quote_t *)(d2->data))[i].exch_time);
-    printf("\n");
-    for (int i = 0; i < 3; i++)
-        printf("%llu ", ((common_quote_t *)(d2->data))[i].exch_time);
-    printf("\n");
-    for (int i = 0; i < 3; i++)
-        printf("%llu ", ((common_quote_t *)(d3->data))[i].exch_time);
-    printf("\n");
+    //printf("\ncol1: ");
+    //for (int i = 0; i < 3; i++)
+    //    printf("%llu ", ((common_quote_t *)(d1->data))[i].exch_time);
+    //printf("\ncol2: ");
+    //for (int i = 0; i < 3; i++)
+    //    printf("%llu ", ((common_quote_t *)(d2->data))[i].exch_time);
+    //printf("\ncol3: ");
+    //for (int i = 0; i < 3; i++)
+    //    printf("%llu ", ((common_quote_t *)(d2->data))[i].exch_time);
+    //printf("\ncol4: ");
+    //for (int i = 0; i < 3; i++)
+    //    printf("%llu ", ((common_quote_t *)(d3->data))[i].exch_time);
+    //printf("\n");
 
     load_quote_c(x, 4, 0);
     return (void **)x;
@@ -96,7 +93,7 @@ int main()
         idx++;
         row = decode_tick_row(res);
         col = decode_tick_col(res);
-        printf("idx = %d, row = %d, col = %d, val=%llu\n", idx, row, col, fetch_cell(col, row));
+        //printf("idx = %d, row = %d, col = %d, val=%llu\n", idx, row, col, fetch_cell(col, row));
         //printf("idx = %d, row = %d, col = %d\n", idx, row, col);
 		//if(idx == 2) break;
     }
