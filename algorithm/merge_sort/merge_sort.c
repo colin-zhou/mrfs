@@ -1,4 +1,3 @@
-
 //#include <iostream>
 #include <stdio.h>
 #include <limits.h>
@@ -15,8 +14,8 @@ enum SORT_METHOD {
 typedef struct quote_tick {
     uint64_t exch_time;
     uint64_t local_time;
-    uint32_t column;
-    uint32_t row;
+    int32_t column;
+    int32_t row;
 } quote_tick_t;
 
 typedef struct common_quote {
@@ -30,11 +29,11 @@ typedef struct channel_data {
     void *data;                                /* point to data array like common_quote_t */
     int itemsize;                              /* itemsize of tick item */
     int size;                                  /* number of the tick in this channel */
-} channel_data_t;						       
-										       
-typedef size_t loser_index_t;			       
-										       
-typedef struct g_quote {				       
+} channel_data_t;
+
+typedef size_t loser_index_t;
+
+typedef struct g_quote {
     int            size;                       /* size of loser tree */
     int            sort_method;                /* the sort method of merge sort */
 	uint32_t       p_tick_col;                 /* previous return column */
@@ -83,14 +82,21 @@ adjust_by_local_time(int s)
     all_quote_data.l[0] = s;
 }
 
+/**
+ * squote is some data channel
+ */
 void
-convert_to_quote_tick(void *squote, quote_tick_t *dquote, int column, int row)
+convert_to_quote_tick(channel_data_t *c_quote, quote_tick_t *dquote, int column, int row)
 {
-    common_quote_t *cq = (common_quote_t *)(((channel_data_t *)squote)->data);
+    //common_quote_t *cq = (common_quote_t *)(((channel_data_t *)c_quote)->data);
+    common_quote_t *cq = (common_quote_t *)(((channel_data_t *)c_quote)->data);
+    //printf("col:%d, row:%d, the addr is %p, val1=%llu, val2=%llu\n", column, row, cq, cq[0].exch_time, cq[1].exch_time);
     dquote->column = column;
     dquote->row = row;
-    dquote->local_time = cq->local_time;
-    dquote->exch_time = cq->exch_time;
+    dquote->local_time = cq[row].local_time;
+    dquote->exch_time = cq[row].exch_time;
+    //if (row != 0)
+    //    printf("the exch_time is %llu\n", dquote->exch_time);
 }
 
 /**
@@ -102,8 +108,8 @@ init_loser_tree()
     int i;
     all_quote_data.p_tick_row = 0;
 	all_quote_data.p_tick_col = 0;
-    d_max_quote_tick = (quote_tick_t){.local_time=UINT_MAX, .exch_time=UINT_MAX, .column=(uint32_t)-1, .row=(uint32_t)-1};
-    all_quote_data.q[all_quote_data.size] = (quote_tick_t){.local_time=0, .exch_time=0, .column=(uint32_t)-1, .row=(uint32_t)-1};
+    d_max_quote_tick = (quote_tick_t){.local_time=UINT_MAX, .exch_time=UINT_MAX, .column=-1, .row=-1};
+    all_quote_data.q[all_quote_data.size] = (quote_tick_t){.local_time=0, .exch_time=0, .column=-1, .row=-1};
     /* all index point to the smallest value, always be champion */
     for (i = 0; i < all_quote_data.size + 1; i++)
         all_quote_data.l[i] = all_quote_data.size;
@@ -124,9 +130,11 @@ update_loser_tree()
 {
 	int row = all_quote_data.p_tick_row;
 	int col = all_quote_data.p_tick_col;
-    if (row < all_quote_data.d[col].size) {
+    // todo: remote minus 1
+    if (row < all_quote_data.d[col].size - 1) {
         /* more quote in the queue */
-        convert_to_quote_tick(all_quote_data.d[col].data, &all_quote_data.q[col], col, row+1);
+        /* this not work now */
+        convert_to_quote_tick(&all_quote_data.d[col], &all_quote_data.q[col], col, row+1);
     } else {
         all_quote_data.q[col] = d_max_quote_tick;
     }
@@ -144,15 +152,16 @@ int64_t
 pop_tick()
 {
     /* return an int value identify the column and row */
-	printf("current values: %lld\n", all_quote_data.q[0].exch_time);
-	printf("current values: %lld\n", all_quote_data.q[1].exch_time);
-	printf("current values: %lld\n", all_quote_data.q[2].exch_time);
-	printf("current values: %lld\n", all_quote_data.q[3].exch_time);
-	printf("the top index is %d and value is %d\n", all_quote_data.l[0],
-			all_quote_data.q[all_quote_data.l[0]].exch_time);
+	//printf("current values: %lld\n", all_quote_data.q[0].exch_time);
+	//printf("current values: %lld\n", all_quote_data.q[1].exch_time);
+	//printf("current values: %lld\n", all_quote_data.q[2].exch_time);
+	//printf("current values: %lld\n", all_quote_data.q[3].exch_time);
+	//printf("the top index is %d and value is %d\n", all_quote_data.l[0],
+	//		all_quote_data.q[all_quote_data.l[0]].exch_time);
 
     all_quote_data.p_tick_col = all_quote_data.q[all_quote_data.l[0]].column;
 	all_quote_data.p_tick_row = all_quote_data.q[all_quote_data.l[0]].row;
+
     update_loser_tree();
     if (all_quote_data.p_tick_col == -1) {
         /* None */
@@ -172,6 +181,9 @@ load_quote(void **data, int sort_method)
     init_loser_tree();
 }
 
+/**
+ * data is list of channel_data_t
+ */
 void
 load_quote_c(void **data, int size, int sort_method)
 {
@@ -180,11 +192,10 @@ load_quote_c(void **data, int size, int sort_method)
     all_quote_data.sort_method = sort_method;
     for (int i = 0; i < size; i++) {
         /* initial each channel of data */
-        d = &all_quote_data.d[i];
-        d->data = (void *)data[i];
+        all_quote_data.d[i] = *(channel_data_t *)data[i];
 		/* load data into queue */
-		convert_to_quote_tick((void *)data[i], &all_quote_data.q[i], i, 0);
-        d->size = 3;
+		convert_to_quote_tick((channel_data_t *)data[i], &all_quote_data.q[i], i, 0);
+        all_quote_data.d[i].size = 3;
     }
     init_loser_tree();
 	//printf("the top1 minmum value is %d\n", all_quote_data.q[all_quote_data.l[0]]);

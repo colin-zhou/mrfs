@@ -3,6 +3,7 @@
 #include <time.h>
 #include "merge_sort.h"
 
+void *x[4];
 
 typedef struct channel_data {
     void *data;
@@ -35,17 +36,16 @@ get_random_data(int size)
 	printf("\n");
     for(int i = 0; i < size; i++) {
         tick[i].local_time = rand() % 10 + i * 10;
-        tick[i].exch_time = tick->local_time;
-		printf("%d ", tick[i].local_time);
+        tick[i].exch_time = tick[i].local_time;
+		printf("%llu ", tick[i].local_time);
     }
 	printf("\n");
     return d;
 }
 
-void
+void **
 test_load_quote()
 {
-    void *x[4];
     channel_data_t *d1 = get_random_data(3);
     channel_data_t *d2 = get_random_data(3);
     channel_data_t *d3 = get_random_data(3);
@@ -54,7 +54,22 @@ test_load_quote()
     x[1] = d2;
     x[2] = d3;
     x[3] = d4;
+    printf("\n");
+    for (int i = 0; i < 3; i++)
+        printf("%llu ", ((common_quote_t *)(d1->data))[i].exch_time);
+    printf("\n");
+    for (int i = 0; i < 3; i++)
+        printf("%llu ", ((common_quote_t *)(d2->data))[i].exch_time);
+    printf("\n");
+    for (int i = 0; i < 3; i++)
+        printf("%llu ", ((common_quote_t *)(d2->data))[i].exch_time);
+    printf("\n");
+    for (int i = 0; i < 3; i++)
+        printf("%llu ", ((common_quote_t *)(d3->data))[i].exch_time);
+    printf("\n");
+
     load_quote_c(x, 4, 0);
+    return (void **)x;
 }
 
 void
@@ -63,10 +78,17 @@ init_srand()
     srand((unsigned) time(0));
 }
 
+uint64_t
+fetch_cell(int col, int row)
+{
+    common_quote_t *line = (common_quote_t *)((channel_data_t *)x[col])->data;
+    return line[row].exch_time;
+}
+
 int main()
 {
     init_srand();
-    test_load_quote();
+    void **data = test_load_quote();
     int row, col;
     int64_t res;
     int idx = 0;
@@ -74,10 +96,10 @@ int main()
         idx++;
         row = decode_tick_row(res);
         col = decode_tick_col(res);
-        printf("idx = %d, row = %d, col = %d\n", idx, row, col);
-		//if(idx == 12)
-		break;
+        printf("idx = %d, row = %d, col = %d, val=%llu\n", idx, row, col, fetch_cell(col, row));
+        //printf("idx = %d, row = %d, col = %d\n", idx, row, col);
+		//if(idx == 2) break;
     }
     printf("finished\n");
-	system("pause");
+	//system("pause");
 }
