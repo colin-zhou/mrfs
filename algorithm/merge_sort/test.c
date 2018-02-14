@@ -7,7 +7,7 @@
 typedef struct channel_data {
     void *data;
     int itemsize;
-    int size; 
+    int size;
 } channel_data_t;
 
 typedef struct common_quote {
@@ -24,43 +24,43 @@ typedef struct quote_tick {
     uint32_t row;
 } quote_tick_t;
 
-
-
 channel_data_t *
 get_random_data(int size)
 {
     channel_data_t *d = (channel_data_t *)malloc(sizeof(channel_data_t));
-    quote_tick_t *tick = (quote_tick_t *)malloc(sizeof(quote_tick_t) * size);
+	common_quote_t *tick = (common_quote_t *)malloc(sizeof(common_quote_t) * size);
     d->data = (void*) tick;
     d->itemsize = sizeof(common_quote_t);
+	d->size = size;
+	printf("\n");
     for(int i = 0; i < size; i++) {
-       	tick[i].local_time = rand() % 100000; 
+        tick[i].local_time = rand() % 10 + i * 10;
         tick[i].exch_time = tick->local_time;
+		printf("%d ", tick[i].local_time);
     }
-    d->size = size;
+	printf("\n");
     return d;
 }
 
 void
 test_load_quote()
 {
-    channel_data_t *d1 = get_random_data(100);
-    channel_data_t *d2 = get_random_data(100);
-    channel_data_t *d3 = get_random_data(100);
-    channel_data_t *d4 = get_random_data(100);
     void *x[4];
+    channel_data_t *d1 = get_random_data(3);
+    channel_data_t *d2 = get_random_data(3);
+    channel_data_t *d3 = get_random_data(3);
+    channel_data_t *d4 = get_random_data(3);
     x[0] = d1;
     x[1] = d2;
     x[2] = d3;
-    x[2] = d4;
+    x[3] = d4;
     load_quote_c(x, 4, 0);
 }
-
 
 void
 init_srand()
 {
-    //srand((unsigned) time(0));
+    srand((unsigned) time(0));
 }
 
 int main()
@@ -72,8 +72,12 @@ int main()
     int idx = 0;
     while ((res = pop_tick()) != -1) {
         idx++;
-        row =  decode_tick_row(res);
+        row = decode_tick_row(res);
         col = decode_tick_col(res);
         printf("idx = %d, row = %d, col = %d\n", idx, row, col);
+		//if(idx == 12)
+		break;
     }
+    printf("finished\n");
+	system("pause");
 }
