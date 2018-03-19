@@ -97,7 +97,7 @@ set ignorecase   " ignore case
 set incsearch
 set hlsearch
 set cursorline   " cursor currenct line
-set cursorcolumn " cursor currenct column
+" set cursorcolumn " cursor currenct column
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 
 "insert spaces instead of tab characters
