@@ -163,3 +163,5 @@ let g:autopep8_disable_show_diff=1
 
 " map comment
 map <F4> <leader>ci <CR>
+" tagbar
+nmap <F8> :TagbarToggle<CR>
