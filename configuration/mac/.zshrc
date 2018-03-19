@@ -118,7 +118,7 @@ export USER_NAME="ZHOU CHAOLIN"
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 
-#mkdir and cd
+# mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # Aliases
@@ -150,3 +150,7 @@ export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 
 source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+# the configuration
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
