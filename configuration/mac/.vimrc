@@ -165,3 +165,8 @@ let g:autopep8_disable_show_diff=1
 map <F4> <leader>ci <CR>
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+augroup project
+    autocmd!
+    autocmd BufRead, BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
