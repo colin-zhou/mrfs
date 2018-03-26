@@ -41,7 +41,9 @@ if version >= 500
     Plugin 'lokaltog/vim-powerline'
     Plugin 'scrooloose/syntastic'
     Plugin 'scrooloose/nerdcommenter'
+    " edit parentheses quickly
     Plugin 'tpope/vim-surround'
+    " open file quickly
     Plugin 'kien/ctrlp.vim'
     Plugin 'bling/vim-airline'
     Plugin 'majutsushi/tagbar'
@@ -57,7 +59,14 @@ if version >= 500
     " Plugin 'godlygeek/csapprox'
     Plugin 'taglist.vim'
     Plugin 'valloric/youcompleteme'
-    
+
+    " plugin for nodejs
+    Plugin 'marijnh/tern_for_vim'
+    " trigger the tab as another way
+    Plugin 'honza/vim-snippets'    
+    " move faster
+    Plugin 'easymotion/vim-easymotion'
+
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
     filetype plugin indent on    " required
