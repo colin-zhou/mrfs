@@ -6,8 +6,9 @@
 
 #define MAX_CHANNEL_CNT    (4096)
 #define encode_tick(a, b)  (((a)<<12) + (b))
-#define decode_tick_col(v) ((0xFFFFF000 & v) >> 12)
-#define decode_tick_row(v) (0xFFF & v)
+#define decode_tick_row(v) ((0xFFFFF000 & v) >> 12)
+#define decode_tick_col(v) (0xFFF & v)
+#define REACH_END          ((uint64_t)(-1))
 
 enum SORT_METHOD {
     BY_LOCAL_TIME=0,    /* sort by the quote recv time */
@@ -30,7 +31,7 @@ load_quote_c(void **data, int size, int sort_method);
 /**
  * ret = -1 means none tick now else exist quote tick
  */
-int64_t
+uint64_t
 pop_tick();
 
 

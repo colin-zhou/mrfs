@@ -142,7 +142,7 @@ update_loser_tree()
 /**
  * pop tick data and update the code context
  */
-int64_t
+uint64_t
 pop_tick()
 {
     /* return an int value identify the column and row */
@@ -155,7 +155,8 @@ pop_tick()
         /* None */
         return -1;
     }
-    return encode_tick(all_data.p_tick_col, all_data.p_tick_row);
+    //printf("real col: %d, real row: %d\n", all_data.p_tick_col, all_data.p_tick_row);
+    return encode_tick(all_data.p_tick_row, all_data.p_tick_col);
 }
 
 /**

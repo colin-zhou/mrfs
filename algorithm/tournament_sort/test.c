@@ -86,16 +86,17 @@ int main()
 {
     init_srand();
     void **data = test_load_quote();
-    int row, col;
-    int64_t res;
+    uint32_t row, col;
+    uint64_t res;
     int idx = 0;
-    while ((res = pop_tick()) != -1) {
+    while ((res = pop_tick()) != REACH_END) {
         idx++;
         row = decode_tick_row(res);
         col = decode_tick_col(res);
         //printf("idx = %d, row = %d, col = %d, val=%llu\n", idx, row, col, fetch_cell(col, row));
         //printf("idx = %d, row = %d, col = %d\n", idx, row, col);
-		//if(idx == 2) break;
+		if(idx == 10000000) 
+            printf("come to here: %d\n", idx);
     }
     printf("finished\n");
 	//system("pause");
