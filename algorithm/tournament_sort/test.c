@@ -74,7 +74,7 @@ int main()
     struct timeval start, end;
     struct timezone tz;
     init_srand();
-    void **data = test_load_spec(3000);
+    void **data = test_load_spec(1000);
     uint32_t row, col;
     uint64_t res;
     int idx = 0;

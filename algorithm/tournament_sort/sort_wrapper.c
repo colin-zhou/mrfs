@@ -8,6 +8,7 @@ PyMODINIT_FUNC PyInit_quote_sorter(void);
 #define  NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 #include "numpy/arrayobject.h"
 
+static int channel_size;
 static void *_data[MAX_CHANNEL_CNT];
 static channel_data_t _buf[MAX_CHANNEL_CNT];
 static PyObject *input_source[MAX_CHANNEL_CNT];
@@ -25,17 +26,16 @@ py_load_quote(PyObject *self, PyObject *args)
     PyObject *q_list;
     PyObject *q_tuple;
     PyObject *quote;
-
     if (!PyArg_ParseTuple(args, "OI:load_quote", &q_list, &sort_method)) {
         PyErr_Format(PyExc_TypeError, "load quote: Parameters mismatch.");
         return NULL;
     }
-
     size = PyList_Size(q_list);
     if (!PyList_Check(q_list) || size  == 0) {
         PyErr_Format(PyExc_TypeError, "load quote: quote source can't be empty.");
         return NULL;
     }
+    //printf("%s the size is %d\n", __func__, size);
     for (i = 0; i < size; i++) {
         // parse list item
         q_tuple = PyList_GetItem(q_list, i);
@@ -44,14 +44,28 @@ py_load_quote(PyObject *self, PyObject *args)
         q_itemsize = PyLong_AsLong(PyTuple_GetItem(q_tuple, 1));
         q_size = PyLong_AsLong(PyTuple_GetItem(q_tuple, 2));
         input_source[i] = quote;
-
-        _buf[i].data = (common_quote_t *)PyArray_DATA((PyArrayObject *)quote);
+        Py_INCREF(quote);
+        _buf[i].data = PyArray_DATA((PyArrayObject *)quote);
         _buf[i].itemsize = q_itemsize;
         _buf[i].size = q_size;
         _data[i] = &_buf[i];
+
+        //common_quote_t *t = _buf[i].data;
+        //printf("itemsize %d, size %d, item[0].et %lu\n", q_itemsize, q_size, t[0].local_time);
+        //printf("the addr: %p\n", _buf[i].data);
     }
+    channel_size = size;
     load_quote_c(_data, size, sort_method);
     return PyLong_FromLong(0);
+}
+
+static void
+decrease_ref_count()
+{
+    int i;
+    for (i = 0; i < channel_size; i++) {
+        Py_DECREF(input_source[i]);
+    }
 }
 
 static PyObject *
@@ -59,12 +73,15 @@ py_pop_tick(PyObject *self, PyObject *args)
 {
     uint64_t res;
     uint32_t row, col;
+    //printf("come to pop\n");
     while ((res = pop_tick()) != REACH_END) {
         row = decode_tick_row(res);
         col = decode_tick_col(res);
+        //printf("the row %u, col %u\n", row, col);
         return Py_BuildValue("(OI)", input_source[col], row);
     }
-    return Py_None;
+    decrease_ref_count();
+    return Py_BuildValue("(OO)", Py_None, Py_None);
 }
 
 char doc_load_quote[] = "load origin np.array quote interface";

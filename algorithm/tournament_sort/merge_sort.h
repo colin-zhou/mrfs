@@ -12,19 +12,19 @@
 typedef struct common_quote {
     int serial;                                /* the serial index of the tick */
     int mi_type;                               /* internal message index type */
-    uint64_t exch_time;                        /* exchange time of tick */
-    uint64_t local_time;                       /* receive time of tick */
+    uint64_t local_time;                        /* exchange time of tick */
+    uint64_t exch_time;                       /* receive time of tick */
 } common_quote_t;
 
 typedef struct channel_data {
-    common_quote_t *data;                      /* point to data array like common_quote_t */
+    void *data;                                /* point to data array like common_quote_t */
     int itemsize;                              /* itemsize of tick item, useless now */
     int size;                                  /* number of quote tick in this channel */
 } channel_data_t;
 
 enum SORT_METHOD {
-    BY_LOCAL_TIME=0,    /* sort by the quote recv time */
-    BY_EXCH_TIME=1      /* sort by the quote exch time */
+    BY_LOCAL_TIME=0,                           /* sort by the quote recv time */
+    BY_EXCH_TIME=1                             /* sort by the quote exch time */
 };
 
 /**

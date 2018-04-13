@@ -1,6 +1,6 @@
 # -std=c++11
 LDFLAG:=$(shell python3.5-config --cflags)
-INCLUDE:=$(shell python3.5-config --ldflags)
+INCLUDE:=$(shell python3.5-config --ldflags) -I ../include
 BSFLAG:=-Wall -g0 -O3 -fvisibility=hidden
 SOFLAG:=-fPIC -shared -L.  -Wl,-rpath=./ -Wl,--no-undefined
 
