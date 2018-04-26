@@ -143,6 +143,14 @@ connect3() {
     ssh colin@192.168.3.3
 }
 
+# Docker
+entrydocker() {
+    docker exec -it $1 /bin/bash
+}
+matchdocker() {
+    docker ps | grep $1
+}
+
 
 source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
