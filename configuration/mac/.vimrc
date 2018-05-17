@@ -175,6 +175,10 @@ map <F4> <leader>ci <CR>
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" disable highlight when need to cancel
+nmap <F9> :nohlsearch<CR>
+
+
 augroup project
     autocmd!
     autocmd BufRead, BufNewFile *.h,*.c set filetype=c.doxygen
