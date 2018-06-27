@@ -27,7 +27,7 @@ Install wonderful tools and configuration those
     mainly shortcut for spec-task
 
 ## Authors
-* **Colin** - [Blog](http://blog.csdn.net/zcliatb)
+* **Colin** - [Blog](http://blog.clshark.cn)
 
 ## License
 This project is licensed under the MIT License
