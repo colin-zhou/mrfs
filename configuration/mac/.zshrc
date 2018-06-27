@@ -91,6 +91,10 @@ if [ -d "/usr/local/bin" ];then
     export PATH=$PATH:/usr/local/bin
 fi
 
+if [ -d "/usr/local/sbin" ];then
+    export PATH=$PATH:/usr/local/sbin
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -108,7 +112,6 @@ fi
 if [ -f ~/q/m32/q ];then
     alias q='QUHOME=~/q rlwrap -r ~/q/m32/q'
 fi
-export PATH="/usr/local/bin:$PATH"
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Owner
@@ -155,6 +158,7 @@ matchdocker() {
 source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/Cellar/python/3.6.5/bin/:$PATH"
 
 
 source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
