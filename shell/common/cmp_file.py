@@ -1,26 +1,33 @@
+# -*- coding: utf-8 -*-
+
+"""
+Compare files in two directory
+"""
+
 import hashlib
 import os,sys
 import glob
+
 
 def CalcSha1(filepath):
     with open(filepath,'rb') as f:
         sha1obj = hashlib.sha1()
         sha1obj.update(f.read())
-        hash = sha1obj.hexdigest()
-        #print(hash)
-        return hash
+        hash_hex = sha1obj.hexdigest()
+        return hash_hex
+
 
 def CalcMD5(filepath):
     with open(filepath,'rb') as f:
         md5obj = hashlib.md5()
         md5obj.update(f.read())
-        hash = md5obj.hexdigest()
-        #print(hash)
-        return hash
+        hash_hex = md5obj.hexdigest()
+        return hash_hex
 
 
 dir1 = "/home/rss/media/"
 dir2 = "/home/rss/media/"
+
 file_diff1 = []
 file_diff2 = []
 index = 0
