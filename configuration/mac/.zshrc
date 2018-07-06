@@ -154,7 +154,6 @@ matchdocker() {
     docker ps | grep $1
 }
 
-
 source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
