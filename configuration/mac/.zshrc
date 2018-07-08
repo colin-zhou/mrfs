@@ -169,7 +169,8 @@ export LANG=en_US.UTF-8
 
 # vpn
 vpn-connect() {
-    /usr/bin/env osascript <<-EOF; tell application "System Events"
+    /usr/bin/env osascript -e '
+    tell application "System Events"
             tell current location of network preferences
                     set VPN to service "VPN (L2TP)" -- your VPN name here
                     if exists VPN then connect VPN
@@ -177,14 +178,15 @@ vpn-connect() {
                         delay 1
                     end repeat
             end tell
-    end tell
-    EOF;}
+    end tell'
+}
 
 vpn-disconnect() {
-    /usr/bin/env osascript <<-EOF; tell application "System Events"
+    /usr/bin/env osascript -e '
+    tell application "System Events"
             tell current location of network preferences
                     set VPN to service "VPN (L2TP)" -- your VPN name here
                     if exists VPN then disconnect VPN
             end tell
-    end tell
-    EOF;}
+    end tell'
+}
