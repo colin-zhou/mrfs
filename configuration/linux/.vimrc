@@ -2,6 +2,12 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 " color molokai
 set wildmenu
+" do not redraw panel
+set lazyredraw
+" search as entered
+set incsearch
+" highlight matchs
+set hlsearch
 
 " set the runtime path to include Vundle and initialize
 if version >= 500
@@ -24,7 +30,7 @@ if version >= 500
     "html edit
     Plugin 'VundleVim/Vundle.vim'
     "youcompleteme
-    "Plugin 'Valloric/YouCompleteMe'
+    " Plugin 'Valloric/YouCompleteMe'
     "tree nav bar
     Plugin 'scrooloose/nerdtree'
     "comment prompt or corresponding operation
@@ -99,6 +105,8 @@ syntax on
 nmap <F6> :cn<cr>
 nmap <F7> :cp<cr>
 map <F5> :!cscope -Rbq<CR>:cs reset<CR><CR>
+set cscopetag
+cs add ./cscope.out
 
 " make comments looks better
 hi Comment ctermfg=6
@@ -243,3 +251,14 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 ""C/C++ auto indent
 autocmd FileType c,cpp set shiftwidth=4 | set expandtab
 let g:syntastic_python_flake8_args='--ignore=E501,F401,H306,H404,H405,H301,H233'
+""no hl search
+nnoremap <leader><space> :nohlsearch<CR>
+""tmux
+" allows cursor change in tmux mode
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif

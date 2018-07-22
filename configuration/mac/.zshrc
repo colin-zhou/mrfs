@@ -154,7 +154,6 @@ matchdocker() {
     docker ps | grep $1
 }
 
-
 source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
@@ -166,3 +165,28 @@ source "/Users/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 # the configuration
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
+
+
+# vpn
+vpn-connect() {
+    osascript -e '
+    tell application "System Events"
+            tell current location of network preferences
+                    set VPN to service "VPN (L2TP)" -- your VPN name here
+                    if exists VPN then connect VPN
+                    repeat while (current configuration of VPN is not connected)
+                        delay 1
+                    end repeat
+            end tell
+    end tell'
+}
+
+vpn-disconnect() {
+    osascript -e '
+    tell application "System Events"
+            tell current location of network preferences
+                    set VPN to service "VPN (L2TP)" -- your VPN name here
+                    if exists VPN then disconnect VPN
+            end tell
+    end tell'
+}
