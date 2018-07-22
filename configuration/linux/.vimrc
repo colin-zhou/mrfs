@@ -19,6 +19,8 @@ if version >= 500
     " Plugin 'tpope/vim-surround'
     "html5 editor
     " Plugin 'mattn/emmet-vim'
+    " kdb
+    Plugin 'katusk/vim-qkdb-syntax'
     "html edit
     Plugin 'VundleVim/Vundle.vim'
     "youcompleteme

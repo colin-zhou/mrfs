@@ -93,7 +93,11 @@ fi
 
 if [[ -d /var/www/html/phabricator/arcanist/bin ]]; then
     export PATH="$PATH:/var/www/html/phabricator/arcanist/bin"
-fi 
+fi
+
+if [[ -d /usr/local/vpnclient ]];then
+    export PATH="$PATH:/usr/local/vpnclient"
+fi
 
 if [[ -d /opt/spark-2.2.0-bin-hadoop2.7 ]]; then
     export PATH="$PATH:/opt/spark-2.2.0-bin-hadoop2.7/bin"
@@ -110,3 +114,9 @@ fi
 lscnt() {
     netstat -n | awk '/^tcp/ {++b[$NF]} END {for(a in b) print a, b[a]}'
 }
+
+if [[ -d /opt/q ]]; then
+    export PATH=$PATH:/opt/q/l32
+    export QHOME=/opt/q
+    alias q="rlwrap /opt/q/l32/q"
+fi
