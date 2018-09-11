@@ -134,18 +134,6 @@ alias svpn='sudo vpnc-connect'
 alias adbphone='adb -d shell sh /data/data/me.piebridge.brevent/brevent.sh'
 alias subl='subl --add'
 
-mount10() {
-    echo "123" | sshfs -C -o reconnect rss@192.168.3.10:/home/rss/bss_latest /Users/colin/Workspace/bss_server
-}
-
-connect20() {
-    ssh -p 2222 colin@192.168.20.11
-}
-
-connect3() {
-    ssh colin@192.168.3.3
-}
-
 # Docker
 entrydocker() {
     docker exec -it $1 /bin/bash
