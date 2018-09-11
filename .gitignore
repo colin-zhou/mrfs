@@ -15,3 +15,5 @@
 *.xml
 *.idea
 *migrated
+*tags
+*.pip/
