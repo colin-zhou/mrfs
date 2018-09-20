@@ -10,7 +10,7 @@ def perf_print(f):
         start = time.time()
         res = f(*args, **kwargs)
         end = time.time()
-        print("function %s consumption %s seconds", (f.__name__, end - start))
+        print("function %s consumption %s seconds" % (f.__name__, end - start))
         return res
     return wrapper
 
