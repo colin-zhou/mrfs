@@ -1,0 +1,72 @@
+﻿\input{header/bheader.tex}
+
+\begin{document}
+
+\title{CentOS升级Linux Kernel}
+\author{xuxx}
+\date{2016-08-25}
+\maketitle
+
+\section{下载源码}
+\begin{enumerate}
+\item 从https://www.kernel.org/上下载最新的longterm版本;
+\item https://www.kernel.org/pub/linux/kernel/ 可下载历史的版本;
+\end{enumerate}
+
+\section{准备环境}
+安装dracut,用于生成initramfs:
+\begin{enumerate}
+\item dracut-network
+\item dracut-fips
+\item dracut-config-generic
+\item dracut-033-360
+\item dracut-config-rescue-033-360
+\end{enumerate}
+
+安装ncures-devel用于menuconfig方式配置内核选项
+\begin{enumerate}
+\item ncurses-devel-5.9-13.20130511.el7.x86\_64
+\item ncurses-5.9-13.20130511.el7.x86\_64
+\item ncurses-base-5.9-13.20130511.el7.noarch
+\item ncurses-libs-5.9-13.20130511.el7.x86\_64
+\end{enumerate}
+
+安装编译过程中可能需要的软件:
+\begin{enumerate}
+\item bc-1.06.95-13.el7.x86\_64
+\item openssl-devel-1.0.1e-51.el7\_2.5.x86\_64
+\end{enumerate}
+
+\section{编译内核}
+\begin{enumerate}
+\item 进入内核目录, 使用make help查看支持的操作.
+\begin{enumerate}
+    \item 配置内核选项:
+        \begin{enumerate}
+        \item 可以将当前内核的配置, 比如/boot/config-3.10.0-327.el7.x86\_64拷贝到内核源码目录,修改名称为.config
+        \item 执行make menuconfig 查看需要的内核模块开关已经打开.
+        \end{enumerate}
+    \item make all 编译bzImage,modules,vmlinux
+    \item make firmware\_install 安装固件
+          make modules\_install  安装驱动到/lib/modules/\{内核版本\}
+    \item make install 安装内核到/boot目录
+\end{enumerate}
+\end{enumerate}
+
+\section{更新启动选项}
+\begin{enumerate}
+\item 使用grub2-mkconfig,查看新的内核版本是否可以检测到;
+\item 备份/boot/grub2/grub.cfg文件;
+\item 使用grub2-mkconfig -o /boot/grub2/grub.cfg最终生成文件;
+\end{enumerate}
+重启后查看 /proc/version 查看内核版本是否已经更新.
+
+\section{DEBUG}
+当取启动出现问题时:
+\begin{enumerate}
+\item 修改/etc/default/grub 文件,将GRUB\_CMDLINE\_LINUX中的rhgb, quiet去掉,
+        使内核启动过程中打印详细信息;
+\item 执行执行上面一步,更新启动选项:grub2-mkconfig -o /boot/grub2/grub.cfg.
+\end{enumerate}
+
+\end{document}
