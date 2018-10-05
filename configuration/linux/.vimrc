@@ -303,7 +303,7 @@ let g:ycm_server_use_stdout = 1
 
 " Goto definition with F3
 map <F3> :YcmCompleter GoTo<CR>
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 if has('gui_running')
   set background=dark
