@@ -8,6 +8,8 @@ set lazyredraw
 set incsearch
 " highlight matchs
 set hlsearch
+" paste with indent
+set paste
 
 " set the runtime path to include Vundle and initialize
 if version >= 500
@@ -125,7 +127,7 @@ hi Comment ctermfg=6
 set pastetoggle=<F2>
 
 " disable highlight when need to cancel
-nmap <F3> :nohlsearch<CR>
+nmap <F4> :nohlsearch<CR>
 
 " nerdtree
 map <leader>t :NERDTreeToggle<CR>
@@ -237,12 +239,12 @@ let g:pymode_lint_on_fly = 0
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 let g:pymode_lint_cwindow = 0
 let g:pymode_lint_signs = 0
-"let g:pymode_lint_todo_symbol = 'WW'
-"let g:pymode_lint_comment_symbol = 'CC'
-"let g:pymode_lint_visual_symbol = 'RR'
-"let g:pymode_lint_error_symbol = 'EE'
-"let g:pymode_lint_info_symbol = 'II'
-"let g:pymode_lint_pyflakes_symbol = 'FF'
+let g:pymode_lint_todo_symbol = 'WW'
+let g:pymode_lint_comment_symbol = 'CC'
+let g:pymode_lint_visual_symbol = 'RR'
+let g:pymode_lint_error_symbol = 'EE'
+let g:pymode_lint_info_symbol = 'II'
+let g:pymode_lint_pyflakes_symbol = 'FF'
 let g:pymode_rope = 1
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_show_doc_bind = '<C-c>d'
