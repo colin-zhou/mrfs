@@ -114,20 +114,12 @@ set ruler " make it show msg bottom
 syntax on
 
 " cscope part
-nmap <F6> :cn<cr>
-nmap <F7> :cp<cr>
-map <F5> :!cscope -Rbq<CR>:cs reset<CR><CR>
 set cscopetag
 cs add ./cscope.out
 
 " make comments looks better
 hi Comment ctermfg=6
 
-" support paste auto indent
-set pastetoggle=<F2>
-
-" disable highlight when need to cancel
-nmap <F4> :nohlsearch<CR>
 
 " nerdtree
 map <leader>t :NERDTreeToggle<CR>
@@ -204,8 +196,6 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
-"" Tagbar congiruation
-nmap <F8> :TagbarToggle<CR>
 
 "" Supertab configuation
 let g:SuperTabRetainCompletionType=2
@@ -287,6 +277,8 @@ nnoremap <C-H> <C-W><C-H>
 
 " Enable folding with the spacebar
 nnoremap <space> za
+nnoremap <tab>o zR<CR>
+nnoremap <tab>c zM<CR>
 
 " ignore useless space
 set encoding=utf-8
@@ -303,10 +295,9 @@ let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_server_use_stdout = 1
 
-" Goto definition with F3
-map <F3> :YcmCompleter GoTo<CR>
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" background color scheme
 if has('gui_running')
   set background=dark
   colorscheme solarized
@@ -314,8 +305,22 @@ else
   colorscheme zenburn
 endif
 
-" background toggle
-call togglebg#map("<F5>")
-
 " set system clipboard
 " set clipboard=unnamed
+
+"!!!!!!!!!!!!!!!!!!! list all map operation !!!!!!!!!!!!!!!!!!!!!!!!!
+
+" support paste auto indent
+set pastetoggle=<F2>
+" Goto definition with F3
+map <F3> :YcmCompleter GoTo<CR>
+" background toggle
+call togglebg#map("<F4>")
+" cscope re-generate
+map <F5> :!cscope -Rbq<CR>:cs reset<CR><CR>
+" cscope cn
+nmap <F6> :cn<cr>
+" cscope cp
+nmap <F7> :cp<cr>
+" Tagbar congiruation
+nmap <F8> :TagbarToggle<CR>
