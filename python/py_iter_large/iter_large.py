@@ -24,7 +24,7 @@ def method3(data):
 
 if __name__ == "__main__":
     data = np.zeros(shape=1000000, dtype=([('abc', 'i4'),
-                                           ('efg', 'i4')])) 
+                                           ('efg', 'i4')]))
 
     start = time.time()
     method1(data)

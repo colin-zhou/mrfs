@@ -3,10 +3,9 @@
 #include <stdint.h>
 #include <string.h>
 
-
 int main()
 {
-    struct timeval a, b; 
+    struct timeval a, b;
     struct timezone c;
     uint64_t t1, t2;
     gettimeofday(&a, &c);

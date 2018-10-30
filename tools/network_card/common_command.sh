@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # clear cache
 echo "password" | sudo -S sysctl -m vm.drop_caches=3
 
