@@ -133,6 +133,7 @@ alias g='grep --color=always -EnR'
 alias svpn='sudo vpnc-connect'
 alias adbphone='adb -d shell sh /data/data/me.piebridge.brevent/brevent.sh'
 alias subl='subl --add'
+alias mycmt='git log --author="Zhou Chaolin" --no-merges | grep -e "commit [a-zA-Z0-9]*" | wc -l'
 
 # Docker
 entrydocker() {
