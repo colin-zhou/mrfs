@@ -1,5 +1,6 @@
 #!/bin/bash
 
+docker start bc0080904c1c   #    gitlab-runner
 docker start 603a499a2c34   #    zabbix|mysql:5.7                        
 docker start df72a24e07b1   #    zabbix/zabbix-java-gateway:latest 
 docker start f1c6bd1c4a63   #    zabbix/zabbix-server-mysql:latest 
