@@ -118,5 +118,8 @@ lscnt() {
 if [[ -d /opt/q ]]; then
     export PATH=$PATH:/opt/q/l32
     export QHOME=/opt/q
-    alias q="rlwrap /opt/q/l32/q"
+    alias qq="rlwrap /opt/q/l32/q"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/autojump/autojump.zsh ] && source /usr/share/autojump/autojump.zsh
