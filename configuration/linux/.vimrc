@@ -325,3 +325,4 @@ nmap <F6> :cn<cr>
 nmap <F7> :cp<cr>
 " Tagbar congiruation
 nmap <F8> :TagbarToggle<CR>
+set paste

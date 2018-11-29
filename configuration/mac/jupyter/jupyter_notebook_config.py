@@ -42,6 +42,7 @@ c.NotebookApp.notebook_dir = '/Users/colin/Workspace/jupyter_dir'
 c.NotebookApp.allow_origin = '*'
 c.NotebookApp.open_browser = False
 c.NotebookApp.port = 8888
+c.NotebookApp.allow_remote_access = True
 
 ## Set the Access-Control-Allow-Credentials: true header
 #c.NotebookApp.allow_credentials = False
