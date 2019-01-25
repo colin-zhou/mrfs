@@ -11,6 +11,7 @@ docker start 84a67071dde2   #    sentry
 docker start a1e9abde7317   #    sentry                    
 docker start 4b9b4baef529   #    sentry                      
 docker start 4f53ec686a1b   #    jupyter/datascience-notebook  
+docker start ec5117fddb47   #    jupyter-lab/notebook
 
 #docker start 1808d3db04cd   #    centos                          
 ##docker start 76398bbf7edd   #    no_vnc_demo                    
