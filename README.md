@@ -1,30 +1,18 @@
-# Api Usage and Config 
+# Api Document and Customized configuration for developing
+
 ## Getting Started
-This needn't install
-
 ```
-1. clone the project
-2. ln -s those configuration
+1. clone this project
 ```
-### Installing
-
-Install wonderful tools and configuration those
-
-```
-1. cd shell && bash init_install.sh(for centos)
-```
-
-### Javascript
-    common functions
 
 ### Python
-    common functions and api test
+    Mainly present some demo of thirdparty module.
 
 ### C/C++
-    common functions and api test
+    Mainly provide common tools.
 
 ### Shell bash scripts
-    mainly shortcut for spec-task
+    Environtment configuration and shortcut for some command.
 
 ## Authors
 * **Colin** - [Blog](http://blog.clshark.cn)
