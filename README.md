@@ -1,9 +1,8 @@
-# Api Document and Customized configuration for developing
+# Api Document & Customized Configuration
 
 ## Getting Started
-```
-1. clone this project
-```
+
+    Just need you clone this project
 
 ### Python
     Mainly present some demo of thirdparty module.
