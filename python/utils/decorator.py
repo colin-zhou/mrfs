@@ -2,6 +2,8 @@
 
 import time
 import functools
+from queue import Queue
+from threading import Thread
 
 
 def perf_time(func):
@@ -108,4 +110,27 @@ def cache(func):
         return wrapper_cache.cache[cache_key]
     wrapper_cache.cache = dict()
     return wrapper_cache
+
+
+def threaded(f, daemon=False):
+
+    def wrapped_f(q, *args, **kwargs):
+        """this function calls the decorated function and puts the
+        result in a queue"""
+        ret = f(*args, **kwargs)
+        q.put(ret)
+
+    def wrap(*args, **kwargs):
+        """this is the function returned from the decorator. It fires off
+        wrapped_f in a new thread and returns the thread object with
+        the result queue attached"""
+
+        q = Queue()
+        t = Thread(target=wrapped_f, args=(q,)+args, kwargs=kwargs)
+        t.daemon = daemon
+        t.start()
+        t.result_queue = q
+        return t
+
+    return wrap
 
