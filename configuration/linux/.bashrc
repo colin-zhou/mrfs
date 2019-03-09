@@ -205,3 +205,6 @@ startvnc() {
 killvnc() {
     vncserver -kill :1
 }
+github_cache() {
+    git config --global credential.helper wincred
+}
