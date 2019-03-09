@@ -4,3 +4,4 @@
 4. cur_path.sh 打印当前路径的方法
 5. local_yum.sh centos机器装机必备
 6. start_all_docker.sh 本地 docker 容器启动脚本
+7. pgreg.sh 检查正在运行的主进程
