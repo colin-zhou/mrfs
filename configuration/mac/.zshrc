@@ -53,7 +53,7 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git autojump osx brew node npm zsh-syntax-highlighting python pip virtualenv jira colorize colored-man)
+plugins=(git autojump osx brew node npm zsh-syntax-highlighting python pip virtualenv jira colorize)
 
 source $ZSH/oh-my-zsh.sh
 
