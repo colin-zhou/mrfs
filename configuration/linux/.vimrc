@@ -38,7 +38,7 @@ if version >= 500
     " indent help
     Plugin 'vim-scripts/indentpython.vim'
     " code fold
-    Plugin 'tmhedberg/SimpylFold'
+    " Plugin 'tmhedberg/SimpylFold'
     "html edit
     Plugin 'VundleVim/Vundle.vim'
     "youcompleteme
@@ -115,7 +115,7 @@ syntax on
 
 " cscope part
 set cscopetag
-cs add ./cscope.out
+" cs add ./cscope.out
 
 " make comments looks better
 hi Comment ctermfg=6
