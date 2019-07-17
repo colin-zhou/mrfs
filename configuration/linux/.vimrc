@@ -27,6 +27,8 @@ if version >= 500
     " Plugin 'tpope/vim-surround'
     "html5 editor
     " Plugin 'mattn/emmet-vim'
+    " markdown
+    Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
     " kdb
     Plugin 'katusk/vim-qkdb-syntax'
     " terminal mode
@@ -298,6 +300,12 @@ let g:ycm_server_use_stdout = 1
 
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" markdown
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 1
+let g:instant_markdown_mathjax = 1
+let g:instant_markdown_open_to_the_world = 1
+
 " background color scheme
 if has('gui_running')
   set background=dark
@@ -327,3 +335,4 @@ nmap <F7> :cp<cr>
 nmap <F8> :TagbarToggle<CR>
 set paste
 set backspace=indent,eol,start
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
