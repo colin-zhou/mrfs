@@ -179,3 +179,4 @@ vpn-disconnect() {
             end tell
     end tell'
 }
+export PATH="/usr/local/opt/gettext/bin:$PATH"
