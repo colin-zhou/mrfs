@@ -17,7 +17,6 @@ if version >= 500
     call vundle#begin()
     " alternatively, pass a path where Vundle should install plugins
     "call vundle#begin('~/some/path/here')
-    
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
     "
@@ -63,7 +62,7 @@ if version >= 500
     " plugin for nodejs
     Plugin 'marijnh/tern_for_vim'
     " trigger the tab as another way
-    Plugin 'honza/vim-snippets'    
+    Plugin 'honza/vim-snippets'
     " move faster
     Plugin 'easymotion/vim-easymotion'
 
@@ -123,7 +122,7 @@ syntax on
 " map <F5> :!cscope -Rbq<CR>:cs reset<CR><CR>
 
 " make comments looks better
-hi Comment ctermfg=6 
+hi Comment ctermfg=6
 
 " support paste auto indent
 set pastetoggle=<F2>

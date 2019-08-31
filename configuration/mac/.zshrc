@@ -103,6 +103,7 @@ fi
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias docker_restart="osascript -e 'quit app \"Docker\"' && open -a Docker"
 if [ -d "/Users/colin/Workspace/jupyter_dir" ]; then
     alias pynb="nohup jupyter notebook --notebook-dir=~/Workspace/jupyter_dir > /dev/null 2>&1 &"
 else
