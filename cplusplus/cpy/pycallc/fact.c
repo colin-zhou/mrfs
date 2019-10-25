@@ -1,7 +1,6 @@
 #include <Python.h>
 
-int
-fact(int n)
+int fact(int n)
 {
 	if (n <= 1)
 		return 1;
@@ -20,11 +19,11 @@ PyObject * wrap_fact(PyObject* self, PyObject* args)
 	return Py_BuildValue("i", result);
 }
 
-static PyMethodDef exampleMethods[] = 
+static PyMethodDef exampleMethods[] =
 {
-	// When using only METH_VARARGS, the function should expect the 
-	// Python-level parameters to be passed in as a tuple acceptable 
-	// for parsing via PyArg_ParseTuple(); 
+	// When using only METH_VARARGS, the function should expect the
+	// Python-level parameters to be passed in as a tuple acceptable
+	// for parsing via PyArg_ParseTuple();
 	{"fact", wrap_fact, METH_VARARGS, "Caculate N!"},
 	{NULL, NULL}
 };
