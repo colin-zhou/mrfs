@@ -8,8 +8,6 @@ set lazyredraw
 set incsearch
 " highlight matchs
 set hlsearch
-" paste with indent
-set paste
 
 " set the runtime path to include Vundle and initialize
 if version >= 500
@@ -27,6 +25,8 @@ if version >= 500
     " Plugin 'tpope/vim-surround'
     "html5 editor
     " Plugin 'mattn/emmet-vim'
+	" commentary
+	Plugin 'tpope/vim-commentary'
     " markdown
     Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
     " kdb
@@ -104,7 +104,6 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set cindent
-set paste
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 
 "insert spaces instead of tab characters
@@ -333,10 +332,16 @@ nmap <F6> :cn<cr>
 nmap <F7> :cp<cr>
 " Tagbar congiruation
 nmap <F8> :TagbarToggle<CR>
-set paste
 set backspace=indent,eol,start
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
 " ctags
 set tags+=/opt/src/**/tags
+set tags+=/usr/include/sys/tags
 set tags+=/usr/include/c++/4.8.5/tags
+
+" auto indent
+autocmd BufNewFile,BufRead *.{cpp,c,h} set equalprg=indent\ -gnu
+
+" paste with indent
+set paste

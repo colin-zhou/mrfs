@@ -6,6 +6,23 @@ from queue import Queue
 from threading import Thread
 
 
+def run_once(func):
+    """
+    only run once of specified function
+    """
+    has_run = {}
+
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        if f.__name__ not in has_run:
+            has_run[func.__name__] = False
+        if not has_run[func.__name__]:
+            ret = func(*args, **kwargs)
+            has_run[func.__name__] = True
+            return ret
+        return wrapper
+
+
 def perf_time(func):
     """
     perf function execution time

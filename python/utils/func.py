@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import os
+import socket
 import datetime
+from netifaces import interfaces, ifaddresses, AF_INET
 
 
 def fmt_alchemy_attr(self):
@@ -33,3 +36,59 @@ def fmt_ctp_datetime(ctp_date, ctp_time):
         return fmt_datetime
     except ValueError:
         return ''
+
+
+def get_dir_size(start_path = '.'):
+    """
+    get the total size of specified directory recursively
+    """
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(start_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            total_size += os.path.getsize(fp)
+    return total_size
+
+
+def human_size(size):
+    """
+    convert bytes to human readable size
+    """
+    B = "B"
+    KB = "KB"
+    MB = "MB"
+    GB = "GB"
+    TB = "TB"
+    UNITS = [B, KB, MB, GB, TB]
+    HUMANFMT = "%f %s"
+    HUMANRADIX = 1024.
+
+    for u in UNITS[:-1]:
+        if size < HUMANRADIX : return HUMANFMT % (size, u)
+        size /= HUMANRADIX
+
+    return HUMANFMT % (size,  UNITS[-1])
+
+
+def ip4_addresses():
+    """
+    get all ipv4 address of current machine
+    """
+    ip_list = []
+    for interface in interfaces():
+	adds = ifaddresses(interface)
+	if AF_INET not in adds:
+	    continue
+    for link in adds[AF_INET]:
+        ip_list.append(link['addr'])
+        return ip_list
+
+
+def get_local_internet_ip():
+    """
+    get the ip address that can access internet
+    """
+    p = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    p.connect(('www.baidu.com', 80))
+    return p.getsockname()[0]
+
