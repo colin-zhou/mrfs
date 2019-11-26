@@ -337,6 +337,7 @@ set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
 " ctags
 set tags+=/opt/src/**/tags
+set tags+=/usr/include/tags
 set tags+=/usr/include/sys/tags
 set tags+=/usr/include/c++/4.8.5/tags
 
@@ -354,3 +355,4 @@ else
 	let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
