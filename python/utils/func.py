@@ -100,3 +100,12 @@ def chunk_list(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
+
+def pd_reindex_fill(pd, index, keys):
+    """
+    dataframe resort row with index as presented in keys
+    if key not exist then fill with nan
+    """
+    pd = pd.pivot_table(index=index) 
+    return pd.reindex(keys)
+
