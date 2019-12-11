@@ -128,7 +128,6 @@ def cache(func):
     wrapper_cache.cache = dict()
     return wrapper_cache
 
-
 def threaded(f, daemon=False):
 
     def wrapped_f(q, *args, **kwargs):
@@ -150,4 +149,34 @@ def threaded(f, daemon=False):
         return t
 
     return wrap
+
+def calls_count(f):
+    """
+    multiple functions call count
+    """
+    calls_count._record = {}
+
+    @functools.wraps(f):
+    def wrapper(*args, **kwargs):
+        if f.__name__ not in calls_count._record:
+            calls_count._record[f.__name__] = 0
+        calls_count[f.__name__] += 1
+        return f(*args, **kwargs)
+    return wrapper
+
+def calls_time(f):
+    """
+    multiple functions consumption
+    """
+    calls_time._record = {}
+
+    @functools.wraps(f)
+    def wrapper(*args, **kwargs):
+        if f.__name__ not in calls_time._record:
+            calls_time._record[f.__name__] = 0
+        start = time.time()
+        ret = f(*args, **kwargs)
+        calls_time._record[f.__name__] += time.time() - start
+        return ret
+    return wrapper
 
