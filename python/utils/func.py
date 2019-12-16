@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import os
+import importlib
+import sys
 import socket
 import datetime
 from netifaces import interfaces, ifaddresses, AF_INET
@@ -76,9 +78,9 @@ def ip4_addresses():
     """
     ip_list = []
     for interface in interfaces():
-	adds = ifaddresses(interface)
-	if AF_INET not in adds:
-	    continue
+        adds = ifaddresses(interface)
+        if AF_INET not in adds:
+            continue
     for link in adds[AF_INET]:
         ip_list.append(link['addr'])
         return ip_list
@@ -106,6 +108,19 @@ def pd_reindex_fill(pd, index, keys):
     dataframe resort row with index as presented in keys
     if key not exist then fill with nan
     """
-    pd = pd.pivot_table(index=index) 
+    pd = pd.pivot_table(index=index)
     return pd.reindex(keys)
+
+
+def import_module_from_src(src_file):
+    """
+    import module from a source file
+    you can call functions by module.xxx
+    """
+    mod_name = 'anonymous_%s' % os.path.basename(src_file)[:-3]
+    spec = importlib.util.spec_from_file_location(src_file, src_file)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
 

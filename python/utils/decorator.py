@@ -27,6 +27,7 @@ def perf_time(func):
     """
     perf function execution time
     """
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start = time.time()
@@ -38,6 +39,7 @@ def perf_time(func):
 
 
 def perf_time_b(func):
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start = time.perf_counter()
@@ -82,6 +84,7 @@ def exec_per_day(func):
 
 def debug(func):
     """Print the function signature and return value"""
+
     @functools.wraps(func)
     def wrapper_debug(*args, **kwargs):
         args_repr = [repr(a) for a in args]
@@ -94,9 +97,7 @@ def debug(func):
 
 
 def count_calls(func):
-    """
-    count the call number of function
-    """
+    """ count the call number of function """
     @functools.wraps(func)
     def wrapper_count_calls(*args, **kwargs):
         wrapper_count_calls.num_calls += 1
@@ -150,13 +151,12 @@ def threaded(f, daemon=False):
 
     return wrap
 
+
 def calls_count(f):
-    """
-    multiple functions call count
-    """
+    """ multiple functions call count """
     calls_count._record = {}
 
-    @functools.wraps(f):
+    @functools.wraps(f)
     def wrapper(*args, **kwargs):
         if f.__name__ not in calls_count._record:
             calls_count._record[f.__name__] = 0
@@ -164,10 +164,9 @@ def calls_count(f):
         return f(*args, **kwargs)
     return wrapper
 
+
 def calls_time(f):
-    """
-    multiple functions consumption
-    """
+    """ multiple functions consumption """
     calls_time._record = {}
 
     @functools.wraps(f)
