@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+/* protoc --python_out=./ ./quote.proto */
+
+message SymbolPrice {
+	required int32 code = 1;
+	map<string, double> data = 2;
+}
+
+message SymbolVolume {
+	required int32 code = 1;
+	map<string, int64> data = 2;
+}
