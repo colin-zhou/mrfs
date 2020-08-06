@@ -87,6 +87,9 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias g='grep --color=always -EnR '
 alias pynb='jupyter notebook --notebook-dir=/home/colin/Workspace --no-browser >1 2>&1 &'
 
+alias startvm='VBoxManage startvm "win10" --type headless'
+alias stopvm='VBoxManage controlvm "win10" poweroff --type headless'
+
 if [[ -d /home/colin/Git/arcanist ]]; then
     export PATH="$PATH:/home/colin/Git/arcanist/bin/:/opt/cmake-3.6.1/bin"
 fi
@@ -102,7 +105,6 @@ fi
 if [[ -d /opt/spark-2.2.0-bin-hadoop2.7 ]]; then
     export PATH="$PATH:/opt/spark-2.2.0-bin-hadoop2.7/bin"
 fi
-
 
 # for python virtual env
 export WORKON_HOME=$HOME/.virtualenvs
@@ -123,3 +125,5 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/autojump/autojump.zsh ] && source /usr/share/autojump/autojump.zsh
+
+source /soft/anaconda3/bin/activate
